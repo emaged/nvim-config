@@ -2,27 +2,16 @@
 -- Keymaps (run immediately)
 -- =========================
 
-local opts = { noremap = true, silent = true }
-
--- Normal mode
-vim.keymap.set("n", "<C-z>", "u", opts)         -- undo
-vim.keymap.set("n", "<C-S-z>", "<C-r>", opts)   -- redo
-
--- Insert mode (safe, like VSCode)
-vim.keymap.set("i", "<C-z>", "<C-o>u", opts)
-vim.keymap.set("i", "<C-S-z>", "<C-o><C-r>", opts)
-
-vim.opt.undofile = true          -- persist undo history across sessions
-vim.opt.undolevels = 1000        -- number of undo levels
-vim.opt.undoreload = 10000       -- max lines to save for undo
+-- Select all with Ctrl + A
+vim.keymap.set("n", "<leader>a", "ggVG", { noremap = true, silent = true })
 
 -- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 -- You can also add or configure plugins by creating files in this `plugins/` folder
--- PLEASE REMOVE THE EXAMPLES YOU HAVE NO INTEREST IN BEFORE ENABLING THIS FILE
+-- PLEASE REMOVE THE EXAMPLES YOU HAVE NO INTEREST IN BEORE ENABLING THIS FILE
 -- Here are some examples:
 ---@type LazySpec
 return { -- == Examples of Adding Plugins == 
-    {
+    { 
         "andweeb/presence.nvim" 
     },
 
@@ -120,13 +109,13 @@ return { -- == Examples of Adding Plugins ==
             set({"n", "x"}, "<leader>m", function()
                 mc.matchAddCursor(1)
             end)
-            set({"n", "x"}, "<leader>a", function()
+            set({"n", "x"}, "<leader>z", function()
                 mc.matchSkipCursor(1)
             end)
             set({"n", "x"}, "<leader>M", function()
                 mc.matchAddCursor(-1)
             end)
-            set({"n", "x"}, "<leader>A", function()
+            set({"n", "x"}, "<leader>Z", function()
                 mc.matchSkipCursor(-1)
             end)
 
