@@ -1,0 +1,17 @@
+# All text files should have LF in the repo
+* text=auto
+
+# Lua files: always normalize to LF
+*.lua text eol=lf
+
+# JSON files: always normalize to LF
+*.json text eol=lf
+
+# TOML files: always normalize to LF
+*.toml text eol=lf
+
+# YAML files: always normalize to LF
+*.yml text eol=lf
+
+# Markdown and README files
+*.md text eol=lf
