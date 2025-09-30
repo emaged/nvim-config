@@ -8,7 +8,7 @@ return {
         "lua", "vim", "vimdoc", -- Common languages
         "bash", "python", "javascript", "typescript", "html", "css", "json", "yaml", -- Your extras
         "c", "cpp", "java", "jinja", "php", "powershell", "ruby", "scss", "sql", "llvm", -- add more arguments for adding more treesitter parsers
-        "htmldjango", "csv"
+        "htmldjango", "csv", "regex"
         },
         highlight = {
             enable = true,
