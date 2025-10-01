@@ -7,26 +7,31 @@ vim.keymap.set("n", "<leader>a", "ggVG", {
     silent = true
 })
 
--- Alternative cut c to black hole
-vim.keymap.set('n', '<leader>k', '"_c', {
+-- Delete without yank in Visual Mode
+vim.keymap.set("v", "x", '"_d', {
+    noremap = true,
+    silent = true
+})
+
+--[[ -- Yank to + register
+vim.keymap.set({"v", "n"}, "<leader>y", '"+y', {
+    noremap = true,
+    silent = true
+})
+ ]]
+
+ -- Alternative cut c to black hole
+vim.keymap.set({'v', 'n'}, '<leader>k', '"_c', {
     noremap = true,
     silent = true
 })
 
 -- Alternative delete
-vim.keymap.set('n', '<leader>r', '"_d', {
+vim.keymap.set({'v', 'n'}, '<leader>d', '"_d', {
     noremap = true,
     silent = true
 })
-vim.keymap.set('n', '<leader>R', '"_D', {
-    noremap = true,
-    silent = true
-})
-vim.keymap.set('v', '<leader>r', '"_d', {
-    noremap = true,
-    silent = true
-})
-vim.keymap.set('n', '<leader>R', '"_D', {
+vim.keymap.set({'v', 'n'}, '<leader>D', '"_D', {
     noremap = true,
     silent = true
 })
@@ -94,4 +99,3 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", {
     silent = true,
     desc = "Move selection up"
 })
-
