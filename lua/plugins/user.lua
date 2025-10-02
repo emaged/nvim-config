@@ -215,8 +215,24 @@ return { -- == Examples of Adding Plugins ==
   },
 
   {
-  "mfussenegger/nvim-dap",
-  specs = {
+    'numToStr/Comment.nvim',
+    enabled = true,  -- <- this is required
+    event = "VeryLazy",
+    opts = {
+        -- add any options here
+    }
+  },
+
+  -- nvim-ts-context-commentstring setup (optional, but lazy-load with Comment.nvim)
+  {
+    "JoosepAlviste/nvim-ts-context-commentstring",
+    enabled = true,
+    lazy = true,  -- only load when required by Comment.nvim
+  },
+  
+  {
+    "mfussenegger/nvim-dap",
+    specs = {
       "AstroNvim/astrocore",
       cmd = { "DapContinue", "DapToggleBreakpoint", "DapTerminate" }, -- lazy load,
 

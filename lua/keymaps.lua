@@ -7,6 +7,18 @@ vim.keymap.set("n", "<leader>a", "ggVG", {
     silent = true
 })
 
+-- New line with enter in normal mode
+vim.keymap.set("n", "<CR>", "o<Esc>k", {
+    noremap = true,
+    silent = true
+})
+
+-- Alt shift a shortcut
+vim.keymap.set("n", "<A-a>", "<A-A>", {
+    noremap = true,
+    silent = true
+})
+
 -- Delete without yank in Visual Mode
 vim.keymap.set("v", "x", '"_d', {
     noremap = true,
