@@ -9,6 +9,9 @@ return {
   -- Base community repository
   "AstroNvim/astrocommunity",
 
+  -- catppucin color theme
+  { import = "astrocommunity.colorscheme.catppuccin" },
+
   -- Specific community recipes (import these first)
   { import = "astrocommunity.recipes.vscode" },
   { import = "astrocommunity.recipes.heirline-mode-text-statusline" },
@@ -25,7 +28,6 @@ return {
   { import = "astrocommunity.pack.prettier" },
   { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.pack.sql" },
-
 
   -- You can also import/override your own plugins after community plugins
   -- { import = "your.plugins.override" },
