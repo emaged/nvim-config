@@ -11,6 +11,12 @@ vim.keymap.set("n", "<leader>a", "ggVG", {
   silent = true,
 })
 
+-- Select all with Ctrl + A
+vim.keymap.set("n", "<C-a>", "<C-A>", {
+  noremap = true,
+  silent = true,
+})
+
 -- New line with enter in normal mode
 vim.keymap.set("n", "<CR>", "o<Esc>", {
   noremap = true,
