@@ -29,6 +29,8 @@ return {
   { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.pack.sql" },
 
+  -- Testing
+  { import = "astrocommunity.test.neotest" },
   -- You can also import/override your own plugins after community plugins
   -- { import = "your.plugins.override" },
 }

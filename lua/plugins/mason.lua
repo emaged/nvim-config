@@ -12,6 +12,7 @@ return {
       -- Make sure to use the names found in `:Mason`
       ensure_installed = {
         -- install language servers
+        "basedpyright",
         "lua-language-server",
         "clangd",
         "django-template-lsp",
@@ -19,22 +20,23 @@ return {
         "css-lsp",
         "jdtls",
         "json-lsp",
-        
+
         -- install formatters
         "stylua",
         "black",
         "clang-format",
         "djlint",
+        "isort",
+        "jsonlint",
         "pylint",
         "prettier",
-        "jsonlint",
 
         -- install debuggers
         "debugpy",
 
         -- install any other package
         "tree-sitter-cli",
-        "emmet-ls",        
+        "emmet-ls",
       },
     },
   },
