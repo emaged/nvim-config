@@ -6,6 +6,9 @@ return {
       cmd = { "DapContinue", "DapToggleBreakpoint", "DapTerminate" }, -- lazy load,
 
       opts = function(_, opts)
+        ---------------------------------------------------------
+        -- 🧭 1. CUSTOM DAP MAPPINGS
+        ---------------------------------------------------------
         -- Remove original <Leader>d bindings
         local leader_d_keys = {
           "b",
@@ -60,6 +63,46 @@ return {
         opts.mappings.n["<Leader>rh"] = { "<cmd>lua require('dap.ui.widgets').hover()<CR>", desc = "Debugger Hover" }
 
         opts.mappings.v["<Leader>rE"] = { "<cmd>lua require('dapui').eval()<CR>", desc = "Evaluate Input" }
+
+        ---------------------------------------------------------
+        -- 🐍 2. PYTHON DAP CONFIG (AUTO-DETECT VENV)
+        ---------------------------------------------------------
+        local dap = require "dap"
+
+        dap.adapters.python = {
+          type = "executable",
+          command = vim.fn.stdpath "data" .. "/mason/packages/debugpy/venv/bin/python",
+          args = { "-m", "debugpy.adapter" },
+        }
+
+        dap.configurations.python = {
+          {
+            type = "python",
+            request = "launch",
+            name = "Launch current file",
+            program = "${file}",
+            console = "integratedTerminal", -- or "externalTerminal"
+            pythonPath = function()
+              if vim.env.VIRTUAL_ENV then return vim.env.VIRTUAL_ENV .. "/bin/python" end
+              local cwd = vim.fn.getcwd()
+              if vim.fn.executable(cwd .. "/venv/bin/python") == 1 then
+                return cwd .. "/venv/bin/python"
+              elseif vim.fn.executable(cwd .. "/.venv/bin/python") == 1 then
+                return cwd .. "/.venv/bin/python"
+              end
+              return "python"
+            end,
+          },
+        }
+        ---------------------------------------------------------
+        -- 🪄 3. RESTORE DAP-UI AUTO OPEN/CLOSE (ASTRONVIM DEFAULT)
+        ---------------------------------------------------------
+        local ok_dapui, dapui = pcall(require, "dapui")
+        if ok_dapui then
+          dap.listeners.after.event_initialized["dapui_config"] = function() dapui.open() end
+          dap.listeners.before.event_terminated["dapui_config"] = function() dapui.close() end
+          dap.listeners.before.event_exited["dapui_config"] = function() dapui.close() end
+        end
       end,
     },
   },

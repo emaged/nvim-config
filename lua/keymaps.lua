@@ -36,11 +36,16 @@ vim.keymap.set("v", "x", '"_d', {
 })
 
 --[[ -- Yank to + register
-vim.keymap.set({"v", "n"}, "<leader>y", '"+y', {
-    noremap = true,
-    silent = true
+vim.keymap.set({ "v", "n" }, "<leader>y", '"+y', {
+  noremap = true,
+  silent = true,
 })
- ]]
+
+-- Yank to + register
+vim.keymap.set({ "v", "n" }, "<leader>Y", '"+Y', {
+  noremap = true,
+  silent = true,
+}) ]]
 
 -- Alternative cut c to black hole
 vim.keymap.set({ "v", "n" }, "<leader>k", '"_c', {
