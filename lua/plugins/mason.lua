@@ -18,18 +18,25 @@ return {
         "django-template-lsp",
         "html-lsp",
         "css-lsp",
+        "eslint-lsp",
+        "htmlhint",
+        "jinja-lsp",
         "jdtls",
         "json-lsp",
+        "some-sass-language-server",
+        "stylelint-lsp",
 
-        -- install formatters
+        -- install formatters && linters
         "stylua",
         "black",
         "clang-format",
         "djlint",
+        "eslint_d",
         "isort",
         "jsonlint",
         "pylint",
         "prettier",
+        "stylelint",
 
         -- install debuggers
         "debugpy",

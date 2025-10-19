@@ -31,6 +31,7 @@ return {
 
   -- Testing
   { import = "astrocommunity.test.neotest" },
+  { import = "astrocommunity.utility.lua-json5" },
   -- You can also import/override your own plugins after community plugins
   -- { import = "your.plugins.override" },
 }
