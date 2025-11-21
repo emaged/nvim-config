@@ -1,30 +1,20 @@
 -- Keymaps (run immediately)
 -- =========================
 
--- --ctrl + backspace
--- vim.keymap.set("i", "<C-H>", "<C-W>", { noremap = true, silent = true })
--- vim.keymap.set("i", "<C-?>", "<C-W>", { noremap = true, silent = true })
-
--- Select all with Ctrl + A
-vim.keymap.set("n", "<leader>a", "ggVG", {
+-- open current file with alt + b
+vim.keymap.set("n", "<A-b>", ":!xdg-open % &<CR><CR>", {
   noremap = true,
   silent = true,
 })
 
--- Select all with Ctrl + A
-vim.keymap.set("n", "<C-a>", "<C-A>", {
+-- Select all with leader + A
+vim.keymap.set("n", "<leader>a", "ggVG", {
   noremap = true,
   silent = true,
 })
 
 -- New line with enter in normal mode
 vim.keymap.set("n", "<CR>", "o<Esc>", {
-  noremap = true,
-  silent = true,
-})
-
--- Alt shift a shortcut
-vim.keymap.set("n", "<A-a>", "<A-A>", {
   noremap = true,
   silent = true,
 })
@@ -126,3 +116,12 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", {
   silent = true,
   desc = "Move selection up",
 })
+
+-- tmux sessionizer keymaps --
+-- ------------------------ --
+
+vim.keymap.set("n", "<A-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
+vim.keymap.set("n", "<C-h>", "<cmd>silent !tmux neww tmux-sessionizer -s 0<CR>")
+vim.keymap.set("n", "<C-t>", "<cmd>silent !tmux neww tmux-sessionizer -s 1<CR>")
+vim.keymap.set("n", "<C-n>", "<cmd>silent !tmux neww tmux-sessionizer -s 2<CR>")
+vim.keymap.set("n", "<C-s>", "<cmd>silent !tmux neww tmux-sessionizer -s 3<CR>")

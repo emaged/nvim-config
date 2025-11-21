@@ -3,6 +3,7 @@ return {
     "jake-stewart/multicursor.nvim",
     branch = "1.0",
     event = "VeryLazy",
+    cond = true,
     config = function()
       local mc = require "multicursor-nvim"
       mc.setup()
@@ -20,13 +21,32 @@ return {
       set({ "n", "x" }, "<leader>M", function() mc.matchAddCursor(-1) end, { desc = "Add cursor on match backward" })
       set({ "n", "x" }, "<leader>Z", function() mc.matchSkipCursor(-1) end, { desc = "Skip cursor on match backward" }) -- Advanced Actions
 
+      -- Add a cursor for all matches of cursor word/selection in the document.
+      set({ "n", "x" }, "<leader>A", mc.matchAllAddCursors)
+
+      -- Append/insert for each line of visual selections.
+      -- Similar to block selection insertion.
+      set("x", "I", mc.insertVisual)
+      set("x", "A", mc.appendVisual)
+
+      -- Add a cursor and jump to the next/previous search result.
+      set("n", "<leader>/m", function() mc.searchAddCursor(1) end)
+      set("n", "<leader>/M", function() mc.searchAddCursor(-1) end)
+
+      -- Jump to the next/previous search result without adding a cursor.
+      set("n", "<leader>/z", function() mc.searchSkipCursor(1) end)
+      set("n", "<leader>/Z", function() mc.searchSkipCursor(-1) end)
+
+      -- Add a cursor to every search result in the buffer.
+      set("n", "<leader>/A", mc.searchAllAddCursors)
+
       -- Add and remove cursors with control + left click.
       set("n", "<c-leftmouse>", mc.handleMouse)
       set("n", "<c-leftdrag>", mc.handleMouseDrag)
       set("n", "<c-leftrelease>", mc.handleMouseRelease)
 
       -- Disable and enable cursors.
-      --set({"n", "x"}, "<c-q>", mc.toggleCursor)
+      set({ "n", "x" }, "gm", mc.toggleCursor)
 
       -- Mappings defined in a keymap layer only apply when there are
       -- multiple cursors. This lets you have overlapping mappings.

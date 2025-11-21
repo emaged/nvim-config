@@ -32,10 +32,9 @@ return {
         "clang-format",
         "djlint",
         "eslint_d",
-        "isort",
         "jsonlint",
-        "pylint",
         "prettier",
+        "ruff",
         "stylelint",
 
         -- install debuggers
