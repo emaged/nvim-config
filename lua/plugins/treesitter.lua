@@ -32,6 +32,8 @@ return {
       --nvim optional languages
       "latex",
       "norg",
+      "markdown",
+      "markdown_inline",
       "svelte",
       "typst",
       "vue",

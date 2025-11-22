@@ -3,6 +3,15 @@ return {
   branch = "harpoon2",
   dependencies = { "nvim-lua/plenary.nvim" },
 
+  specs = {
+    {
+      "catppuccin",
+      optional = true,
+      ---@type CatppuccinOptions
+      opts = { integrations = { harpoon = true } },
+    },
+  },
+
   config = function()
     local harpoon = require "harpoon"
     harpoon:setup {}

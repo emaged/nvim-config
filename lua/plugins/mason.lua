@@ -25,6 +25,7 @@ return {
         "json-lsp",
         "some-sass-language-server",
         "stylelint-lsp",
+        "sqlls",
 
         -- install formatters && linters
         "stylua",
@@ -36,6 +37,7 @@ return {
         "prettier",
         "ruff",
         "stylelint",
+        "sql-formatter",
 
         -- install debuggers
         "debugpy",

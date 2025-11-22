@@ -1,39 +1,82 @@
 return {
-  {
-    "folke/trouble.nvim",
-    opts = {}, -- for default options, refer to the configuration section for custom setup.
-    cmd = "Trouble",
-    keys = {
-      {
-        "<leader>xx",
-        "<cmd>Trouble diagnostics toggle<cr>",
-        desc = "Diagnostics (Trouble)",
+  "folke/trouble.nvim",
+  cmd = "Trouble",
+  dependencies = {
+    { "AstroNvim/astroui", opts = { icons = { Trouble = "󱍼" } } },
+    {
+      "AstroNvim/astrocore",
+      opts = function(_, opts)
+        local maps = opts.mappings
+        local prefix = "<Leader>x"
+        maps.n[prefix .. "X"] = { "<Cmd>Trouble diagnostics toggle<CR>", desc = "Trouble Workspace Diagnostics" }
+        maps.n[prefix .. "x"] =
+          { "<Cmd>Trouble diagnostics toggle filter.buf=0<CR>", desc = "Trouble Document Diagnostics" }
+        maps.n[prefix .. "L"] = { "<Cmd>Trouble loclist toggle<CR>", desc = "Trouble Location List" }
+        maps.n[prefix .. "Q"] = { "<Cmd>Trouble quickfix toggle<CR>", desc = "Trouble Quickfix List" }
+        if require("astrocore").is_available "todo-comments.nvim" then
+          maps.n[prefix .. "t"] = { "<cmd>Trouble todo<cr>", desc = "Trouble Todo" }
+          maps.n[prefix .. "T"] =
+            { "<cmd>Trouble todo filter={tag={TODO,FIX,FIXME}}<cr>", desc = "Trouble Todo/Fix/Fixme" }
+        end
+      end,
+    },
+  },
+  opts = function()
+    local get_icon = require("astroui").get_icon
+    local lspkind_avail, lspkind = pcall(require, "lspkind")
+    return {
+      keys = {
+        ["<ESC>"] = "close",
+        ["q"] = "close",
+        ["<C-E>"] = "close",
       },
-      {
-        "<leader>xX",
-        "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
-        desc = "Buffer Diagnostics (Trouble)",
+      icons = {
+        indent = {
+          fold_open = get_icon "FoldOpened",
+          fold_closed = get_icon "FoldClosed",
+        },
+        folder_closed = get_icon "FolderClosed",
+        folder_open = get_icon "FolderOpen",
+        kinds = lspkind_avail and lspkind.symbol_map,
       },
-      {
-        "<leader>cs",
-        "<cmd>Trouble symbols toggle focus=false<cr>",
-        desc = "Symbols (Trouble)",
-      },
-      {
-        "<leader>cl",
-        "<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
-        desc = "LSP Definitions / references / ... (Trouble)",
-      },
-      {
-        "<leader>xL",
-        "<cmd>Trouble loclist toggle<cr>",
-        desc = "Location List (Trouble)",
-      },
-      {
-        "<leader>xQ",
-        "<cmd>Trouble qflist toggle<cr>",
-        desc = "Quickfix List (Trouble)",
-      },
+    }
+  end,
+  specs = {
+    { "lewis6991/gitsigns.nvim", optional = true, opts = { trouble = true } },
+    {
+      "folke/edgy.nvim",
+      optional = true,
+      opts = function(_, opts)
+        if not opts.bottom then opts.bottom = {} end
+        table.insert(opts.bottom, "Trouble")
+      end,
+    },
+    {
+      "folke/snacks.nvim",
+      optional = true,
+      opts = function(_, opts)
+        return vim.tbl_deep_extend("force", opts or {}, {
+          picker = {
+            actions = require("trouble.sources.snacks").actions,
+            win = {
+              input = {
+                keys = {
+                  ["<c-t>"] = {
+                    "trouble_open",
+                    mode = { "n", "i" },
+                  },
+                },
+              },
+            },
+          },
+        })
+      end,
+    },
+    {
+      "catppuccin",
+      optional = true,
+      ---@type CatppuccinOptions
+      opts = { integrations = { lsp_trouble = true } },
     },
   },
 }

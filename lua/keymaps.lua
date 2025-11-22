@@ -1,6 +1,23 @@
 -- Keymaps (run immediately)
 -- =========================
+vim.keymap.set("n", "<leader>nl", function() require("noice").cmd "last" end)
 
+vim.keymap.set("n", "<leader>nh", function() require("noice").cmd "history" end)
+--- Noice plugin ---
+vim.keymap.set(
+  "c",
+  "<S-Enter>",
+  function() require("noice").redirect(vim.fn.getcmdline()) end,
+  { desc = "Redirect Cmdline" }
+)
+
+vim.keymap.set({ "n", "i", "s" }, "<c-f>", function()
+  if not require("noice.lsp").scroll(4) then return "<c-f>" end
+end, { silent = true, expr = true })
+-------------------------------------
+vim.keymap.set({ "n", "i", "s" }, "<c-b>", function()
+  if not require("noice.lsp").scroll(-4) then return "<c-b>" end
+end, { silent = true, expr = true })
 -- open current file with alt + b
 vim.keymap.set("n", "<A-b>", ":!xdg-open % &<CR><CR>", {
   noremap = true,
@@ -120,8 +137,9 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", {
 -- tmux sessionizer keymaps --
 -- ------------------------ --
 
-vim.keymap.set("n", "<A-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
-vim.keymap.set("n", "<C-h>", "<cmd>silent !tmux neww tmux-sessionizer -s 0<CR>")
-vim.keymap.set("n", "<C-t>", "<cmd>silent !tmux neww tmux-sessionizer -s 1<CR>")
-vim.keymap.set("n", "<C-n>", "<cmd>silent !tmux neww tmux-sessionizer -s 2<CR>")
-vim.keymap.set("n", "<C-s>", "<cmd>silent !tmux neww tmux-sessionizer -s 3<CR>")
+vim.keymap.set("n", "<M-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
+--long running sessions
+vim.keymap.set("n", "<M-l>", "<cmd>silent !tmux neww tmux-sessionizer -s 0<CR>")
+vim.keymap.set("n", "<M-o>", "<cmd>silent !tmux neww tmux-sessionizer -s 1<CR>")
+vim.keymap.set("n", "<M-p>", "<cmd>silent !tmux neww tmux-sessionizer -s 2<CR>")
+vim.keymap.set("n", "<M-r>", "<cmd>silent !tmux neww tmux-sessionizer -s 3<CR>")
