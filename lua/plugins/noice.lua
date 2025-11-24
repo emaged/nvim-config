@@ -3,7 +3,6 @@ return {
   event = "VeryLazy",
   keys = {
     -- example: dismiss Noice messages
-    { "<leader>nd", "<cmd>NoiceDismiss<CR>", desc = "Dismiss messages" },
   },
   dependencies = { "MunifTanjim/nui.nvim" },
   opts = function(_, opts)

@@ -17,12 +17,13 @@ return {
 
       -- Add or skip adding a new cursor by matching word/selection
       set({ "n", "x" }, "<leader>m", function() mc.matchAddCursor(1) end, { desc = "Add cursor on match forward" })
+
       set({ "n", "x" }, "<leader>z", function() mc.matchSkipCursor(1) end, { desc = "Skip cursor on match forward" })
       set({ "n", "x" }, "<leader>M", function() mc.matchAddCursor(-1) end, { desc = "Add cursor on match backward" })
       set({ "n", "x" }, "<leader>Z", function() mc.matchSkipCursor(-1) end, { desc = "Skip cursor on match backward" }) -- Advanced Actions
 
       -- Add a cursor for all matches of cursor word/selection in the document.
-      set({ "n", "x" }, "<leader>A", mc.matchAllAddCursors)
+      set({ "n", "x" }, "<leader>A", mc.matchAllAddCursors, { desc = "Add cursors to all matches" })
 
       -- Append/insert for each line of visual selections.
       -- Similar to block selection insertion.
@@ -30,15 +31,15 @@ return {
       set("x", "A", mc.appendVisual)
 
       -- Add a cursor and jump to the next/previous search result.
-      set("n", "<leader>/m", function() mc.searchAddCursor(1) end)
-      set("n", "<leader>/M", function() mc.searchAddCursor(-1) end)
+      set("n", "<leader>/m", function() mc.searchAddCursor(1) end, { desc = "add cursor to search match forward" })
+      set("n", "<leader>/M", function() mc.searchAddCursor(-1) end, { desc = "add cursor to search match backward" })
 
       -- Jump to the next/previous search result without adding a cursor.
-      set("n", "<leader>/z", function() mc.searchSkipCursor(1) end)
-      set("n", "<leader>/Z", function() mc.searchSkipCursor(-1) end)
+      set("n", "<leader>/z", function() mc.searchSkipCursor(1) end, { desc = "Skip search match forward" })
+      set("n", "<leader>/Z", function() mc.searchSkipCursor(-1) end, { desc = "Skip search match backward" })
 
       -- Add a cursor to every search result in the buffer.
-      set("n", "<leader>/A", mc.searchAllAddCursors)
+      set("n", "<leader>/A", mc.searchAllAddCursors, { desc = "Add cursors to all search matches" })
 
       -- Add and remove cursors with control + left click.
       set("n", "<c-leftmouse>", mc.handleMouse)

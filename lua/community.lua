@@ -15,6 +15,7 @@ return {
   -- Specific community recipes (import these first)
   { import = "astrocommunity.recipes.vscode" },
   { import = "astrocommunity.recipes.heirline-mode-text-statusline" },
+  -- { import = "astrocommunity.recipes.heirline-vscode-winbar" },
 
   -- Full community plugin pack (import after specific recipes)
   { import = "astrocommunity.pack.lua" },
@@ -30,7 +31,6 @@ return {
   { import = "astrocommunity.pack.sql" },
 
   -- Testing
-  { import = "astrocommunity.test.neotest" },
   { import = "astrocommunity.utility.lua-json5" },
   -- You can also import/override your own plugins after community plugins
   -- { import = "your.plugins.override" },

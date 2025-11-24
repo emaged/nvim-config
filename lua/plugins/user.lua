@@ -88,17 +88,6 @@ return { -- == Examples of Adding Plugins ==
     config = function() require("mini.surround").setup() end,
   },
 
-  -- UndoTree
-  {
-    "mbbill/undotree",
-    vim.keymap.set("n", "<leader>U", ":UndotreeToggle<CR>"),
-    cmd = "UndotreeToggle",
-    config = function()
-      vim.o.undofile = true
-      vim.o.undodir = vim.fn.stdpath "data" .. "/undo"
-    end,
-  },
-
   -- Lorem ipsum generator
   {
     "derektata/lorem.nvim",
@@ -131,11 +120,6 @@ return { -- == Examples of Adding Plugins ==
   },
 
   {
-    "github/copilot.vim",
-    event = "InsertEnter",
-  },
-
-  {
     "numToStr/Comment.nvim",
     enabled = true, -- <- this is required
     event = "VeryLazy",
@@ -150,6 +134,7 @@ return { -- == Examples of Adding Plugins ==
     enabled = true,
     lazy = true, -- only load when required by Comment.nvim
   },
+
   {
     "linux-cultist/venv-selector.nvim",
     dependencies = {
@@ -165,14 +150,16 @@ return { -- == Examples of Adding Plugins ==
       options = {}, -- if you add plugin options, they go here.
     },
   },
-  {
-    "ibhagwan/fzf-lua",
-    -- optional for icon support
-    --dependencies = { "nvim-tree/nvim-web-devicons" },
-    -- or if using mini.icons/mini.nvim
-    dependencies = { "nvim-mini/mini.icons" },
-    opts = {},
-  },
+
+  -- {
+  --   "ibhagwan/fzf-lua",
+  --   -- optional for icon support
+  --   --dependencies = { "nvim-tree/nvim-web-devicons" },
+  --   -- or if using mini.icons/mini.nvim
+  --   dependencies = { "nvim-mini/mini.icons" },
+  --   opts = {},
+  -- },
+
   {
     "MeanderingProgrammer/render-markdown.nvim",
     dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-mini/mini.nvim" }, -- if you use the mini.nvim suite
@@ -181,5 +168,10 @@ return { -- == Examples of Adding Plugins ==
     ---@module 'render-markdown'
     ---@type render.md.UserConfig
     opts = {},
+  },
+
+  {
+    "olrtg/nvim-emmet",
+    config = function() vim.keymap.set({ "n", "v" }, "<A-S-w>", require("nvim-emmet").wrap_with_abbreviation) end,
   },
 }

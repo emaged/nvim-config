@@ -5,6 +5,7 @@
 -- fit in the normal config locations above can go here
 
 -- ~/.config/nvim/lua/user/mappings.lua (or polish.lua)
-
 -- Replace the "p" prefix with ";"
 -- polish.lua
+--
+vim.on_key(nil, vim.api.nvim_get_namespaces()["auto_hlsearch"])

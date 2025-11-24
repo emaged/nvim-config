@@ -16,6 +16,7 @@ return {
         "lua-language-server",
         "clangd",
         "django-template-lsp",
+        "emmet-language-server",
         "html-lsp",
         "css-lsp",
         "eslint-lsp",
