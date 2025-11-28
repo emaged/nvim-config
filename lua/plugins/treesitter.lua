@@ -1,13 +1,19 @@
--- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
--- Customize Treesitter
+-- if true then return {} end -- REMOVE TO ENABLE THIS FILE
 ---@type LazySpec
 return {
   "nvim-treesitter/nvim-treesitter",
+  build = ":TSUpdate",
   opts = {
-    ensure_installed = { -- Neovim essentials
+    ------------------------------------------------------------
+    -- 🏆 REQUIRED & COMMON PARSERS
+    ------------------------------------------------------------
+    ensure_installed = {
+      -- Neovim core
       "lua",
       "vim",
-      "vimdoc", -- Common languages
+      "vimdoc",
+
+      -- General programming
       "bash",
       "python",
       "javascript",
@@ -15,36 +21,82 @@ return {
       "html",
       "css",
       "json",
-      "yaml", -- Your extras
+      "yaml",
+
+      -- Extra languages you use
       "c",
       "cpp",
       "java",
-      "jinja",
-      "php",
-      "powershell",
-      "ruby",
       "scss",
       "sql",
-      "llvm", -- add more arguments for adding more treesitter parsers
-      "htmldjango",
-      "csv",
+      "jsonc",
       "regex",
-      --nvim optional languages
-      "latex",
-      "norg",
+
+      -- Markup & docs
       "markdown",
       "markdown_inline",
+
+      -- Templates
+      "htmldjango", -- Jinja/Django
+      "jinja", -- (optional: remove if you only use htmldjango)
+
+      -- Web frameworks
       "svelte",
-      "typst",
       "vue",
+
+      -- Optional languages
+      "php",
+      "latex",
+      "typst",
+
+      -- Utilities
+      "csv",
+
+      -- Less useful / niche (keep only if you use these)
+      -- "llvm",
+      -- "powershell",
+      -- "ruby",
+      -- "norg",
     },
+
+    ------------------------------------------------------------
+    -- 🚀 PERFORMANCE & SAFETY
+    ------------------------------------------------------------
+    auto_install = true, -- Install missing parsers automatically
+    sync_install = false,
+
+    ------------------------------------------------------------
+    -- ✨ HIGHLIGHTING
+    ------------------------------------------------------------
     highlight = {
       enable = true,
       additional_vim_regex_highlighting = false,
     },
+
+    ------------------------------------------------------------
+    -- 🪄 INDENTATION
+    ------------------------------------------------------------
     indent = {
       enable = true,
+      -- disable = { "python" }, -- optional: Treesitter python indent is imperfect
     },
-    auto_install = true, -- auto-install missing parsers
+
+    ------------------------------------------------------------
+    -- 🔥 TREE-SITTER MODULES (Recommended)
+    ------------------------------------------------------------
+    incremental_selection = {
+      enable = true,
+      keymaps = {
+        init_selection = "gnn", -- set to `false` to disable one of the mappings
+        node_incremental = "grn",
+        scope_incremental = "grc",
+        node_decremental = "grm",
+      },
+    },
+
+    ------------------------------------------------------------
+    -- 🧠 RAINBOW / MATCHUP (Optional but great)
+    ------------------------------------------------------------
+    matchup = { enable = true }, -- improves % jump and matching pairs
   },
 }

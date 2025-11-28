@@ -5,14 +5,16 @@ return {
   cmd = { "TSContext" },
   opts = {},
   dependencies = {
-    "AstroNvim/astrocore",
-    ---@type AstroCoreOpts
-    opts = {
-      mappings = {
-        n = {
-          ["<Leader>uT"] = {
-            "<cmd>TSContext toggle<CR>",
-            desc = "Toggle treesitter context",
+    {
+      "AstroNvim/astrocore",
+      ---@type AstroCoreOpts
+      opts = {
+        mappings = {
+          n = {
+            ["<Leader>uT"] = {
+              "<cmd>TSContext toggle<CR>",
+              desc = "Toggle treesitter context",
+            },
           },
         },
       },

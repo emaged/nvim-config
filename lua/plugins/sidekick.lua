@@ -2,8 +2,10 @@ local prefix = "<leader>O"
 
 return {
   "folke/sidekick.nvim",
+  event = "User AstroFile",
   opts = {
     -- add any options here
+    nes = { enabled = false }, -- enable NES here (Copilot.lua has NES disabled!)
     cli = {
       mux = {
         backend = "tmux",
@@ -12,17 +14,17 @@ return {
     },
   },
   keys = {
-    {
-      "<tab>",
-      function()
-        -- if there is a next edit, jump to it, otherwise apply it if any
-        if not require("sidekick").nes_jump_or_apply() then
-          return "<Tab>" -- fallback to normal tab
-        end
-      end,
-      expr = true,
-      desc = "Goto/Apply Next Edit Suggestion",
-    },
+    -- { -- NES keybinding example (disabled by default)
+    --   "<Tab>",
+    --   function()
+    --     -- if there is a next edit, jump to it, otherwise apply it if any
+    --     if not require("sidekick").nes_jump_or_apply() then
+    --       return "<Tab>" -- fallback to normal tab
+    --     end
+    --   end,
+    --   expr = true,
+    --   desc = "Goto/Apply Next Edit Suggestion",
+    -- },
     {
       "<c-.>",
       function() require("sidekick.cli").toggle() end,

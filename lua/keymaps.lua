@@ -8,8 +8,8 @@ vim.keymap.set("n", "<Esc>", function()
   vim.cmd "NoiceDismiss"
 end, { silent = true })
 
--- vim.keymap.set("n", "<leader>nl", function() require("noice").cmd "last" end)
--- vim.keymap.set("n", "<leader>nh", function() require("noice").cmd "history" end)
+vim.keymap.set("n", "<leader>Nl", function() require("noice").cmd "last" end)
+vim.keymap.set("n", "<leader>Nh", function() require("noice").cmd "history" end)
 -- vim.keymap.set("n", "<leader>nd", "<cmd>NoiceDismiss<CR>", { desc = "Dismiss messages" })
 
 vim.keymap.set(
@@ -45,12 +45,31 @@ vim.keymap.set("n", "<CR>", "o<Esc>", {
   silent = true,
 })
 
--- Delete without yank in Visual Mode
-vim.keymap.set("v", "x", '"_d', {
+-- Delete s without yank in normal Mode
+vim.keymap.set("n", "<leader>s", '"_s', {
   noremap = true,
   silent = true,
 })
 
+-- Delete x without yank in normal Mode
+vim.keymap.set("n", "<leader>x", '"_x', {
+  noremap = true,
+  silent = true,
+})
+
+-- Delete s without yank in Visual Mode
+vim.keymap.set("v", "<leader>s", '"_di', {
+  noremap = true,
+  silent = true,
+})
+
+-- Delete x without yank in Visual Mode
+vim.keymap.set("v", "<leader>x", '"_d', {
+  noremap = true,
+  silent = true,
+})
+
+--- When not having clipboard=unnamed ---
 --[[ -- Yank to + register
 vim.keymap.set({ "v", "n" }, "<leader>y", '"+y', {
   noremap = true,
@@ -92,22 +111,8 @@ vim.keymap.set({ "v", "n" }, "<C-c>", '"+y', {
   desc = "Copy selection to clipboard",
 })
 
--- -- Make Ctrl+V paste from system clipboard in normal & insert mode
-vim.keymap.set({ "v", "n", "i" }, "<C-v>", '"_dP', {
-  noremap = true,
-  silent = true,
-  desc = "Paste from clipboard",
-})
-
--- -- Make Ctrl+Q Visual Visual Block Mode
-vim.keymap.set({ "v", "n", "i" }, "<C-q>", "<C-v>", {
-  noremap = true,
-  silent = true,
-  desc = "Visual Block Mode",
-})
-
--- Make Ctrl + q in Insert mode go back to Normal mode
-vim.keymap.set("i", "<C-q>", "<C-c>", {
+-- -- Make Ctrl+q Visual Visual Block Mode
+vim.keymap.set({ "v", "n" }, "<C-q>", "<C-v>", {
   noremap = true,
   silent = true,
   desc = "Visual Block Mode",

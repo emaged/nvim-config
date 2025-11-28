@@ -10,8 +10,8 @@ return {
     -- 👇 in this section, choose your own keymappings!
     {
       "<leader>-",
-      mode = { "n", "v" },
       "<cmd>Yazi<cr>",
+      mode = { "n", "v" },
       desc = "Open yazi at the current file",
     },
     {
@@ -28,7 +28,22 @@ return {
   },
   ---@type YaziConfig | {}
   opts = {
-    -- if you want to open yazi instead of netrw, see below for more info
+    -- if you want t
+
+    -- enable this if you want to open yazi instead of netrw.
+    -- Note that if you enable this, you need to call yazi.setup() to
+    -- initialize the plugin. lazy.nvim does this for you in certain cases.
+    --
+    -- If you are also using neotree, you may prefer not to bring it up when
+    -- opening a directory:
+    -- {
+    --   "nvim-neo-tree/neo-tree.nvim",
+    --   opts = {
+    --     filesystem = {
+    --       hijack_netrw_behavior = "disabled",
+    --     },
+    --   },
+    -- },
     open_for_directories = false,
     keymaps = {
       show_help = "<f1>",

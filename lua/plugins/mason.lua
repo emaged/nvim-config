@@ -19,8 +19,6 @@ return {
         "emmet-language-server",
         "html-lsp",
         "css-lsp",
-        "eslint-lsp",
-        "htmlhint",
         "jinja-lsp",
         "jdtls",
         "json-lsp",
@@ -34,6 +32,7 @@ return {
         "clang-format",
         "djlint",
         "eslint_d",
+        "htmlhint",
         "jsonlint",
         "prettier",
         "ruff",
@@ -45,7 +44,7 @@ return {
 
         -- install any other package
         "tree-sitter-cli",
-        "emmet-ls",
+        --"copilot-language-server",
       },
     },
   },
