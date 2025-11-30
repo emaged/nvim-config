@@ -4,20 +4,25 @@ return {
   keys = {
     -- Clear search + dismiss Noice
     {
+      "<Esc>",
+      function()
+        -- run your actions
+        vim.cmd "nohlsearch"
+        vim.cmd "NoiceDismiss"
+
+        -- return <Esc> so Flash sees it
+        return "<Esc>"
+      end,
+      mode = "n",
+      expr = true, -- THIS is required so the return value is sent as keys
+      silent = true,
+      desc = "Clear search + dismiss Noice",
+    },
+    {
       "<leader>N",
       mode = "n",
       silent = true,
       desc = " Noice",
-    },
-    {
-      "<Esc>",
-      function()
-        vim.cmd "nohlsearch"
-        vim.cmd "NoiceDismiss"
-      end,
-      mode = "n",
-      silent = true,
-      desc = "Clear search + dismiss Noice",
     },
     -- Noice last message
     {

@@ -71,7 +71,7 @@ return { -- == Examples of Adding Plugins ==
     },
     ft = "python", -- Load when opening Python files
     keys = {
-      { ",v", "<cmd>VenvSelect<cr>" }, -- Open picker on keymap
+      { "<leader>v", "<cmd>VenvSelect<cr>" }, -- Open picker on keymap
     },
     opts = { -- this can be an empty lua table - just showing below for clarity.
       picker = "snacks", -- <— SWITCH TO SNACKS HERE
@@ -93,6 +93,7 @@ return { -- == Examples of Adding Plugins ==
     "olrtg/nvim-emmet",
     config = function() vim.keymap.set({ "n", "v" }, "<A-S-w>", require("nvim-emmet").wrap_with_abbreviation) end,
   },
+
   {
     "andymass/vim-matchup",
     event = "User AstroFile",
@@ -111,7 +112,6 @@ return { -- == Examples of Adding Plugins ==
         },
       },
     },
-
     opts = {
       treesitter = {
         enable = true,
@@ -119,10 +119,25 @@ return { -- == Examples of Adding Plugins ==
       },
     },
   },
+
   {
     "barrett-ruth/live-server.nvim",
     build = "npm install -g live-server",
     cmd = { "LiveServerStart", "LiveServerStop" },
     config = true,
+  },
+
+  {
+    "folke/flash.nvim",
+    event = "VeryLazy",
+    ---@type Flash.Config
+    opts = {},
+    keys = {
+      { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
+      { "S", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
+      { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
+      { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
+      { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
+    },
   },
 }
