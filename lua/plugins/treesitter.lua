@@ -62,7 +62,7 @@ return {
     ------------------------------------------------------------
     -- 🚀 PERFORMANCE & SAFETY
     ------------------------------------------------------------
-    auto_install = true, -- Install missing parsers automatically
+    auto_install = false, -- Install missing parsers automatically
     sync_install = false,
 
     ------------------------------------------------------------

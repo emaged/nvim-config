@@ -1,0 +1,1115 @@
+
+sourcing "nvim_exec2()"
+finished sourcing nvim_exec2()
+sourcing "/usr/share/nvim/runtime/ftplugin.vim"
+finished sourcing /usr/share/nvim/runtime/ftplugin.vim
+sourcing "/usr/share/nvim/runtime/indent.vim"
+finished sourcing /usr/share/nvim/runtime/indent.vim
+could not source "/etc/xdg/nvim/sysinit.vim"
+could not source "$VIM/sysinit.vim"
+sourcing "/home/emiel/.config/nvim/init.lua"
+line 0: sourcing "nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0"
+finished sourcing nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0
+continuing in /home/emiel/.dotfiles/nvim/.config/nvim/init.lua
+line 0: sourcing "nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0"
+finished sourcing nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0
+continuing in /home/emiel/.dotfiles/nvim/.config/nvim/init.lua
+line 0: sourcing "nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0"
+finished sourcing nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0
+continuing in /home/emiel/.dotfiles/nvim/.config/nvim/init.lua
+line 0: sourcing "nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0"
+finished sourcing nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0
+continuing in /home/emiel/.dotfiles/nvim/.config/nvim/init.lua
+line 0: sourcing "nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0"
+finished sourcing nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0
+continuing in /home/emiel/.dotfiles/nvim/.config/nvim/init.lua
+line 0: sourcing "nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0"
+finished sourcing nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0
+continuing in /home/emiel/.dotfiles/nvim/.config/nvim/init.lua
+line 0: sourcing "nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0"
+finished sourcing nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0
+continuing in /home/emiel/.dotfiles/nvim/.config/nvim/init.lua
+line 0: sourcing "nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0"
+finished sourcing nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0
+continuing in /home/emiel/.dotfiles/nvim/.config/nvim/init.lua
+line 0: sourcing "nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0"
+finished sourcing nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0
+continuing in /home/emiel/.dotfiles/nvim/.config/nvim/init.lua
+line 0: sourcing "nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0"
+finished sourcing nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0
+continuing in /home/emiel/.dotfiles/nvim/.config/nvim/init.lua
+line 0: sourcing "nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0"
+finished sourcing nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0
+continuing in /home/emiel/.dotfiles/nvim/.config/nvim/init.lua
+line 0: sourcing "nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0"
+finished sourcing nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0
+continuing in /home/emiel/.dotfiles/nvim/.config/nvim/init.lua
+line 0: sourcing "nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0"
+line 1: sourcing "/usr/share/nvim/runtime/filetype.lua"
+line 0: sourcing "nvim_exec2() called at /usr/share/nvim/runtime/filetype.lua:0"
+not found in runtime path: "ftdetect/*.{vim,lua}"
+finished sourcing nvim_exec2() called at /usr/share/nvim/runtime/filetype.lua:0
+continuing in /usr/share/nvim/runtime/filetype.lua
+finished sourcing /usr/share/nvim/runtime/filetype.lua
+continuing in nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0
+finished sourcing nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0
+continuing in /home/emiel/.dotfiles/nvim/.config/nvim/init.lua
+line 0: sourcing "nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0"
+finished sourcing nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0
+continuing in /home/emiel/.dotfiles/nvim/.config/nvim/init.lua
+line 0: sourcing "nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0"
+finished sourcing nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0
+continuing in /home/emiel/.dotfiles/nvim/.config/nvim/init.lua
+line 0: sourcing "nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0"
+finished sourcing nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0
+continuing in /home/emiel/.dotfiles/nvim/.config/nvim/init.lua
+line 0: sourcing "nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0"
+finished sourcing nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0
+continuing in /home/emiel/.dotfiles/nvim/.config/nvim/init.lua
+line 0: sourcing "nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0"
+finished sourcing nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0
+continuing in /home/emiel/.dotfiles/nvim/.config/nvim/init.lua
+line 0: sourcing "nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0"
+finished sourcing nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0
+continuing in /home/emiel/.dotfiles/nvim/.config/nvim/init.lua
+line 0: sourcing "nvim_exec2() called at ColorSchemePre Autocommands for "*":0"
+finished sourcing nvim_exec2() called at ColorSchemePre Autocommands for "*":0
+continuing in ColorSchemePre Autocommands for "*"
+line 0: sourcing "nvim_exec2() called at ColorSchemePre Autocommands for "*":0"
+finished sourcing nvim_exec2() called at ColorSchemePre Autocommands for "*":0
+continuing in ColorSchemePre Autocommands for "*"
+line 0: sourcing "/home/emiel/.local/share/nvim/lazy/catppuccin/colors/catppuccin.vim"
+finished sourcing /home/emiel/.local/share/nvim/lazy/catppuccin/colors/catppuccin.vim
+continuing in /home/emiel/.dotfiles/nvim/.config/nvim/init.lua
+line 0: sourcing "nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0"
+finished sourcing nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0
+continuing in /home/emiel/.dotfiles/nvim/.config/nvim/init.lua
+line 0: sourcing "nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0"
+finished sourcing nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0
+continuing in /home/emiel/.dotfiles/nvim/.config/nvim/init.lua
+line 0: sourcing "nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0"
+line 1: sourcing "/home/emiel/.local/share/nvim/lazy/snacks.nvim/plugin/snacks.lua"
+finished sourcing /home/emiel/.local/share/nvim/lazy/snacks.nvim/plugin/snacks.lua
+continuing in nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0
+finished sourcing nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0
+continuing in /home/emiel/.dotfiles/nvim/.config/nvim/init.lua
+line 0: sourcing "nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0"
+finished sourcing nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0
+continuing in /home/emiel/.dotfiles/nvim/.config/nvim/init.lua
+line 0: sourcing "nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0"
+finished sourcing nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0
+continuing in /home/emiel/.dotfiles/nvim/.config/nvim/init.lua
+line 0: sourcing "nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0"
+line 1: sourcing "/home/emiel/.local/share/nvim/lazy/plenary.nvim/plugin/plenary.vim"
+finished sourcing /home/emiel/.local/share/nvim/lazy/plenary.nvim/plugin/plenary.vim
+continuing in nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0
+finished sourcing nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0
+continuing in /home/emiel/.dotfiles/nvim/.config/nvim/init.lua
+line 0: sourcing "nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0"
+finished sourcing nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0
+continuing in /home/emiel/.dotfiles/nvim/.config/nvim/init.lua
+line 0: sourcing "nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0"
+finished sourcing nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0
+continuing in /home/emiel/.dotfiles/nvim/.config/nvim/init.lua
+line 0: sourcing "nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0"
+finished sourcing nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0
+continuing in /home/emiel/.dotfiles/nvim/.config/nvim/init.lua
+line 0: sourcing "nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0"
+finished sourcing nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0
+continuing in /home/emiel/.dotfiles/nvim/.config/nvim/init.lua
+line 0: sourcing "nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0"
+line 1: sourcing "/home/emiel/.local/share/nvim/lazy/vim-dadbod/plugin/dadbod.vim"
+finished sourcing /home/emiel/.local/share/nvim/lazy/vim-dadbod/plugin/dadbod.vim
+continuing in nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0
+finished sourcing nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0
+continuing in /home/emiel/.dotfiles/nvim/.config/nvim/init.lua
+line 0: sourcing "nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0"
+finished sourcing nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0
+continuing in /home/emiel/.dotfiles/nvim/.config/nvim/init.lua
+line 0: sourcing "nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0"
+finished sourcing nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0
+continuing in /home/emiel/.dotfiles/nvim/.config/nvim/init.lua
+line 0: sourcing "nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0"
+finished sourcing nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0
+continuing in /home/emiel/.dotfiles/nvim/.config/nvim/init.lua
+line 0: sourcing "nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0"
+finished sourcing nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0
+continuing in /home/emiel/.dotfiles/nvim/.config/nvim/init.lua
+line 0: sourcing "nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0"
+finished sourcing nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0
+continuing in /home/emiel/.dotfiles/nvim/.config/nvim/init.lua
+line 0: sourcing "nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0"
+finished sourcing nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0
+continuing in /home/emiel/.dotfiles/nvim/.config/nvim/init.lua
+line 0: sourcing "nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0"
+finished sourcing nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0
+continuing in /home/emiel/.dotfiles/nvim/.config/nvim/init.lua
+line 0: sourcing "nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0"
+finished sourcing nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0
+continuing in /home/emiel/.dotfiles/nvim/.config/nvim/init.lua
+line 0: sourcing "nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0"
+finished sourcing nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0
+continuing in /home/emiel/.dotfiles/nvim/.config/nvim/init.lua
+line 0: sourcing "nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0"
+finished sourcing nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0
+continuing in /home/emiel/.dotfiles/nvim/.config/nvim/init.lua
+line 0: sourcing "nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0"
+line 1: sourcing "/home/emiel/.local/share/nvim/lazy/nvim-ts-context-commentstring/plugin/ts_context_commentstring.lua"
+finished sourcing /home/emiel/.local/share/nvim/lazy/nvim-ts-context-commentstring/plugin/ts_context_commentstring.lua
+continuing in nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0
+finished sourcing nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0
+continuing in /home/emiel/.dotfiles/nvim/.config/nvim/init.lua
+line 0: sourcing "nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0"
+finished sourcing nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0
+continuing in /home/emiel/.dotfiles/nvim/.config/nvim/init.lua
+line 0: sourcing "nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0"
+finished sourcing nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0
+continuing in /home/emiel/.dotfiles/nvim/.config/nvim/init.lua
+line 0: sourcing "nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0"
+line 1: sourcing "/usr/share/nvim/runtime/plugin/editorconfig.lua"
+finished sourcing /usr/share/nvim/runtime/plugin/editorconfig.lua
+continuing in nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0
+finished sourcing nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0
+continuing in /home/emiel/.dotfiles/nvim/.config/nvim/init.lua
+line 0: sourcing "nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0"
+line 1: sourcing "/usr/share/nvim/runtime/plugin/man.lua"
+finished sourcing /usr/share/nvim/runtime/plugin/man.lua
+continuing in nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0
+finished sourcing nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0
+continuing in /home/emiel/.dotfiles/nvim/.config/nvim/init.lua
+line 0: sourcing "nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0"
+line 1: sourcing "/usr/share/nvim/runtime/plugin/matchit.vim"
+not found in 'packpath': "pack/*/start/matchit"
+line 3: sourcing "/usr/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim"
+finished sourcing /usr/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim
+continuing in /usr/share/nvim/runtime/plugin/matchit.vim
+finished sourcing /usr/share/nvim/runtime/plugin/matchit.vim
+continuing in nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0
+finished sourcing nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0
+continuing in /home/emiel/.dotfiles/nvim/.config/nvim/init.lua
+line 0: sourcing "nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0"
+line 1: sourcing "/usr/share/nvim/runtime/plugin/matchparen.vim"
+finished sourcing /usr/share/nvim/runtime/plugin/matchparen.vim
+continuing in nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0
+finished sourcing nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0
+continuing in /home/emiel/.dotfiles/nvim/.config/nvim/init.lua
+line 0: sourcing "nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0"
+line 1: sourcing "/usr/share/nvim/runtime/plugin/nvim/net.lua"
+finished sourcing /usr/share/nvim/runtime/plugin/nvim/net.lua
+continuing in nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0
+finished sourcing nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0
+continuing in /home/emiel/.dotfiles/nvim/.config/nvim/init.lua
+line 0: sourcing "nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0"
+line 1: sourcing "/usr/share/nvim/runtime/plugin/nvim/spellfile.lua"
+finished sourcing /usr/share/nvim/runtime/plugin/nvim/spellfile.lua
+continuing in nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0
+finished sourcing nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0
+continuing in /home/emiel/.dotfiles/nvim/.config/nvim/init.lua
+line 0: sourcing "nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0"
+line 1: sourcing "/usr/share/nvim/runtime/plugin/osc52.lua"
+finished sourcing /usr/share/nvim/runtime/plugin/osc52.lua
+continuing in nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0
+finished sourcing nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0
+continuing in /home/emiel/.dotfiles/nvim/.config/nvim/init.lua
+line 0: sourcing "nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0"
+line 1: sourcing "/usr/share/nvim/runtime/plugin/rplugin.vim"
+finished sourcing /usr/share/nvim/runtime/plugin/rplugin.vim
+continuing in nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0
+finished sourcing nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0
+continuing in /home/emiel/.dotfiles/nvim/.config/nvim/init.lua
+line 0: sourcing "nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0"
+line 1: sourcing "/usr/share/nvim/runtime/plugin/shada.lua"
+finished sourcing /usr/share/nvim/runtime/plugin/shada.lua
+continuing in nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0
+finished sourcing nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0
+continuing in /home/emiel/.dotfiles/nvim/.config/nvim/init.lua
+line 0: sourcing "nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0"
+line 1: sourcing "/usr/share/nvim/runtime/plugin/tutor.vim"
+finished sourcing /usr/share/nvim/runtime/plugin/tutor.vim
+continuing in nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0
+finished sourcing nvim_exec2() called at /home/emiel/.dotfiles/nvim/.config/nvim/init.lua:0
+continuing in /home/emiel/.dotfiles/nvim/.config/nvim/init.lua
+finished sourcing /home/emiel/.config/nvim/init.lua
+sourcing "/usr/share/nvim/runtime/filetype.lua"
+finished sourcing /usr/share/nvim/runtime/filetype.lua
+sourcing "/usr/share/nvim/runtime/syntax/syntax.vim"
+line 20: sourcing "/usr/share/nvim/runtime/syntax/synload.vim"
+finished sourcing /usr/share/nvim/runtime/syntax/synload.vim
+continuing in /usr/share/nvim/runtime/syntax/syntax.vim
+finished sourcing /usr/share/nvim/runtime/syntax/syntax.vim
+Reading ShaDa file "/home/emiel/.local/state/nvim/shada/main.shada" info marks oldfiles
+line 0: sourcing "nvim_exec2() called at BufEnter Autocommands for "*":0"
+finished sourcing nvim_exec2() called at BufEnter Autocommands for "*":0
+continuing in BufEnter Autocommands for "*"
+line 0: sourcing "nvim_exec2() called at BufEnter Autocommands for "*":0"
+finished sourcing nvim_exec2() called at BufEnter Autocommands for "*":0
+continuing in BufEnter Autocommands for "*"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "VeryLazy":0"
+finished sourcing nvim_exec2() called at User Autocommands for "VeryLazy":0
+continuing in User Autocommands for "VeryLazy"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "VeryLazy":0"
+finished sourcing nvim_exec2() called at User Autocommands for "VeryLazy":0
+continuing in User Autocommands for "VeryLazy"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "VeryLazy":0"<SNR>53_setOpfunc
+finished sourcing nvim_exec2() called at User Autocommands for "VeryLazy":0
+continuing in User Autocommands for "VeryLazy"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "VeryLazy":0"
+line 1: sourcing "/home/emiel/.local/share/nvim/lazy/Comment.nvim/plugin/Comment.lua"
+finished sourcing /home/emiel/.local/share/nvim/lazy/Comment.nvim/plugin/Comment.lua
+continuing in nvim_exec2() called at User Autocommands for "VeryLazy":0
+finished sourcing nvim_exec2() called at User Autocommands for "VeryLazy":0
+continuing in User Autocommands for "VeryLazy"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "VeryLazy":0"
+finished sourcing nvim_exec2() called at User Autocommands for "VeryLazy":0
+continuing in User Autocommands for "VeryLazy"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "VeryLazy":0"
+finished sourcing nvim_exec2() called at User Autocommands for "VeryLazy":0
+continuing in User Autocommands for "VeryLazy"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "VeryLazy":0"
+line 1: sourcing "/home/emiel/.local/share/nvim/lazy/nvim-treesitter-textobjects/plugin/nvim-treesitter-textobjects.vim"
+finished sourcing /home/emiel/.local/share/nvim/lazy/nvim-treesitter-textobjects/plugin/nvim-treesitter-textobjects.vim
+continuing in nvim_exec2() called at User Autocommands for "VeryLazy":0
+finished sourcing nvim_exec2() called at User Autocommands for "VeryLazy":0
+continuing in User Autocommands for "VeryLazy"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "VeryLazy":0"
+finished sourcing nvim_exec2() called at User Autocommands for "VeryLazy":0
+continuing in User Autocommands for "VeryLazy"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "VeryLazy":0"
+finished sourcing nvim_exec2() called at User Autocommands for "VeryLazy":0
+continuing in User Autocommands for "VeryLazy"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "VeryLazy":0"
+line 1: sourcing "/home/emiel/.local/share/nvim/lazy/nvim-treesitter/plugin/nvim-treesitter.lua"
+finished sourcing /home/emiel/.local/share/nvim/lazy/nvim-treesitter/plugin/nvim-treesitter.lua
+continuing in nvim_exec2() called at User Autocommands for "VeryLazy":0
+finished sourcing nvim_exec2() called at User Autocommands for "VeryLazy":0
+continuing in User Autocommands for "VeryLazy"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "VeryLazy":0"
+finished sourcing nvim_exec2() called at User Autocommands for "VeryLazy":0
+continuing in User Autocommands for "VeryLazy"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "VeryLazy":0"
+finished sourcing nvim_exec2() called at User Autocommands for "VeryLazy":0
+continuing in User Autocommands for "VeryLazy"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "VeryLazy":0"
+finished sourcing nvim_exec2() called at User Autocommands for "VeryLazy":0
+continuing in User Autocommands for "VeryLazy"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "VeryLazy":0"
+finished sourcing nvim_exec2() called at User Autocommands for "VeryLazy":0
+continuing in User Autocommands for "VeryLazy"
+not found in runtime path: "parser/snacks_dashboard.*"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "VeryLazy":0"
+line 1: sourcing "/home/emiel/.local/share/nvim/lazy/yazi.nvim/plugin/yazi.lua"
+finished sourcing /home/emiel/.local/share/nvim/lazy/yazi.nvim/plugin/yazi.lua
+continuing in nvim_exec2() called at User Autocommands for "VeryLazy":0
+finished sourcing nvim_exec2() called at User Autocommands for "VeryLazy":0
+continuing in User Autocommands for "VeryLazy"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "VeryLazy":0"
+finished sourcing nvim_exec2() called at User Autocommands for "VeryLazy":0
+continuing in User Autocommands for "VeryLazy"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "VeryLazy":0"
+finished sourcing nvim_exec2() called at User Autocommands for "VeryLazy":0
+continuing in User Autocommands for "VeryLazy"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "VeryLazy":0"
+finished sourcing nvim_exec2() called at User Autocommands for "VeryLazy":0
+continuing in User Autocommands for "VeryLazy"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "VeryLazy":0"
+finished sourcing nvim_exec2() called at User Autocommands for "VeryLazy":0
+continuing in User Autocommands for "VeryLazy"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "VeryLazy":0"
+finished sourcing nvim_exec2() called at User Autocommands for "VeryLazy":0
+continuing in User Autocommands for "VeryLazy"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "VeryLazy":0"
+finished sourcing nvim_exec2() called at User Autocommands for "VeryLazy":0
+continuing in User Autocommands for "VeryLazy"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "VeryLazy":0"
+line 1: sourcing "/home/emiel/.local/share/nvim/lazy/which-key.nvim/plugin/which-key.lua"
+finished sourcing /home/emiel/.local/share/nvim/lazy/which-key.nvim/plugin/which-key.lua
+continuing in nvim_exec2() called at User Autocommands for "VeryLazy":0
+finished sourcing nvim_exec2() called at User Autocommands for "VeryLazy":0
+continuing in User Autocommands for "VeryLazy"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "VeryLazy":0"
+finished sourcing nvim_exec2() called at User Autocommands for "VeryLazy":0
+continuing in User Autocommands for "VeryLazy"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "VeryLazy":0"
+finished sourcing nvim_exec2() called at User Autocommands for "VeryLazy":0
+continuing in User Autocommands for "VeryLazy"
+
+
+--- Terminal info --- {{{
+&term: xterm-ghostty
+using terminfo database
+
+Boolean capabilities:
+  back_color_erase: true
+  truecolor ('Tc' or 'RGB'): true
+  extended underline ('Su'): true
+
+Numeric capabilities: (-1 for unknown)
+  lines: 24
+  columns: 80
+  max_colors: 80
+
+String capabilities:
+  carriage_return                 = ^M
+  change_scroll_region            = ^[[%i%p1%d;%p2%dr
+  clear_screen                    = ^[[H^[[2J
+  clr_eol                         = ^[[K
+  clr_eos                         = ^[[J
+  cursor_address                  = ^[[%i%p1%d;%p2%dH
+  cursor_down                     = ^@
+  cursor_invisible                = ^[[?25l
+  cursor_left                     = ^H
+  cursor_home                     = ^[[H
+  cursor_normal                   = ^[[?25h
+  cursor_up                       = ^[[A
+  cursor_right                    = ^[[C
+  delete_line                     = ^[[M
+  enter_bold_mode                 = ^[[1m
+  enter_ca_mode                   = ^[[?1049h
+  enter_italics_mode              = ^[[3m
+  enter_reverse_mode              = ^[[7m
+  enter_standout_mode             = ^[[7m
+  enter_underline_mode            = ^[[4m
+  erase_chars                     = ^[[%p1%dX
+  exit_attribute_mode             = ^[(B^[[m
+  exit_ca_mode                    = ^[[?1049l
+  from_status_line                = ^G
+  insert_line                     = ^[[L
+  keypad_local                    = ^[[?1l^[>
+  keypad_xmit                     = ^[[?1h^[=
+  parm_delete_line                = ^[[%p1%dM
+  parm_down_cursor                = ^[[%p1%dB
+  parm_insert_line                = ^[[%p1%dL
+  parm_left_cursor                = ^[[%p1%dD
+  parm_right_cursor               = ^[[%p1%dC
+  parm_up_cursor                  = ^[[%p1%dA
+  set_a_background                = ^[[%?%p1%{8}%<%t4%p1%d%e%p1%{16}%<%t10%p1%{8}%-%d%e48;5;%p1%d%;m
+  set_a_foreground                = ^[[%?%p1%{8}%<%t3%p1%d%e%p1%{16}%<%t9%p1%{8}%-%d%e38;5;%p1%d%;m
+  set_attributes                  = %?%p9%t^[(0%e^[(B%;^[[0%?%p6%t;1%;%?%p2%t;4%;%?%p1%p3%|%t;7%;%?%p4%t;5%;%?%p7%t;8%;m
+  set_lr_margin                   = ^[[%i%p1%d;%p2%ds
+  to_status_line                  = ^[]2;
+  reset_cursor_style (Se)         = ^[[2 q
+  set_cursor_style (Ss)           = ^[[%p1%d q
+  enter_strikethrough_mode (smxx) = ^[[9m
+  set_rgb_foreground (setrgbf)    = ^[[38:2:%p1%d:%p2%d:%p3%dm
+  set_rgb_background (setrgbb)    = ^[[48:2:%p1%d:%p2%d:%p3%dm
+  set_cursor_color (Cs)           = ^[]12;%p1%s^G
+  reset_cursor_color (Cr)         = ^[]112^G
+  set_underline_style (Smulx)     = ^[[4:%p1%dm
+  key_btab                        = ^[[Z
+  key_dc                          = ^[[3~, key_sdc = ^[[3;2~
+  key_end                         = ^[OF, key_send = ^[[1;2F
+  key_home                        = ^[OH, key_shome = ^[[1;2H
+  key_ic                          = ^[[2~, key_sic = ^[[2;2~
+  key_npage                       = ^[[6~
+  key_ppage                       = ^[[5~
+  key_f2                          = ^[OQ
+  key_f3                          = ^[OR
+  key_f4                          = ^[OS
+  key_f5                          = ^[[15~
+  key_f6                          = ^[[17~
+  key_f7                          = ^[[18~
+  key_f8                          = ^[[19~
+  key_f9                          = ^[[20~
+  key_f10                         = ^[[21~
+  key_f11                         = ^[[23~
+  key_f12                         = ^[[24~
+  key_f13                         = ^[[1;2P
+  key_f14                         = ^[[1;2Q
+  key_f15                         = ^[[1;2R
+  key_f16                         = ^[[1;2S
+  key_f17                         = ^[[15;2~
+  key_f18                         = ^[[17;2~
+  key_f19                         = ^[[18;2~
+  key_f20                         = ^[[19;2~
+  key_f21                         = ^[[20;2~
+  key_f22                         = ^[[21;2~
+  key_f23                         = ^[[23;2~
+  key_f24                         = ^[[24;2~
+  key_f25                         = ^[[1;5P
+  key_f26                         = ^[[1;5Q
+  key_f27                         = ^[[1;5R
+  key_f28                         = ^[[1;5S
+  key_f29                         = ^[[15;5~
+  key_f30                         = ^[[17;5~
+  key_f31                         = ^[[18;5~
+  key_f32                         = ^[[19;5~
+  key_f33                         = ^[[20;5~
+  key_f34                         = ^[[21;5~
+  key_f35                         = ^[[23;5~
+  key_f36                         = ^[[24;5~
+  key_f37                         = ^[[1;6P
+  key_f38                         = ^[[1;6Q
+  key_f39                         = ^[[1;6R
+  key_f40                         = ^[[1;6S
+  key_f41                         = ^[[15;6~
+  key_f42                         = ^[[17;6~
+  key_f43                         = ^[[18;6~
+  key_f44                         = ^[[19;6~
+  key_f45                         = ^[[20;6~
+  key_f46                         = ^[[21;6~
+  key_f47                         = ^[[23;6~
+  key_f48                         = ^[[24;6~
+  key_f49                         = ^[[1;3P
+  key_f50                         = ^[[1;3Q
+  key_f51                         = ^[[1;3R
+  key_f52                         = ^[[1;3S
+  key_f53                         = ^[[15;3~
+  key_f54                         = ^[[17;3~
+  key_f55                         = ^[[18;3~
+  key_f56                         = ^[[19;3~
+  key_f57                         = ^[[20;3~
+  key_f58                         = ^[[21;3~
+  key_f59                         = ^[[23;3~
+  key_f60                         = ^[[24;3~
+  key_f61                         = ^[[1;4P
+  key_f62                         = ^[[1;4Q
+  key_f63                         = ^[[1;4R
+}}}
+
+line 0: sourcing "nvim_exec2() called at User Autocommands for "LazyLoad":0"
+line 1: sourcing "/home/emiel/.local/share/nvim/lazy/mason-tool-installer.nvim/plugin/mason-tool-installer.lua"
+finished sourcing /home/emiel/.local/share/nvim/lazy/mason-tool-installer.nvim/plugin/mason-tool-installer.lua
+continuing in nvim_exec2() called at User Autocommands for "LazyLoad":0
+finished sourcing nvim_exec2() called at User Autocommands for "LazyLoad":0
+continuing in User Autocommands for "LazyLoad"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "LazyLoad":0"
+finished sourcing nvim_exec2() called at User Autocommands for "LazyLoad":0
+continuing in User Autocommands for "LazyLoad"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "LazyLoad":0"
+finished sourcing nvim_exec2() called at User Autocommands for "LazyLoad":0
+continuing in User Autocommands for "LazyLoad"
+sourcing "/usr/share/nvim/runtime/autoload/provider/clipboard.vim"
+finished sourcing /usr/share/nvim/runtime/autoload/provider/clipboard.vim
+not found in runtime path: "ftplugin/snacks_layout_box[.]{vim,lua} ftplugin/snacks_layout_box_*.{vim,lua} ftplugin/snacks_layout_box/*.{vim,lua}"
+not found in runtime path: "indent/snacks_layout_box[.]{vim,lua}"
+not found in runtime path: "parser/snacks_layout_box.*"
+not found in runtime path: "parser/snacks_layout_box.*"
+not found in runtime path: "ftplugin/snacks_picker_input[.]{vim,lua} ftplugin/snacks_picker_input_*.{vim,lua} ftplugin/snacks_picker_input/*.{vim,lua}"
+not found in runtime path: "indent/snacks_picker_input[.]{vim,lua}"
+not found in runtime path: "parser/snacks_picker_input.*"
+not found in runtime path: "parser/snacks_picker_input.*"
+not found in runtime path: "queries/regex/injections.scm"
+not found in runtime path: "ftplugin/snacks_picker_list[.]{vim,lua} ftplugin/snacks_picker_list_*.{vim,lua} ftplugin/snacks_picker_list/*.{vim,lua}"
+not found in runtime path: "indent/snacks_picker_list[.]{vim,lua}"
+not found in runtime path: "parser/snacks_picker_list.*"
+not found in runtime path: "parser/snacks_picker_list.*"
+sourcing "nvim_exec2()"
+finished sourcing nvim_exec2()
+sourcing "nvim_exec2()"
+finished sourcing nvim_exec2()
+not found in runtime path: "ftplugin/snacks_picker_preview[.]{vim,lua} ftplugin/snacks_picker_preview_*.{vim,lua} ftplugin/snacks_picker_preview/*.{vim,lua}"
+not found in runtime path: "indent/snacks_picker_preview[.]{vim,lua}"
+not found in runtime path: "parser/snacks_picker_preview.*"
+not found in runtime path: "parser/snacks_picker_preview.*"
+line 0: sourcing "nvim_exec2() called at BufEnter Autocommands for "<buffer=3>":0"
+finished sourcing nvim_exec2() called at BufEnter Autocommands for "<buffer=3>":0
+continuing in BufEnter Autocommands for "<buffer=3>"
+line 0: sourcing "nvim_exec2() called at InsertEnter Autocommands for "*":0"
+line 1: sourcing "/home/emiel/.local/share/nvim/lazy/blink.cmp/plugin/blink-cmp.lua"
+finished sourcing /home/emiel/.local/share/nvim/lazy/blink.cmp/plugin/blink-cmp.lua
+continuing in nvim_exec2() called at InsertEnter Autocommands for "*":0
+finished sourcing nvim_exec2() called at InsertEnter Autocommands for "*":0
+continuing in InsertEnter Autocommands for "*"
+line 0: sourcing "nvim_exec2() called at InsertEnter Autocommands for "*":0"
+finished sourcing nvim_exec2() called at InsertEnter Autocommands for "*":0
+continuing in InsertEnter Autocommands for "*"
+line 0: sourcing "nvim_exec2() called at InsertEnter Autocommands for "*":0"
+finished sourcing nvim_exec2() called at InsertEnter Autocommands for "*":0
+continuing in InsertEnter Autocommands for "*"
+line 0: sourcing "nvim_exec2() called at InsertEnter Autocommands for "*":0"
+finished sourcing nvim_exec2() called at InsertEnter Autocommands for "*":0
+continuing in InsertEnter Autocommands for "*"
+line 0: sourcing "nvim_exec2() called at InsertEnter Autocommands for "*":0"
+finished sourcing nvim_exec2() called at InsertEnter Autocommands for "*":0
+continuing in InsertEnter Autocommands for "*"
+not found in runtime path: "parser/comment.*"
+sourcing "nvim_exec2()"
+finished sourcing nvim_exec2()
+sourcing "nvim_exec2()"
+Reading ShaDa file "/home/emiel/.local/state/nvim/shada/main.shada" marks
+Reading undo file: /home/emiel/.local/state/nvim/undo/%home%emiel%.dotfiles%nvim%.config%nvim%lua%plugins%obsidian.lua
+line 20: sourcing "/usr/share/nvim/runtime/ftplugin/lua.vim"
+finished sourcing /usr/share/nvim/runtime/ftplugin/lua.vim
+continuing in <SNR>2_LoadFTPlugin
+line 20: sourcing "/usr/share/nvim/runtime/ftplugin/lua.lua"
+finished sourcing /usr/share/nvim/runtime/ftplugin/lua.lua
+continuing in <SNR>2_LoadFTPlugin
+line 15: sourcing "/usr/share/nvim/runtime/indent/lua.vim"
+finished sourcing /usr/share/nvim/runtime/indent/lua.vim
+continuing in <SNR>3_LoadIndent
+line 20: sourcing "/usr/share/nvim/runtime/ftplugin/lua.vim"
+finished sourcing /usr/share/nvim/runtime/ftplugin/lua.vim
+continuing in <SNR>2_LoadFTPlugin
+line 20: sourcing "/usr/share/nvim/runtime/ftplugin/lua.lua"
+finished sourcing /usr/share/nvim/runtime/ftplugin/lua.lua
+continuing in <SNR>2_LoadFTPlugin
+line 15: sourcing "/usr/share/nvim/runtime/indent/lua.vim"
+finished sourcing /usr/share/nvim/runtime/indent/lua.vim
+continuing in <SNR>3_LoadIndent
+line 0: sourcing "nvim_exec2() called at BufReadPost Autocommands for "*":0"
+finished sourcing nvim_exec2() called at BufReadPost Autocommands for "*":0
+continuing in BufReadPost Autocommands for "*"
+line 0: sourcing "nvim_exec2() called at BufReadPost Autocommands for "*":0"
+finished sourcing nvim_exec2() called at BufReadPost Autocommands for "*":0
+continuing in BufReadPost Autocommands for "*"
+                                              File type: lua
+Buffer type: 
+Guess Indent
+Lines using tabs: 0
+Lines using spaces: 12
+Relative Indentation
+  2 spaces: 15
+Absolute Indentation
+  2 spaces: 5
+  4 spaces: 3
+  6 spaces: 2
+  8 spaces: 2
+Lines loaded: 26
+Lines iterated: 26
+Spaces Scoring
+  2 score: 1.7325018808221
+not found in runtime path: "parser/luadoc.*"
+finished sourcing nvim_exec2()
+line 0: sourcing "nvim_exec2() called at User Autocommands for "AstroFile":0"
+line 1: sourcing "/home/emiel/.local/share/nvim/lazy/vim-matchup/plugin/matchup.vim"
+line 28: sourcing "/home/emiel/.local/share/nvim/lazy/vim-matchup/autoload/matchup/unmatchit.vim"
+finished sourcing /home/emiel/.local/share/nvim/lazy/vim-matchup/autoload/matchup/unmatchit.vim
+continuing in /home/emiel/.local/share/nvim/lazy/vim-matchup/plugin/matchup.vim
+line 34: sourcing "/usr/share/nvim/runtime/plugin/matchparen.vim"
+finished sourcing /usr/share/nvim/runtime/plugin/matchparen.vim
+continuing in /home/emiel/.local/share/nvim/lazy/vim-matchup/plugin/matchup.vim
+line 54: sourcing "/home/emiel/.local/share/nvim/lazy/vim-matchup/autoload/matchup.vim"
+finished sourcing /home/emiel/.local/share/nvim/lazy/vim-matchup/autoload/matchup.vim
+continuing in /home/emiel/.local/share/nvim/lazy/vim-matchup/plugin/matchup.vim
+line 1: sourcing "/home/emiel/.local/share/nvim/lazy/vim-matchup/autoload/matchup/perf.vim"
+finished sourcing /home/emiel/.local/share/nvim/lazy/vim-matchup/autoload/matchup/perf.vim
+continuing in matchup#init
+line 6: sourcing "/home/emiel/.local/share/nvim/lazy/vim-matchup/autoload/matchup/loader.vim"
+finished sourcing /home/emiel/.local/share/nvim/lazy/vim-matchup/autoload/matchup/loader.vim
+continuing in <SNR>124_init_modules
+line 6: sourcing "/home/emiel/.local/share/nvim/lazy/vim-matchup/autoload/matchup/matchparen.vim"
+finished sourcing /home/emiel/.local/share/nvim/lazy/vim-matchup/autoload/matchup/matchparen.vim
+continuing in <SNR>124_init_modules
+finished sourcing /home/emiel/.local/share/nvim/lazy/vim-matchup/plugin/matchup.vim
+continuing in nvim_exec2() called at User Autocommands for "AstroFile":0
+finished sourcing nvim_exec2() called at User Autocommands for "AstroFile":0
+continuing in User Autocommands for "AstroFile"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "AstroFile":0"
+finished sourcing nvim_exec2() called at User Autocommands for "AstroFile":0
+continuing in User Autocommands for "AstroFile"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "AstroFile":0"
+finished sourcing nvim_exec2() called at User Autocommands for "AstroFile":0
+continuing in User Autocommands for "AstroFile"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "AstroFile":0"
+line 1: sourcing "/home/emiel/.local/share/nvim/lazy/vim-matchup/after/plugin/matchit.vim"
+finished sourcing /home/emiel/.local/share/nvim/lazy/vim-matchup/after/plugin/matchit.vim
+continuing in nvim_exec2() called at User Autocommands for "AstroFile":0
+finished sourcing nvim_exec2() called at User Autocommands for "AstroFile":0
+continuing in User Autocommands for "AstroFile"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "AstroFile":0"
+line 1: sourcing "/home/emiel/.local/share/nvim/lazy/todo-comments.nvim/plugin/todo.vim"
+finished sourcing /home/emiel/.local/share/nvim/lazy/todo-comments.nvim/plugin/todo.vim
+continuing in nvim_exec2() called at User Autocommands for "AstroFile":0
+finished sourcing nvim_exec2() called at User Autocommands for "AstroFile":0
+continuing in User Autocommands for "AstroFile"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "AstroFile":0"
+finished sourcing nvim_exec2() called at User Autocommands for "AstroFile":0
+continuing in User Autocommands for "AstroFile"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "AstroFile":0"
+finished sourcing nvim_exec2() called at User Autocommands for "AstroFile":0
+continuing in User Autocommands for "AstroFile"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "AstroFile":0"
+finished sourcing nvim_exec2() called at User Autocommands for "AstroFile":0
+continuing in User Autocommands for "AstroFile"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "AstroFile":0"
+finished sourcing nvim_exec2() called at User Autocommands for "AstroFile":0
+continuing in User Autocommands for "AstroFile"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "AstroFile":0"
+finished sourcing nvim_exec2() called at User Autocommands for "AstroFile":0
+continuing in User Autocommands for "AstroFile"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "AstroFile":0"
+finished sourcing nvim_exec2() called at User Autocommands for "AstroFile":0
+continuing in User Autocommands for "AstroFile"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "AstroFile":0"
+finished sourcing nvim_exec2() called at User Autocommands for "AstroFile":0
+continuing in User Autocommands for "AstroFile"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "AstroFile":0"
+finished sourcing nvim_exec2() called at User Autocommands for "AstroFile":0
+continuing in User Autocommands for "AstroFile"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "AstroFile":0"
+finished sourcing nvim_exec2() called at User Autocommands for "AstroFile":0
+continuing in User Autocommands for "AstroFile"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "AstroFile":0"
+finished sourcing nvim_exec2() called at User Autocommands for "AstroFile":0
+continuing in User Autocommands for "AstroFile"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "AstroFile":0"
+finished sourcing nvim_exec2() called at User Autocommands for "AstroFile":0
+continuing in User Autocommands for "AstroFile"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "AstroFile":0"
+finished sourcing nvim_exec2() called at User Autocommands for "AstroFile":0
+continuing in User Autocommands for "AstroFile"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "AstroFile":0"
+finished sourcing nvim_exec2() called at User Autocommands for "AstroFile":0
+continuing in User Autocommands for "AstroFile"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "AstroFile":0"
+finished sourcing nvim_exec2() called at User Autocommands for "AstroFile":0
+continuing in User Autocommands for "AstroFile"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "AstroFile":0"
+finished sourcing nvim_exec2() called at User Autocommands for "AstroFile":0
+continuing in User Autocommands for "AstroFile"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "AstroFile":0"
+finished sourcing nvim_exec2() called at User Autocommands for "AstroFile":0
+continuing in User Autocommands for "AstroFile"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "AstroFile":0"
+finished sourcing nvim_exec2() called at User Autocommands for "AstroFile":0
+continuing in User Autocommands for "AstroFile"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "AstroFile":0"
+finished sourcing nvim_exec2() called at User Autocommands for "AstroFile":0
+continuing in User Autocommands for "AstroFile"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "AstroFile":0"
+finished sourcing nvim_exec2() called at User Autocommands for "AstroFile":0
+continuing in User Autocommands for "AstroFile"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "AstroFile":0"
+finished sourcing nvim_exec2() called at User Autocommands for "AstroFile":0
+continuing in User Autocommands for "AstroFile"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "AstroFile":0"
+finished sourcing nvim_exec2() called at User Autocommands for "AstroFile":0
+continuing in User Autocommands for "AstroFile"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "AstroFile":0"
+finished sourcing nvim_exec2() called at User Autocommands for "AstroFile":0
+continuing in User Autocommands for "AstroFile"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "AstroFile":0"
+finished sourcing nvim_exec2() called at User Autocommands for "AstroFile":0
+continuing in User Autocommands for "AstroFile"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "AstroFile":0"
+finished sourcing nvim_exec2() called at User Autocommands for "AstroFile":0
+continuing in User Autocommands for "AstroFile"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "AstroFile":0"
+finished sourcing nvim_exec2() called at User Autocommands for "AstroFile":0
+continuing in User Autocommands for "AstroFile"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "AstroFile":0"
+line 1: sourcing "/home/emiel/.local/share/nvim/lazy/vim-illuminate/plugin/illuminate.vim"
+line 52: sourcing "nvim_exec2() called at /home/emiel/.local/share/nvim/lazy/vim-illuminate/plugin/illuminate.vim:52"
+finished sourcing nvim_exec2() called at /home/emiel/.local/share/nvim/lazy/vim-illuminate/plugin/illuminate.vim:52
+continuing in /home/emiel/.local/share/nvim/lazy/vim-illuminate/plugin/illuminate.vim
+finished sourcing /home/emiel/.local/share/nvim/lazy/vim-illuminate/plugin/illuminate.vim
+continuing in nvim_exec2() called at User Autocommands for "AstroFile":0
+finished sourcing nvim_exec2() called at User Autocommands for "AstroFile":0
+continuing in User Autocommands for "AstroFile"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "AstroFile":0"
+finished sourcing nvim_exec2() called at User Autocommands for "AstroFile":0
+continuing in User Autocommands for "AstroFile"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "AstroFile":0"
+finished sourcing nvim_exec2() called at User Autocommands for "AstroFile":0
+continuing in User Autocommands for "AstroFile"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "AstroFile":0"
+line 1: sourcing "/home/emiel/.local/share/nvim/lazy/nvim-ts-autotag/plugin/nvim-ts-autotag.lua"
+finished sourcing /home/emiel/.local/share/nvim/lazy/nvim-ts-autotag/plugin/nvim-ts-autotag.lua
+continuing in nvim_exec2() called at User Autocommands for "AstroFile":0
+finished sourcing nvim_exec2() called at User Autocommands for "AstroFile":0
+continuing in User Autocommands for "AstroFile"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "AstroFile":0"
+finished sourcing nvim_exec2() called at User Autocommands for "AstroFile":0
+continuing in User Autocommands for "AstroFile"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "AstroFile":0"
+finished sourcing nvim_exec2() called at User Autocommands for "AstroFile":0
+continuing in User Autocommands for "AstroFile"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "AstroFile":0"
+finished sourcing nvim_exec2() called at User Autocommands for "AstroFile":0
+continuing in User Autocommands for "AstroFile"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "AstroFile":0"
+finished sourcing nvim_exec2() called at User Autocommands for "AstroFile":0
+continuing in User Autocommands for "AstroFile"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "AstroFile":0"
+finished sourcing nvim_exec2() called at User Autocommands for "AstroFile":0
+continuing in User Autocommands for "AstroFile"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "AstroFile":0"
+finished sourcing nvim_exec2() called at User Autocommands for "AstroFile":0
+continuing in User Autocommands for "AstroFile"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "AstroFile":0"
+finished sourcing nvim_exec2() called at User Autocommands for "AstroFile":0
+continuing in User Autocommands for "AstroFile"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "AstroFile":0"
+finished sourcing nvim_exec2() called at User Autocommands for "AstroFile":0
+continuing in User Autocommands for "AstroFile"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "AstroFile":0"
+line 1: sourcing "/home/emiel/.local/share/nvim/lazy/nvim-lspconfig/plugin/lspconfig.lua"
+finished sourcing /home/emiel/.local/share/nvim/lazy/nvim-lspconfig/plugin/lspconfig.lua
+continuing in nvim_exec2() called at User Autocommands for "AstroFile":0
+finished sourcing nvim_exec2() called at User Autocommands for "AstroFile":0
+continuing in User Autocommands for "AstroFile"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "AstroFile":0"
+finished sourcing nvim_exec2() called at User Autocommands for "AstroFile":0
+continuing in User Autocommands for "AstroFile"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "AstroFile":0"
+finished sourcing nvim_exec2() called at User Autocommands for "AstroFile":0
+continuing in User Autocommands for "AstroFile"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "AstroFile":0"
+finished sourcing nvim_exec2() called at User Autocommands for "AstroFile":0
+continuing in User Autocommands for "AstroFile"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "AstroFile":0"
+finished sourcing nvim_exec2() called at User Autocommands for "AstroFile":0
+continuing in User Autocommands for "AstroFile"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "AstroFile":0"
+finished sourcing nvim_exec2() called at User Autocommands for "AstroFile":0
+continuing in User Autocommands for "AstroFile"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "AstroFile":0"
+finished sourcing nvim_exec2() called at User Autocommands for "AstroFile":0
+continuing in User Autocommands for "AstroFile"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "AstroFile":0"
+finished sourcing nvim_exec2() called at User Autocommands for "AstroFile":0
+continuing in User Autocommands for "AstroFile"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "AstroFile":0"
+finished sourcing nvim_exec2() called at User Autocommands for "AstroFile":0
+continuing in User Autocommands for "AstroFile"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "AstroFile":0"
+finished sourcing nvim_exec2() called at User Autocommands for "AstroFile":0
+continuing in User Autocommands for "AstroFile"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "AstroFile":0"
+finished sourcing nvim_exec2() called at User Autocommands for "AstroFile":0
+continuing in User Autocommands for "AstroFile"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "AstroFile":0"
+line 1: sourcing "/home/emiel/.local/share/nvim/lazy/nvim-treesitter-context/plugin/treesitter-context.lua"
+finished sourcing /home/emiel/.local/share/nvim/lazy/nvim-treesitter-context/plugin/treesitter-context.lua
+continuing in nvim_exec2() called at User Autocommands for "AstroFile":0
+finished sourcing nvim_exec2() called at User Autocommands for "AstroFile":0
+continuing in User Autocommands for "AstroFile"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "AstroFile":0"
+finished sourcing nvim_exec2() called at User Autocommands for "AstroFile":0
+continuing in User Autocommands for "AstroFile"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "AstroFile":0"
+finished sourcing nvim_exec2() called at User Autocommands for "AstroFile":0
+continuing in User Autocommands for "AstroFile"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "AstroGitFile":0"
+finished sourcing nvim_exec2() called at User Autocommands for "AstroGitFile":0
+continuing in User Autocommands for "AstroGitFile"
+line 0: sourcing "nvim_exec2() called at User Autocommands for "AstroGitFile":0"
+finished sourcing nvim_exec2() called at User Autocommands for "AstroGitFile":0
+continuing in User Autocommands for "AstroGitFile"
+line 20: sourcing "/usr/share/nvim/runtime/ftplugin/lua.vim"
+finished sourcing /usr/share/nvim/runtime/ftplugin/lua.vim
+continuing in <SNR>2_LoadFTPlugin
+line 20: sourcing "/usr/share/nvim/runtime/ftplugin/lua.lua"
+finished sourcing /usr/share/nvim/runtime/ftplugin/lua.lua
+continuing in <SNR>2_LoadFTPlugin
+line 20: sourcing "/home/emiel/.local/share/nvim/lazy/vim-matchup/after/ftplugin/lua_matchup.vim"
+line 19: sourcing "/home/emiel/.local/share/nvim/lazy/vim-matchup/autoload/matchup/util.vim"
+finished sourcing /home/emiel/.local/share/nvim/lazy/vim-matchup/autoload/matchup/util.vim
+continuing in /home/emiel/.local/share/nvim/lazy/vim-matchup/after/ftplugin/lua_matchup.vim
+finished sourcing /home/emiel/.local/share/nvim/lazy/vim-matchup/after/ftplugin/lua_matchup.vim
+continuing in <SNR>2_LoadFTPlugin
+line 15: sourcing "/usr/share/nvim/runtime/indent/lua.vim"
+finished sourcing /usr/share/nvim/runtime/indent/lua.vim
+continuing in <SNR>3_LoadIndent
+line 5: sourcing "/home/emiel/.local/share/nvim/lazy/vim-matchup/autoload/matchup/ts_engine.vim"
+finished sourcing /home/emiel/.local/share/nvim/lazy/vim-matchup/autoload/matchup/ts_engine.vim
+continuing in matchup#loader#init_buffer
+line 17: sourcing "/home/emiel/.local/share/nvim/lazy/vim-matchup/autoload/matchup/re.vim"
+finished sourcing /home/emiel/.local/share/nvim/lazy/vim-matchup/autoload/matchup/re.vim
+continuing in <SNR>126_init_delim_regexes
+not found in runtime path: "ftplugin/snacks_notif[.]{vim,lua} ftplugin/snacks_notif_*.{vim,lua} ftplugin/snacks_notif/*.{vim,lua}"
+not found in runtime path: "indent/snacks_notif[.]{vim,lua}"
+not found in runtime path: "parser/snacks_notif.*"
+not found in runtime path: "parser/snacks_notif.*"
+not found in runtime path: "parser/snacks_notif.*"
+line 28: sourcing "/home/emiel/.local/share/nvim/lazy/vim-matchup/autoload/matchup/pos.vim"
+finished sourcing /home/emiel/.local/share/nvim/lazy/vim-matchup/autoload/matchup/pos.vim
+continuing in 7
+line 71: sourcing "/home/emiel/.local/share/nvim/lazy/vim-matchup/autoload/matchup/delim.vim"
+finished sourcing /home/emiel/.local/share/nvim/lazy/vim-matchup/autoload/matchup/delim.vim
+continuing in 7
+not found in runtime path: "ftplugin/noice[.]{vim,lua} ftplugin/noice_*.{vim,lua} ftplugin/noice/*.{vim,lua}"
+not found in runtime path: "indent/noice[.]{vim,lua}"
+not found in runtime path: "parser/noice.*"
+not found in runtime path: "parser/noice.*"
+not found in runtime path: "parser/noice.*"
+not found in runtime path: "ftplugin/snacks_layout_box[.]{vim,lua} ftplugin/snacks_layout_box_*.{vim,lua} ftplugin/snacks_layout_box/*.{vim,lua}"
+not found in runtime path: "indent/snacks_layout_box[.]{vim,lua}"
+not found in runtime path: "parser/snacks_layout_box.*"
+not found in runtime path: "parser/snacks_layout_box.*"
+not found in runtime path: "ftplugin/snacks_picker_input[.]{vim,lua} ftplugin/snacks_picker_input_*.{vim,lua} ftplugin/snacks_picker_input/*.{vim,lua}"
+not found in runtime path: "indent/snacks_picker_input[.]{vim,lua}"
+not found in runtime path: "parser/snacks_picker_input.*"
+not found in runtime path: "parser/snacks_picker_input.*"
+not found in runtime path: "queries/regex/injections.scm"
+not found in runtime path: "ftplugin/snacks_picker_list[.]{vim,lua} ftplugin/snacks_picker_list_*.{vim,lua} ftplugin/snacks_picker_list/*.{vim,lua}"
+not found in runtime path: "indent/snacks_picker_list[.]{vim,lua}"
+not found in runtime path: "parser/snacks_picker_list.*"
+not found in runtime path: "parser/snacks_picker_list.*"
+not found in runtime path: "ftplugin/snacks_picker_preview[.]{vim,lua} ftplugin/snacks_picker_preview_*.{vim,lua} ftplugin/snacks_picker_preview/*.{vim,lua}"
+not found in runtime path: "indent/snacks_picker_preview[.]{vim,lua}"
+not found in runtime path: "parser/snacks_picker_preview.*"
+not found in runtime path: "parser/snacks_picker_preview.*"
+line 0: sourcing "nvim_exec2() called at BufEnter Autocommands for "<buffer=15>":0"
+finished sourcing nvim_exec2() called at BufEnter Autocommands for "<buffer=15>":0
+continuing in BufEnter Autocommands for "<buffer=15>"
+not found in runtime path: "parser/comment.*"
+not found in runtime path: "parser/luadoc.*"
+sourcing "nvim_exec2()"
+finished sourcing nvim_exec2()
+sourcing "nvim_exec2()"
+Reading ShaDa file "/home/emiel/.local/state/nvim/shada/main.shada" marks
+Reading undo file: /home/emiel/.local/state/nvim/undo/%home%emiel%.dotfiles%nvim%.config%nvim%lua%plugins%user.lua
+line 20: sourcing "/usr/share/nvim/runtime/ftplugin/lua.vim"
+finished sourcing /usr/share/nvim/runtime/ftplugin/lua.vim
+continuing in <SNR>2_LoadFTPlugin
+line 20: sourcing "/usr/share/nvim/runtime/ftplugin/lua.lua"
+finished sourcing /usr/share/nvim/runtime/ftplugin/lua.lua
+continuing in <SNR>2_LoadFTPlugin
+line 20: sourcing "/home/emiel/.local/share/nvim/lazy/vim-matchup/after/ftplugin/lua_matchup.vim"
+finished sourcing /home/emiel/.local/share/nvim/lazy/vim-matchup/after/ftplugin/lua_matchup.vim
+continuing in <SNR>2_LoadFTPlugin
+line 15: sourcing "/usr/share/nvim/runtime/indent/lua.vim"
+finished sourcing /usr/share/nvim/runtime/indent/lua.vim
+continuing in <SNR>3_LoadIndent
+                               File type: lua
+Buffer type: 
+Guess Indent
+Lines using tabs: 0
+Lines using spaces: 96
+Relative Indentation
+  2 spaces: 120
+Absolute Indentation
+  2 spaces: 18
+  4 spaces: 42
+  6 spaces: 17
+  8 spaces: 12
+  10 spaces: 2
+  12 spaces: 2
+  14 spaces: 3
+Lines loaded: 128
+Lines iterated: 128
+Spaces Scoring
+  2 score: 1.6788826223079
+finished sourcing nvim_exec2()
+not found in runtime path: "parser/comment.*"
+not found in runtime path: "ftplugin/snacks_notif[.]{vim,lua} ftplugin/snacks_notif_*.{vim,lua} ftplugin/snacks_notif/*.{vim,lua}"
+not found in runtime path: "indent/snacks_notif[.]{vim,lua}"
+not found in runtime path: "parser/snacks_notif.*"
+not found in runtime path: "parser/snacks_notif.*"
+not found in runtime path: "parser/luadoc.*"
+not found in runtime path: "ftplugin/noice[.]{vim,lua} ftplugin/noice_*.{vim,lua} ftplugin/noice/*.{vim,lua}"
+not found in runtime path: "indent/noice[.]{vim,lua}"
+not found in runtime path: "parser/noice.*"
+not found in runtime path: "parser/noice.*"
+not found in runtime path: "ftplugin/noice[.]{vim,lua} ftplugin/noice_*.{vim,lua} ftplugin/noice/*.{vim,lua}"
+not found in runtime path: "indent/noice[.]{vim,lua}"
+not found in runtime path: "parser/noice.*"
+not found in runtime path: "parser/noice.*"
+not found in runtime path: "ftplugin/snacks_layout_box[.]{vim,lua} ftplugin/snacks_layout_box_*.{vim,lua} ftplugin/snacks_layout_box/*.{vim,lua}"
+not found in runtime path: "indent/snacks_layout_box[.]{vim,lua}"
+not found in runtime path: "parser/snacks_layout_box.*"
+not found in runtime path: "parser/snacks_layout_box.*"
+not found in runtime path: "ftplugin/snacks_picker_input[.]{vim,lua} ftplugin/snacks_picker_input_*.{vim,lua} ftplugin/snacks_picker_input/*.{vim,lua}"
+not found in runtime path: "indent/snacks_picker_input[.]{vim,lua}"
+not found in runtime path: "parser/snacks_picker_input.*"
+not found in runtime path: "parser/snacks_picker_input.*"
+not found in runtime path: "ftplugin/snacks_picker_list[.]{vim,lua} ftplugin/snacks_picker_list_*.{vim,lua} ftplugin/snacks_picker_list/*.{vim,lua}"
+not found in runtime path: "indent/snacks_picker_list[.]{vim,lua}"
+not found in runtime path: "parser/snacks_picker_list.*"
+not found in runtime path: "parser/snacks_picker_list.*"
+not found in runtime path: "ftplugin/snacks_picker_preview[.]{vim,lua} ftplugin/snacks_picker_preview_*.{vim,lua} ftplugin/snacks_picker_preview/*.{vim,lua}"
+not found in runtime path: "indent/snacks_picker_preview[.]{vim,lua}"
+not found in runtime path: "parser/snacks_picker_preview.*"
+not found in runtime path: "parser/snacks_picker_preview.*"
+line 0: sourcing "nvim_exec2() called at BufEnter Autocommands for "<buffer=28>":0"
+finished sourcing nvim_exec2() called at BufEnter Autocommands for "<buffer=28>":0
+continuing in BufEnter Autocommands for "<buffer=28>"
+not found in runtime path: "parser/comment.*"
+not found in runtime path: "parser/comment.*"
+not found in runtime path: "parser/luadoc.*"
+sourcing "nvim_exec2()"
+finished sourcing nvim_exec2()
+sourcing "nvim_exec2()"
+Reading ShaDa file "/home/emiel/.local/state/nvim/shada/main.shada" marks
+Reading undo file: /home/emiel/.local/state/nvim/undo/%home%emiel%.dotfiles%nvim%.config%nvim%lua%plugins%nvim-dap.lua
+line 20: sourcing "/usr/share/nvim/runtime/ftplugin/lua.vim"
+finished sourcing /usr/share/nvim/runtime/ftplugin/lua.vim
+continuing in <SNR>2_LoadFTPlugin
+line 20: sourcing "/usr/share/nvim/runtime/ftplugin/lua.lua"
+finished sourcing /usr/share/nvim/runtime/ftplugin/lua.lua
+continuing in <SNR>2_LoadFTPlugin
+line 20: sourcing "/home/emiel/.local/share/nvim/lazy/vim-matchup/after/ftplugin/lua_matchup.vim"
+finished sourcing /home/emiel/.local/share/nvim/lazy/vim-matchup/after/ftplugin/lua_matchup.vim
+continuing in <SNR>2_LoadFTPlugin
+line 15: sourcing "/usr/share/nvim/runtime/indent/lua.vim"
+finished sourcing /usr/share/nvim/runtime/indent/lua.vim
+continuing in <SNR>3_LoadIndent
+                               File type: lua
+Buffer type: 
+Guess Indent
+Lines using tabs: 0
+Lines using spaces: 37
+Relative Indentation
+  2 spaces: 46
+Absolute Indentation
+  2 spaces: 2
+  4 spaces: 4
+  6 spaces: 8
+  8 spaces: 8
+  10 spaces: 7
+  12 spaces: 6
+  14 spaces: 2
+Lines loaded: 51
+Lines iterated: 51
+Spaces Scoring
+  2 score: 1.5814794867837
+finished sourcing nvim_exec2()
+not found in runtime path: "ftplugin/snacks_notif[.]{vim,lua} ftplugin/snacks_notif_*.{vim,lua} ftplugin/snacks_notif/*.{vim,lua}"
+not found in runtime path: "indent/snacks_notif[.]{vim,lua}"
+not found in runtime path: "parser/snacks_notif.*"
+not found in runtime path: "parser/snacks_notif.*"
+not found in runtime path: "ftplugin/noice[.]{vim,lua} ftplugin/noice_*.{vim,lua} ftplugin/noice/*.{vim,lua}"
+not found in runtime path: "indent/noice[.]{vim,lua}"
+not found in runtime path: "parser/noice.*"
+not found in runtime path: "parser/noice.*"
+not found in runtime path: "ftplugin/noice[.]{vim,lua} ftplugin/noice_*.{vim,lua} ftplugin/noice/*.{vim,lua}"
+not found in runtime path: "indent/noice[.]{vim,lua}"
+not found in runtime path: "parser/noice.*"
+not found in runtime path: "parser/noice.*"
+not found in runtime path: "ftplugin/snacks_layout_box[.]{vim,lua} ftplugin/snacks_layout_box_*.{vim,lua} ftplugin/snacks_layout_box/*.{vim,lua}"
+not found in runtime path: "indent/snacks_layout_box[.]{vim,lua}"
+not found in runtime path: "parser/snacks_layout_box.*"
+not found in runtime path: "parser/snacks_layout_box.*"
+not found in runtime path: "ftplugin/snacks_picker_input[.]{vim,lua} ftplugin/snacks_picker_input_*.{vim,lua} ftplugin/snacks_picker_input/*.{vim,lua}"
+not found in runtime path: "indent/snacks_picker_input[.]{vim,lua}"
+not found in runtime path: "parser/snacks_picker_input.*"
+not found in runtime path: "parser/snacks_picker_input.*"
+not found in runtime path: "ftplugin/snacks_picker_list[.]{vim,lua} ftplugin/snacks_picker_list_*.{vim,lua} ftplugin/snacks_picker_list/*.{vim,lua}"
+not found in runtime path: "indent/snacks_picker_list[.]{vim,lua}"
+not found in runtime path: "parser/snacks_picker_list.*"
+not found in runtime path: "parser/snacks_picker_list.*"
+not found in runtime path: "ftplugin/snacks_picker_preview[.]{vim,lua} ftplugin/snacks_picker_preview_*.{vim,lua} ftplugin/snacks_picker_preview/*.{vim,lua}"
+not found in runtime path: "indent/snacks_picker_preview[.]{vim,lua}"
+not found in runtime path: "parser/snacks_picker_preview.*"
+not found in runtime path: "parser/snacks_picker_preview.*"
+line 0: sourcing "nvim_exec2() called at BufEnter Autocommands for "<buffer=41>":0"
+finished sourcing nvim_exec2() called at BufEnter Autocommands for "<buffer=41>":0
+continuing in BufEnter Autocommands for "<buffer=41>"
+not found in runtime path: "parser/comment.*"
+not found in runtime path: "parser/luadoc.*"
+not found in runtime path: "ftplugin/snacks_layout_box[.]{vim,lua} ftplugin/snacks_layout_box_*.{vim,lua} ftplugin/snacks_layout_box/*.{vim,lua}"
+not found in runtime path: "indent/snacks_layout_box[.]{vim,lua}"
+not found in runtime path: "parser/snacks_layout_box.*"
+not found in runtime path: "parser/snacks_layout_box.*"
+not found in runtime path: "ftplugin/snacks_picker_input[.]{vim,lua} ftplugin/snacks_picker_input_*.{vim,lua} ftplugin/snacks_picker_input/*.{vim,lua}"
+not found in runtime path: "indent/snacks_picker_input[.]{vim,lua}"
+not found in runtime path: "parser/snacks_picker_input.*"
+not found in runtime path: "parser/snacks_picker_input.*"
+not found in runtime path: "ftplugin/snacks_picker_list[.]{vim,lua} ftplugin/snacks_picker_list_*.{vim,lua} ftplugin/snacks_picker_list/*.{vim,lua}"
+not found in runtime path: "indent/snacks_picker_list[.]{vim,lua}"
+not found in runtime path: "parser/snacks_picker_list.*"
+not found in runtime path: "parser/snacks_picker_list.*"
+not found in runtime path: "ftplugin/snacks_picker_preview[.]{vim,lua} ftplugin/snacks_picker_preview_*.{vim,lua} ftplugin/snacks_picker_preview/*.{vim,lua}"
+not found in runtime path: "indent/snacks_picker_preview[.]{vim,lua}"
+not found in runtime path: "parser/snacks_picker_preview.*"
+not found in runtime path: "parser/snacks_picker_preview.*"
+line 0: sourcing "nvim_exec2() called at BufEnter Autocommands for "<buffer=47>":0"
+finished sourcing nvim_exec2() called at BufEnter Autocommands for "<buffer=47>":0
+continuing in BufEnter Autocommands for "<buffer=47>"
+not found in runtime path: "parser/comment.*"
+not found in runtime path: "parser/luadoc.*"
+line 0: sourcing "nvim_exec2() called at InsertCharPre Autocommands for "*":0"
+finished sourcing nvim_exec2() called at InsertCharPre Autocommands for "*":0
+continuing in InsertCharPre Autocommands for "*"
+line 0: sourcing "nvim_exec2() called at InsertCharPre Autocommands for "*":0"
+finished sourcing nvim_exec2() called at InsertCharPre Autocommands for "*":0
+continuing in InsertCharPre Autocommands for "*"
+line 0: sourcing "nvim_exec2() called at InsertCharPre Autocommands for "*":0"
+line 1: sourcing "/home/emiel/.local/share/nvim/lazy/LuaSnip/plugin/luasnip.lua"
+finished sourcing /home/emiel/.local/share/nvim/lazy/LuaSnip/plugin/luasnip.lua
+continuing in nvim_exec2() called at InsertCharPre Autocommands for "*":0
+finished sourcing nvim_exec2() called at InsertCharPre Autocommands for "*":0
+continuing in InsertCharPre Autocommands for "*"
+line 0: sourcing "nvim_exec2() called at InsertCharPre Autocommands for "*":0"
+line 1: sourcing "/home/emiel/.local/share/nvim/lazy/LuaSnip/plugin/luasnip.vim"
+finished sourcing /home/emiel/.local/share/nvim/lazy/LuaSnip/plugin/luasnip.vim
+continuing in nvim_exec2() called at InsertCharPre Autocommands for "*":0
+finished sourcing nvim_exec2() called at InsertCharPre Autocommands for "*":0
+continuing in InsertCharPre Autocommands for "*"
+line 0: sourcing "nvim_exec2() called at InsertCharPre Autocommands for "*":0"
+finished sourcing nvim_exec2() called at InsertCharPre Autocommands for "*":0
+continuing in InsertCharPre Autocommands for "*"
+line 0: sourcing "nvim_exec2() called at InsertCharPre Autocommands for "*":0"
+finished sourcing nvim_exec2() called at InsertCharPre Autocommands for "*":0
+continuing in InsertCharPre Autocommands for "*"
+not found in runtime path: "package.jsonc"
+not found in runtime path: "luasnippets"
+not found in runtime path: "queries/json/injections.scm"
+sourcing "nvim_exec2()"
+finished sourcing nvim_exec2()
+sourcing "nvim_exec2()"
+Reading ShaDa file "/home/emiel/.local/state/nvim/shada/main.shada" marks
+Reading undo file: /home/emiel/.local/state/nvim/undo/%home%emiel%.dotfiles%nvim%.config%nvim%lua%plugins%mason.lua
+line 20: sourcing "/usr/share/nvim/runtime/ftplugin/lua.vim"
+finished sourcing /usr/share/nvim/runtime/ftplugin/lua.vim
+continuing in <SNR>2_LoadFTPlugin
+line 20: sourcing "/usr/share/nvim/runtime/ftplugin/lua.lua"
+finished sourcing /usr/share/nvim/runtime/ftplugin/lua.lua
+continuing in <SNR>2_LoadFTPlugin
+line 20: sourcing "/home/emiel/.local/share/nvim/lazy/vim-matchup/after/ftplugin/lua_matchup.vim"
+finished sourcing /home/emiel/.local/share/nvim/lazy/vim-matchup/after/ftplugin/lua_matchup.vim
+continuing in <SNR>2_LoadFTPlugin
+line 15: sourcing "/usr/share/nvim/runtime/indent/lua.vim"
+finished sourcing /usr/share/nvim/runtime/indent/lua.vim
+continuing in <SNR>3_LoadIndent
+                               File type: lua
+Buffer type: 
+Guess Indent
+Lines using tabs: 0
+Lines using spaces: 34
+Relative Indentation
+  2 spaces: 37
+Absolute Indentation
+  2 spaces: 2
+  4 spaces: 3
+  6 spaces: 3
+  8 spaces: 26
+Lines loaded: 52
+Lines iterated: 52
+Spaces Scoring
+  2 score: 1.4360175746799
+finished sourcing nvim_exec2()
+not found in runtime path: "ftplugin/snacks_notif[.]{vim,lua} ftplugin/snacks_notif_*.{vim,lua} ftplugin/snacks_notif/*.{vim,lua}"
+not found in runtime path: "indent/snacks_notif[.]{vim,lua}"
+not found in runtime path: "parser/snacks_notif.*"
+not found in runtime path: "parser/snacks_notif.*"
+not found in runtime path: "parser/comment.*"
+not found in runtime path: "parser/luadoc.*"
+not found in runtime path: "ftplugin/noice[.]{vim,lua} ftplugin/noice_*.{vim,lua} ftplugin/noice/*.{vim,lua}"
+not found in runtime path: "indent/noice[.]{vim,lua}"
+not found in runtime path: "parser/noice.*"
+not found in runtime path: "parser/noice.*"
+
+line 0: sourcing "nvim_exec2() called at VimLeavePre Autocommands for "*":0"
+finished sourcing nvim_exec2() called at VimLeavePre Autocommands for "*":0
+continuing in VimLeavePre Autocommands for "*"
+line 0: sourcing "nvim_exec2() called at VimLeavePre Autocommands for "*":0"
+finished sourcing nvim_exec2() called at VimLeavePre Autocommands for "*":0
+continuing in VimLeavePre Autocommands for "*"
+Writing ShaDa file "/home/emiel/.local/state/nvim/shada/main.shada"
+Error in LspNotify Autocommands for "<buffer=50>":
+Lua callback: /usr/share/nvim/runtime/lua/vim/lsp/_folding_range.lua:235: assertion failed!
+stack traceback:
+	[C]: in function 'assert'
+	/usr/share/nvim/runtime/lua/vim/lsp/_folding_range.lua:235: in function </usr/share/nvim/runtime/lua/vim/lsp/_folding_range.lua:234>
+	[C]: in function 'nvim_exec_autocmds'
+	/usr/share/nvim/runtime/lua/vim/lsp/client.lua:838: in function </usr/share/nvim/runtime/lua/vim/lsp/client.lua:837>
+Lua callback: /usr/share/nvim/runtime/lua/vim/lsp/_folding_range.lua:235: assertion failed!
+stack traceback:
+	[C]: in function 'assert'
+	/usr/share/nvim/runtime/lua/vim/lsp/_folding_range.lua:235: in function </usr/share/nvim/runtime/lua/vim/lsp/_folding_range.lua:234>
+	[C]: in function 'nvim_exec_autocmds'
+	/usr/share/nvim/runtime/lua/vim/lsp/client.lua:838: in function </usr/share/nvim/runtime/lua/vim/lsp/client.lua:837>
+Lua callback: /usr/share/nvim/runtime/lua/vim/lsp/_folding_range.lua:235: assertion failed!
+stack traceback:
+	[C]: in function 'assert'
+	/usr/share/nvim/runtime/lua/vim/lsp/_folding_range.lua:235: in function </usr/share/nvim/runtime/lua/vim/lsp/_folding_range.lua:234>
+	[C]: in function 'nvim_exec_autocmds'
+	/usr/share/nvim/runtime/lua/vim/lsp/client.lua:838: in function </usr/share/nvim/runtime/lua/vim/lsp/client.lua:837>
+Lua callback: /usr/share/nvim/runtime/lua/vim/lsp/_folding_range.lua:235: assertion failed!
+stack traceback:
+	[C]: in function 'assert'
+	/usr/share/nvim/runtime/lua/vim/lsp/_folding_range.lua:235: in function </usr/share/nvim/runtime/lua/vim/lsp/_folding_range.lua:234>
+	[C]: in function 'nvim_exec_autocmds'
+	/usr/share/nvim/runtime/lua/vim/lsp/client.lua:838: in function </usr/share/nvim/runtime/lua/vim/lsp/client.lua:837>

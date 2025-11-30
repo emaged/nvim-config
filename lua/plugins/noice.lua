@@ -2,7 +2,66 @@ return {
   "folke/noice.nvim",
   event = "VeryLazy",
   keys = {
-    -- example: dismiss Noice messages
+    -- Clear search + dismiss Noice
+    {
+      "<leader>N",
+      mode = "n",
+      silent = true,
+      desc = " Noice",
+    },
+    {
+      "<Esc>",
+      function()
+        vim.cmd "nohlsearch"
+        vim.cmd "NoiceDismiss"
+      end,
+      mode = "n",
+      silent = true,
+      desc = "Clear search + dismiss Noice",
+    },
+    -- Noice last message
+    {
+      "<leader>Nl",
+      function() require("noice").cmd "last" end,
+      mode = "n",
+      desc = "Noice Last Message",
+    },
+    -- Noice message history
+    {
+      "<leader>Nh",
+      function() require("noice").cmd "history" end,
+      mode = "n",
+      desc = "Noice History",
+    },
+    -- Redirect commandline with Shift-Enter
+    {
+      "<S-Enter>",
+      function() require("noice").redirect(vim.fn.getcmdline()) end,
+      mode = "c",
+      desc = "Redirect Cmdline",
+    },
+    -- Noice LSP scrolling (<C-f>)
+    {
+      "<C-f>",
+      function()
+        if not require("noice.lsp").scroll(4) then return "<C-f>" end
+      end,
+      mode = { "n", "i", "s" },
+      expr = true,
+      silent = true,
+      desc = "Noice LSP scroll (down)",
+    },
+    -- Noice LSP scrolling (<C-b>)
+    {
+      "<C-b>",
+      function()
+        if not require("noice.lsp").scroll(-4) then return "<C-b>" end
+      end,
+      mode = { "n", "i", "s" },
+      expr = true,
+      silent = true,
+      desc = "Noice LSP scroll (up)",
+    },
   },
   dependencies = { "MunifTanjim/nui.nvim" },
   opts = function(_, opts)

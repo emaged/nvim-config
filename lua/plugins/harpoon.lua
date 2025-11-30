@@ -1,103 +1,105 @@
 return {
   "ThePrimeagen/harpoon",
   branch = "harpoon2",
-  dependencies = { "nvim-lua/plenary.nvim" },
+  dependencies = {
+    "nvim-lua/plenary.nvim",
+    "folke/snacks.nvim",
+  },
 
   config = function()
     local harpoon = require "harpoon"
-    harpoon:setup {}
+    local Snacks = require "snacks"
+    harpoon:setup()
 
     ---------------------------------------------------------------------------
-    -- Telescope integration
+    -- util: normalize table indices (Harpoon creates sparse lists)
     ---------------------------------------------------------------------------
-    local conf = require("telescope.config").values
-
-    local function toggle_telescope(harpoon_files)
-      local file_paths = {}
-      for _, item in ipairs(harpoon_files.items) do
-        table.insert(file_paths, item.value)
+    local function normalize_list(t)
+      local norm = {}
+      for i = 1, #t do
+        if t[i] ~= nil then norm[#norm + 1] = t[i] end
       end
-
-      require("telescope.pickers")
-        .new({}, {
-          prompt_title = "Harpoon",
-          finder = require("telescope.finders").new_table {
-            results = file_paths,
-          },
-          previewer = conf.file_previewer {},
-          sorter = conf.generic_sorter {},
-        })
-        :find()
+      return norm
     end
 
     ---------------------------------------------------------------------------
-    -- Harpoon extensions
+    -- Snacks picker finder for Harpoon items
     ---------------------------------------------------------------------------
+    local function harpoon_finder()
+      local items = normalize_list(harpoon:list().items)
+      local results = {}
 
-    harpoon:extend {
-      UI_CREATE = function(cx)
-        vim.keymap.set(
-          "n",
-          "<A-v>",
-          function() harpoon.ui:select_menu_item { vsplit = true } end,
-          { buffer = cx.bufnr }
-        )
+      for _, item in ipairs(items) do
+        results[#results + 1] = {
+          text = item.value,
+          file = item.value,
+        }
+      end
 
-        vim.keymap.set("n", "<A-x>", function() harpoon.ui:select_menu_item { split = true } end, { buffer = cx.bufnr })
-
-        vim.keymap.set(
-          "n",
-          "<A-t>",
-          function() harpoon.ui:select_menu_item { tabedit = true } end,
-          { buffer = cx.bufnr }
-        )
-      end,
-    }
+      return results
+    end
 
     ---------------------------------------------------------------------------
-    -- Harpoon keymaps
+    -- Snacks picker action for deleting items
     ---------------------------------------------------------------------------
+    local function harpoon_delete(picker, item)
+      local target = item or picker:selected()
+      if not target then return end
 
-    -- Add file to Harpoon
+      -- Remove by value (Harpoon v2)
+      harpoon:list():remove { value = target.text }
+
+      -- Normalize after deletion
+      harpoon:list().items = normalize_list(harpoon:list().items)
+
+      -- Refresh picker UI
+      picker:find { refresh = true }
+    end
+
+    ---------------------------------------------------------------------------
+    -- Keymaps for Harpoon
+    ---------------------------------------------------------------------------
     vim.keymap.set("n", "<A-a>", function() harpoon:list():add() end, { desc = "Harpoon Add File" })
 
-    -- Harpoon quick menu (built-in UI)
+    vim.keymap.set("n", "<A-e>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, { desc = "Harpoon Menu" })
+
+    ---------------------------------------------------------------------------
+    -- Snacks picker for Harpoon
+    ---------------------------------------------------------------------------
     vim.keymap.set(
       "n",
-      "<A-e>",
-      function() harpoon.ui:toggle_quick_menu(harpoon:list()) end,
-      { desc = "Harpoon Quick Menu" }
+      "<leader>he",
+      function()
+        Snacks.picker {
+          finder = harpoon_finder,
+
+          win = {
+            input = {
+              keys = {
+                ["dd"] = { "harpoon_delete", mode = "n" },
+              },
+            },
+            list = {
+              keys = {
+                ["dd"] = { "harpoon_delete", mode = "n" },
+              },
+            },
+          },
+
+          actions = {
+            harpoon_delete = harpoon_delete,
+          },
+        }
+      end,
+      { desc = "Harpoon Snacks Picker" }
     )
 
-    -- Telescope version (optional alternative)
-    vim.keymap.set(
-      "n",
-      "<leader>te",
-      function() toggle_telescope(harpoon:list()) end,
-      { desc = "Harpoon Telescope Menu" }
-    )
-
-    -- Direct navigation to Harpoon slots
+    ---------------------------------------------------------------------------
+    -- Jump mappings
+    ---------------------------------------------------------------------------
     vim.keymap.set("n", "<A-h>", function() harpoon:list():select(1) end, { desc = "Harpoon Jump 1" })
-
     vim.keymap.set("n", "<A-t>", function() harpoon:list():select(2) end, { desc = "Harpoon Jump 2" })
-
     vim.keymap.set("n", "<A-n>", function() harpoon:list():select(3) end, { desc = "Harpoon Jump 3" })
-
     vim.keymap.set("n", "<A-s>", function() harpoon:list():select(4) end, { desc = "Harpoon Jump 4" })
-
-    -- Previous / next navigation
-    vim.keymap.set("n", "<A-S-P>", function() harpoon:list():prev() end, { desc = "Harpoon Previous" })
-
-    vim.keymap.set("n", "<A-S-N>", function() harpoon:list():next() end, { desc = "Harpoon Next" })
   end,
-
-  specs = {
-    {
-      "catppuccin",
-      optional = true,
-      ---@type CatppuccinOptions
-      opts = { integrations = { harpoon = true } },
-    },
-  },
 }

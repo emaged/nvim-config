@@ -46,6 +46,7 @@ return {
         "tree-sitter-cli",
         --"copilot-language-server",
       },
+      debounce_hours = 5, -- at least 5 hours between attempts to install/update
     },
   },
 }

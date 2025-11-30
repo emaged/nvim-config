@@ -7,4 +7,3 @@
 -- ~/.config/nvim/lua/user/mappings.lua (or polish.lua)
 -- Replace the "p" prefix with ";"
 -- polish.lua
---
