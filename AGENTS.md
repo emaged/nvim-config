@@ -211,7 +211,7 @@
   - Always prefer authoritative README.md content over assumptions.
   - Mention which MCP tool was used (GitHub, Fetch, or Context7) if it affects reliability.
 - For comparisons, configuration guidance, troubleshooting, or behavioral questions:
-  - Fetch plugin documentation before answering.
+  - Fetch plugin documentation with, preferably with GitHub, MCP before answering.
 
 ---
 
