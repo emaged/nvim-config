@@ -3,9 +3,9 @@ local prefix = "<leader>O"
 return {
   "folke/sidekick.nvim",
   event = "User AstroFile",
+
   opts = {
-    -- add any options here
-    nes = { enabled = false }, -- enable NES here (Copilot.lua has NES disabled!)
+    nes = { enabled = false },
     cli = {
       mux = {
         backend = "tmux",
@@ -13,86 +13,78 @@ return {
       },
     },
   },
-  keys = {
-    -- { -- NES keybinding example (disabled by default)
-    --   "<Tab>",
-    --   function()
-    --     -- if there is a next edit, jump to it, otherwise apply it if any
-    --     if not require("sidekick").nes_jump_or_apply() then
-    --       return "<Tab>" -- fallback to normal tab
-    --     end
-    --   end,
-    --   expr = true,
-    --   desc = "Goto/Apply Next Edit Suggestion",
-    -- },
-    {
-      "<c-.>",
-      function() require("sidekick.cli").toggle() end,
-      desc = "Sidekick Toggle",
-      mode = { "n", "t", "i", "x" },
-    },
-    {
-      "<leader>Oa",
-      function() require("sidekick.cli").toggle() end,
-      desc = "Sidekick Toggle CLI",
-    },
-    {
-      "<leader>Os",
-      function() require("sidekick.cli").select() end,
-      -- Or to select only installed tools:
-      -- require("sidekick.cli").select({ filter = { installed = true } })
-      desc = "Select CLI",
-    },
-    {
-      "<leader>Od",
-      function() require("sidekick.cli").close() end,
-      desc = "Detach a CLI Session",
-    },
-    {
-      "<leader>Ot",
-      function() require("sidekick.cli").send { msg = "{this}" } end,
-      mode = { "x", "n" },
-      desc = "Send This",
-    },
-    {
-      "<leader>Of",
-      function() require("sidekick.cli").send { msg = "{file}" } end,
-      desc = "Send File",
-    },
-    {
-      "<leader>Ov",
-      function() require("sidekick.cli").send { msg = "{selection}" } end,
-      mode = { "x" },
-      desc = "Send Visual Selection",
-    },
-    {
-      "<leader>Op",
-      function() require("sidekick.cli").prompt() end,
-      mode = { "n", "x" },
-      desc = "Sidekick Select Prompt",
-    },
-    -- Example of a keybinding to open Claude directly
-    {
-      "<leader>Oc",
-      function() require("sidekick.cli").toggle { name = "claude", focus = true } end,
-      desc = "Sidekick Toggle Claude",
-    },
-  },
-  specs = {
+
+  keys = function(_, keys)
+    -- Rebuild the keymap using the new prefix
+    return vim.list_extend({
+      {
+        "<c-.>",
+        function() require("sidekick.cli").toggle() end,
+        desc = "Sidekick Toggle",
+        mode = { "n", "t", "i", "x" },
+      },
+      {
+        prefix .. "a",
+        function() require("sidekick.cli").toggle() end,
+        desc = "Sidekick Toggle CLI",
+      },
+      {
+        prefix .. "s",
+        function() require("sidekick.cli").select() end,
+        desc = "Select CLI",
+      },
+      {
+        prefix .. "d",
+        function() require("sidekick.cli").close() end,
+        desc = "Detach CLI Session",
+      },
+      {
+        prefix .. "t",
+        function() require("sidekick.cli").send { msg = "{this}" } end,
+        mode = { "x", "n" },
+        desc = "Send This",
+      },
+      {
+        prefix .. "f",
+        function() require("sidekick.cli").send { msg = "{file}" } end,
+        desc = "Send File",
+      },
+      {
+        prefix .. "v",
+        function() require("sidekick.cli").send { msg = "{selection}" } end,
+        mode = { "x" },
+        desc = "Send Visual Selection",
+      },
+      {
+        prefix .. "p",
+        function() require("sidekick.cli").prompt() end,
+        mode = { "n", "x" },
+        desc = "Sidekick Prompt",
+      },
+      {
+        prefix .. "c",
+        function() require("sidekick.cli").toggle { name = "claude", focus = true } end,
+        desc = "Sidekick Toggle Claude",
+      },
+    }, keys)
+  end,
+
+  -- replace "specs" with proper AstroNvim-style overrides
+  dependencies = {
+    -- Add the which-key group
     {
       "AstroNvim/astrocore",
       opts = function(_, opts)
         opts.mappings = opts.mappings or {}
         opts.mappings.n = opts.mappings.n or {}
 
-        -- Add Sidekick group name + icon to which-key
         opts.mappings.n[prefix] = {
           desc = require("astroui").get_icon("sidekick", 1, true) .. "Sidekick",
         }
       end,
     },
 
-    -- Add the icon itself
+    -- add icon
     {
       "AstroNvim/astroui",
       opts = {

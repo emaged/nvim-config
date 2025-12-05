@@ -7,3 +7,12 @@
 -- ~/.config/nvim/lua/user/mappings.lua (or polish.lua)
 -- Replace the "p" prefix with ";"
 -- polish.lua
+
+-- vim.treesitter.language.register("html", "jinja-html")
+-- vim.treesitter.language.register("jinja", "jinja-html")
+-- vim.treesitter.language.register("htmldjango", "jinja-html")
+
+-- vim.api.nvim_create_autocmd("FileType", {
+--   pattern = "jinja-html",
+--   command = "setlocal syntax=jinja",
+-- })

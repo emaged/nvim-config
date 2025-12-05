@@ -13,6 +13,13 @@ return { -- == Examples of Adding Plugins ==
     enabled = false,
   },
 
+  {
+    "catppuccin",
+    optional = true,
+    ---@type CatppuccinOptions
+    opts = { integrations = { which_key = true } },
+  },
+
   -- Lorem ipsum generator
   {
     "derektata/lorem.nvim",
@@ -70,9 +77,9 @@ return { -- == Examples of Adding Plugins ==
       "folke/snacks.nvim",
     },
     ft = "python", -- Load when opening Python files
-    keys = {
-      { "<leader>v", "<cmd>VenvSelect<cr>" }, -- Open picker on keymap
-    },
+    -- keys = {
+    --   { "<leader>v", "<cmd>VenvSelect<cr>" }, -- Open picker on keymap
+    -- },
     opts = { -- this can be an empty lua table - just showing below for clarity.
       picker = "snacks", -- <— SWITCH TO SNACKS HERE
       search = {}, -- if you add your own searches, they go here.
@@ -96,35 +103,17 @@ return { -- == Examples of Adding Plugins ==
 
   {
     "andymass/vim-matchup",
-    event = "User AstroFile",
-    specs = {
-      { "nvim-treesitter/nvim-treesitter", optional = true },
-      {
-        "AstroNvim/astrocore",
-        opts = {
-          options = {
-            g = {
-              matchup_matchparen_nomode = "i",
-              matchup_matchparen_deferred = 1,
-              matchup_matchparen_offscreen = { method = "popup" },
-            },
-          },
+    opts = {
+      options = {
+        g = {
+          matchup_matchparen_offscreen = { method = "popup" },
         },
       },
-    },
-    opts = {
       treesitter = {
         enable = true,
         stopline = 500,
       },
     },
-  },
-
-  {
-    "barrett-ruth/live-server.nvim",
-    build = "npm install -g live-server",
-    cmd = { "LiveServerStart", "LiveServerStop" },
-    config = true,
   },
 
   {
@@ -140,4 +129,80 @@ return { -- == Examples of Adding Plugins ==
       { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
     },
   },
+
+  {
+    "Jezda1337/nvim-html-css",
+    ft = {
+      "html",
+      "htmldjango",
+      "tsx",
+      "jsx",
+      "erb",
+      "svelte",
+      "vue",
+      "blade",
+      "php",
+      "templ",
+      "astro",
+    },
+    dependencies = { "saghen/blink.cmp", "nvim-treesitter/nvim-treesitter" }, -- Use this if you're using blink.cmp
+    opts = {
+      enable_on = { -- Example file types
+        "html",
+        "htmldjango",
+        "tsx",
+        "jsx",
+        "erb",
+        "svelte",
+        "vue",
+        "blade",
+        "php",
+        "templ",
+        "astro",
+      },
+      handlers = {
+        definition = {
+          bind = "gD",
+        },
+        hover = {
+          bind = "K",
+          wrap = true,
+          border = "none",
+          position = "cursor",
+        },
+      },
+      documentation = {
+        auto_show = true,
+      },
+      style_sheets = {
+        -- "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css",
+        -- "https://cdnjs.cloudflare.com/ajax/libs/bulma/1.0.3/css/bulma.min.css",
+        -- "./index.css", -- `./` refers to the current working directory.
+      },
+    },
+  },
+
+  -- {
+  --   "jedrzejboczar/exrc.nvim",
+  --   dependencies = { "neovim/nvim-lspconfig" }, -- (optional)
+  --   config = true,
+  --   opts = {
+  --     exrc_name = ".nvim.lua", -- Name of exrc files to use
+  --     on_vim_enter = true, -- Load exrc from current directory on start
+  --     on_dir_changed = { -- Automatically load exrc files on DirChanged autocmd
+  --       enabled = true,
+  --       -- Wait until CursorHold and use vim.ui.select to confirm files to load, instead of loading unconditionally
+  --       use_ui_select = true,
+  --     },
+  --     trust_on_write = true, -- Automatically trust when saving exrc file
+  --     use_telescope = true, -- Use telescope instead of vim.ui.select for picking files (if available)
+  --     min_log_level = vim.log.levels.DEBUG, -- Disable notifications below this level (TRACE=most logs)
+  --     lsp = {
+  --       auto_setup = false, -- Automatically configure lspconfig to register on_new_config
+  --     },
+  --     commands = {
+  --       instant_edit_single = true, -- Do not use vim.ui.select if there is only 1 candidate for ExrcEdit* commands
+  --     },
+  --   },
+  -- },
 }

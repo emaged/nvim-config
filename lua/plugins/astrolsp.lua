@@ -30,7 +30,7 @@ return {
       },
       disabled = { -- disable formatting capabilities for the listed language servers
         -- disable lua_ls formatting capability if you want to use StyLua to format your lua code
-        -- "lua_ls",
+        "lua_ls",
       },
       timeout_ms = 1000, -- default format timeout
       -- filter = function(client) -- fully override the default formatting function
@@ -44,10 +44,23 @@ return {
     -- customize language server configuration options passed to `lspconfig`
     ---@diagnostic disable: missing-fields
     config = {
-      -- clangd = { capabilities = { offsetEncoding = "utf-8" } },
+      eslint = {
+        filetypes = {
+          "javascript",
+          "javascriptreact",
+          "mjs",
+          "cjs",
+          "html",
+          "css", -- ⭐ add this
+        },
+      },
+      jinja_lsp = {
+        filetypes = { "jinja-html", "jinja" },
+      },
     },
     -- customize how language servers are attached
     handlers = {
+      emmet_ls = false,
       -- a function without a key is simply the default handler, functions take two parameters, the server name and the configured options table for that server
       -- function(server, opts) require("lspconfig")[server].setup(opts) end
 

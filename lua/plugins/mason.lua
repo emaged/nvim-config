@@ -13,7 +13,7 @@ return {
       ensure_installed = {
         -- install language servers
         "basedpyright",
-        "lua-language-server",
+        -- "lua-language-server",
         "clangd",
         "django-template-lsp",
         "emmet-language-server",
@@ -28,14 +28,15 @@ return {
 
         -- install formatters && linters
         "stylua",
-        "black",
         "clang-format",
         "djlint",
         "eslint_d",
         "htmlhint",
         "jsonlint",
         "prettier",
+        "prettierd",
         "ruff",
+        "selene",
         "stylelint",
         "sql-formatter",
 
@@ -46,7 +47,7 @@ return {
         "tree-sitter-cli",
         --"copilot-language-server",
       },
-      debounce_hours = 5, -- at least 5 hours between attempts to install/update
+      -- debounce_hours = 5, -- at least 5 hours between attempts to install/update
     },
   },
 }

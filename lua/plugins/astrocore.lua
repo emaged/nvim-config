@@ -29,6 +29,7 @@ return {
       -- see `:h vim.filetype.add` for usage
       extension = {
         foo = "fooscript",
+        ["jinja-html"] = "jinja-html",
       },
       filename = {
         [".foorc"] = "fooscript",
@@ -45,6 +46,7 @@ return {
         spell = false, -- sets vim.opt.spell
         signcolumn = "yes", -- sets vim.opt.signcolumn to yes
         wrap = false, -- sets vim.opt.wrap
+        exrc = true,
       },
       g = { -- vim.g.<key>
         -- configure global vim variables (vim.g)

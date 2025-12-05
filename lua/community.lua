@@ -29,8 +29,29 @@ return {
   { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.pack.sql" },
 
+  -- Movement
+  { import = "astrocommunity.motion.mini-surround" },
+  { import = "astrocommunity.motion.vim-matchup" },
+  -- { import = "astrocommunity.motion.flash-nvim" },
+
+  -- Tools
+  { import = "astrocommunity.pack.full-dadbod" },
+  { import = "astrocommunity.pack.docker" },
+
+  -- Linting && Formatting
+  { import = "astrocommunity.editing-support.nvim-treesitter-context" },
+  { import = "astrocommunity.editing-support.conform-nvim" },
+  { import = "astrocommunity.lsp.nvim-lint" },
+  { import = "astrocommunity.editing-support.undotree" },
+
+  -- Utility
+  { import = "astrocommunity.utility.noice-nvim" },
+
   -- Testing
   { import = "astrocommunity.utility.lua-json5" },
+  { import = "astrocommunity.test.neotest" },
+  { import = "astrocommunity.diagnostics.trouble-nvim" },
+
   -- You can also import/override your own plugins after community plugins
   -- { import = "your.plugins.override" },
 }
