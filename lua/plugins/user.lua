@@ -97,21 +97,48 @@ return { -- == Examples of Adding Plugins ==
   },
 
   {
+    "iamcco/markdown-preview.nvim",
+    ft = { "markdown", "markdown.mdx" },
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    init = function()
+      local plugin = require("lazy.core.config").spec.plugins["markdown-preview.nvim"]
+      vim.g.mkdp_filetypes = require("lazy.core.plugin").values(plugin, "ft", true)
+    end,
+    dependencies = {
+      { "AstroNvim/astroui", opts = { icons = { Markdown = "" } } },
+      {
+        "AstroNvim/astrocore",
+        optional = true,
+        opts = function(_, opts)
+          local maps = opts.mappings
+          local prefix = "<Leader>P"
+
+          maps.n[prefix] = { desc = require("astroui").get_icon("Markdown", 1, true) .. "Markdown" }
+          maps.n[prefix .. "p"] = { "<cmd>MarkdownPreview<cr>", desc = "Preview" }
+          maps.n[prefix .. "s"] = { "<cmd>MarkdownPreviewStop<cr>", desc = "Stop preview" }
+          maps.n[prefix .. "t"] = { "<cmd>MarkdownPreviewToggle<cr>", desc = "Toggle preview" }
+        end,
+      },
+    },
+  },
+
+  {
     "olrtg/nvim-emmet",
     config = function() vim.keymap.set({ "n", "v" }, "<A-S-w>", require("nvim-emmet").wrap_with_abbreviation) end,
   },
 
   {
     "andymass/vim-matchup",
-    opts = {
-      options = {
-        g = {
-          matchup_matchparen_offscreen = { method = "popup" },
+    dependencies = {
+      "AstroNvim/astrocore",
+      opts = {
+        options = {
+          g = {
+            matchup_matchparen_offscreen = { method = "popup" },
+            matchup_treesitter_stopline = 500,
+            matchup_treesitter_enabled = true,
+          },
         },
-      },
-      treesitter = {
-        enable = true,
-        stopline = 500,
       },
     },
   },
@@ -179,6 +206,41 @@ return { -- == Examples of Adding Plugins ==
         -- "https://cdnjs.cloudflare.com/ajax/libs/bulma/1.0.3/css/bulma.min.css",
         -- "./index.css", -- `./` refers to the current working directory.
       },
+    },
+  },
+
+  {
+    "saghen/filler-begone.nvim",
+    dependencies = {
+      {
+        "AstroNvim/astrocore",
+        opts = {
+          options = {
+            g = {
+              filler_begone = false, -- global default
+            },
+          },
+          autocmds = {
+            filler_begone = {
+              {
+                event = "BufEnter",
+                pattern = "*",
+                callback = function(args)
+                  -- set buffer-local behavior for buftype=nofile buffers
+                  if vim.bo[args.buf].buftype == "nofile" then vim.b[args.buf].filler_begone = true end
+                end,
+              },
+            },
+          },
+        },
+      },
+    },
+  },
+
+  {
+    "dstein64/nvim-scrollview",
+    opts = {
+      diagnostics_severities = {}, -- disable ALL diagnostic markers
     },
   },
 

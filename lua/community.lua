@@ -1,4 +1,4 @@
---if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+-- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 
 -- AstroCommunity: import any community modules here
 -- We import this file in `lazy_setup.lua` before the `plugins/` folder.
@@ -13,9 +13,9 @@ return {
   { import = "astrocommunity.colorscheme.catppuccin" },
 
   -- Specific community recipes (import these first)
+  { import = "astrocommunity.recipes.auto-session-restore" },
   { import = "astrocommunity.recipes.vscode" },
-  { import = "astrocommunity.recipes.heirline-mode-text-statusline" },
-  -- { import = "astrocommunity.recipes.heirline-vscode-winbar" },
+  { import = "astrocommunity.recipes.picker-lsp-mappings" },
 
   -- Full community plugin pack (import after specific recipes)
   { import = "astrocommunity.pack.lua" },
@@ -28,6 +28,9 @@ return {
   { import = "astrocommunity.pack.prettier" },
   { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.pack.sql" },
+
+  -- completion
+  { import = "astrocommunity.completion.blink-cmp-tmux" },
 
   -- Movement
   { import = "astrocommunity.motion.mini-surround" },
