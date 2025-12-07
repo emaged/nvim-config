@@ -9,11 +9,11 @@ return {
   -- Base community repository
   "AstroNvim/astrocommunity",
 
-  -- catppucin color theme
+  -- catppuccin color theme
   { import = "astrocommunity.colorscheme.catppuccin" },
 
   -- Specific community recipes (import these first)
-  { import = "astrocommunity.recipes.auto-session-restore" },
+  -- { import = "astrocommunity.recipes.auto-session-restore" },
   { import = "astrocommunity.recipes.vscode" },
   { import = "astrocommunity.recipes.picker-lsp-mappings" },
 
@@ -31,6 +31,7 @@ return {
 
   -- completion
   { import = "astrocommunity.completion.blink-cmp-tmux" },
+  { import = "astrocommunity.completion.cmp-spell" }, --
 
   -- Movement
   { import = "astrocommunity.motion.mini-surround" },
@@ -42,12 +43,12 @@ return {
   { import = "astrocommunity.pack.docker" },
 
   -- Linting && Formatting
-  { import = "astrocommunity.editing-support.nvim-treesitter-context" },
   { import = "astrocommunity.editing-support.conform-nvim" },
   { import = "astrocommunity.lsp.nvim-lint" },
   { import = "astrocommunity.editing-support.undotree" },
 
   -- Utility
+  { import = "astrocommunity.editing-support.nvim-treesitter-context" },
   { import = "astrocommunity.utility.noice-nvim" },
 
   -- Testing

@@ -1,7 +1,7 @@
 -- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 --
 -- You can also add or configure plugins by creating files in this `plugins/` folder
--- PLEASE REMOVE THE EXAMPLES YOU HAVE NO INTEREST IN BEORE ENABLING THIS FILE
+-- PLEASE REMOVE THE EXAMPLES YOU HAVE NO INTEREST IN BEFORE ENABLING THIS FILE
 -- Here are some examples:
 ---@type LazySpec
 return { -- == Examples of Adding Plugins ==
@@ -149,8 +149,8 @@ return { -- == Examples of Adding Plugins ==
     ---@type Flash.Config
     opts = {},
     keys = {
-      { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
-      { "S", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
+      { "gs", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
+      { "gS", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
       { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
       { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
       { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
@@ -210,40 +210,41 @@ return { -- == Examples of Adding Plugins ==
   },
 
   {
-    "saghen/filler-begone.nvim",
-    dependencies = {
-      {
-        "AstroNvim/astrocore",
-        opts = {
-          options = {
-            g = {
-              filler_begone = false, -- global default
-            },
-          },
-          autocmds = {
-            filler_begone = {
-              {
-                event = "BufEnter",
-                pattern = "*",
-                callback = function(args)
-                  -- set buffer-local behavior for buftype=nofile buffers
-                  if vim.bo[args.buf].buftype == "nofile" then vim.b[args.buf].filler_begone = true end
-                end,
-              },
-            },
-          },
-        },
-      },
-    },
-  },
-
-  {
     "dstein64/nvim-scrollview",
     opts = {
       diagnostics_severities = {}, -- disable ALL diagnostic markers
     },
   },
 
+  { "nvim-tree/nvim-web-devicons", opts = {} },
+
+  -- {
+  --   "saghen/filler-begone.nvim",
+  --   dependencies = {
+  --     {
+  --       "AstroNvim/astrocore",
+  --       opts = {
+  --         options = {
+  --           g = {
+  --             filler_begone = false, -- global default
+  --           },
+  --         },
+  --         autocmds = {
+  --           filler_begone = {
+  --             {
+  --               event = "BufEnter",
+  --               pattern = "*",
+  --               callback = function(args)
+  --                 -- set buffer-local behavior for buftype=nofile buffers
+  --                 if vim.bo[args.buf].buftype == "nofile" then vim.b[args.buf].filler_begone = true end
+  --               end,
+  --             },
+  --           },
+  --         },
+  --       },
+  --     },
+  --   },
+  -- },
   -- {
   --   "jedrzejboczar/exrc.nvim",
   --   dependencies = { "neovim/nvim-lspconfig" }, -- (optional)

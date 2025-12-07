@@ -72,10 +72,18 @@ vim.keymap.set({ "v", "n" }, "<leader>D", '"_D', {
   silent = true,
 })
 
---Alternative paste without yank
-vim.keymap.set("v", "<leader>p", '"_dP', {
+-- Alternative paste without yank -- deprecated,
+-- can use P for this
+-- vim.keymap.set("v", "<leader>p", '"_dP', {
+--   noremap = true,
+--   silent = true,
+-- })
+
+-- Visual mode: copy selection to system clipboard
+vim.keymap.set({ "v", "n", "i" }, "<C-v>", '"_dP', {
   noremap = true,
   silent = true,
+  desc = "regular paste",
 })
 
 -- Visual mode: copy selection to system clipboard

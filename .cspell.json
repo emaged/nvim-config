@@ -1,0 +1,36 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "allowCompoundWords": true,
+  "words": [
+    "neovim",
+    "nvim",
+    "lua",
+    "async",
+    "req",
+    "autocmd",
+    "keymap",
+    "cmdline",
+    "treesitter"
+  ],
+  "ignoreWords": [
+    "TODO",
+    "FIXME"
+  ],
+  "ignorePaths": [
+    "node_modules",
+    "dist",
+    "build",
+    "coverage",
+    ".git",
+    "target",
+    "cargo.lock"
+  ],
+  "dictionaries": [
+    "typescript",
+    "node",
+    "softwareTerms",
+    "lorem-ipsum"
+  ],
+  "dictionaryDefinitions": []
+}

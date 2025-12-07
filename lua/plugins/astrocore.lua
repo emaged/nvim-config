@@ -4,7 +4,7 @@
 -- Configuration documentation can be found with `:h astrocore`
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
 --       as this provides autocomplete and documentation while editing
-
+--tes
 ---@type LazySpec
 return {
   "AstroNvim/astrocore",
@@ -15,13 +15,14 @@ return {
       large_buf = { size = 1024 * 256, lines = 10000 }, -- set global limits for large files for disabling features like treesitter
       autopairs = true, -- enable autopairs at start
       cmp = true, -- enable completion at start
-      diagnostics = { virtual_text = true, virtual_lines = false }, -- diagnostic settings on startup
+      diagnostics = true,
       highlighturl = true, -- highlight URLs at start
       notifications = true, -- enable notifications at start
     },
     -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
     diagnostics = {
       virtual_text = true,
+      virtual_lines = false,
       underline = true,
     },
     -- passed to `vim.filetype.add`
@@ -80,6 +81,33 @@ return {
 
         -- setting a mapping to false will disable it
         -- ["<C-S>"] = false,
+
+        -- remap all quickfix mappings to X instead of x
+        ["<leader>x"] = false,
+        ["<Leader>xq"] = false,
+        ["<Leader>xl"] = false,
+        ["<Leader>xt"] = false,
+        ["<Leader>xL"] = false,
+        ["<Leader>xQ"] = false,
+        ["<Leader>xX"] = false,
+        ["<Leader>xT"] = false,
+        ["<Leader>xx"] = false,
+
+        -- remaps to X
+        ["<leader>X"] = {
+          desc = " Quickfix/Lists",
+        },
+        ["<Leader>Xq"] = { "<Cmd>copen<CR>", desc = " Quickfix List" },
+        ["<Leader>Xl"] = { "<Cmd>lopen<CR>", desc = " Location List" },
+        ["<Leader>Xt"] = { "<Cmd>Trouble todo<CR>", desc = " Trouble Todo" },
+        ["<Leader>XL"] = { "<Cmd>Trouble loclist toggle<CR>", desc = " Trouble Location List" },
+        ["<Leader>XQ"] = { "<Cmd>Trouble quickfix toggle<CR>", desc = " Trouble Quickfix List" },
+        ["<Leader>XX"] = { "<Cmd>Trouble diagnostics toggle<CR>", desc = " Trouble Workspace Diagnostics" },
+        ["<Leader>XT"] = { "<Cmd>Trouble todo filter={tag={TODO,FIX,FIXME}}<CR>", desc = " Trouble Todo/Fix/Fixme" },
+        ["<Leader>Xx"] = {
+          "<Cmd>Trouble diagnostics toggle filter.buf=0<CR>",
+          desc = " Trouble Document Diagnostics",
+        },
 
         -- Remove all default DAP mappings from <leader>d
         ["<Leader>d"] = false,

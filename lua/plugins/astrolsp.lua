@@ -1,6 +1,6 @@
 --if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 
--- AstroLSP allows you to customize the features in AstroNvim's LSP configuration engine
+-- TODO: AstroLSP allows you to customize the features in AstroNvim's LSP configuration engine
 -- Configuration documentation can be found with `:h astrolsp`
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
 --       as this provides autocomplete and documentation while editing
@@ -39,11 +39,76 @@ return {
     },
     -- enable servers that you already have installed without mason
     servers = {
+      "codebook",
+      "djlsp",
       -- "pyright"
     },
     -- customize language server configuration options passed to `lspconfig`
     ---@diagnostic disable: missing-fields
     config = {
+      codebook = {
+        cmd = { "codebook-lsp", "serve" },
+        filetypes = {
+          "c",
+          "cpp",
+          "css",
+          "gitcommit",
+          "go",
+          "haskell",
+          "html",
+          "java",
+          "javascript",
+          "javascriptreact",
+          "lua",
+          "markdown",
+          "php",
+          "python",
+          "ruby",
+          "rust",
+          "toml",
+          "text",
+          "typescript",
+          "typescriptreact",
+        },
+        root_markers = { ".git", "codebook.toml", ".codebook.toml" },
+        -- use closest codebook.toml file, starting at file itself not project folder
+        root_dir = function(_)
+          local fname = vim.api.nvim_buf_get_name(0)
+
+          -- Search upward from the buffer's directory
+          local found = vim.fs.find(
+            { "codebook.toml", ".codebook.toml", ".git" },
+            { upward = true, path = vim.fs.dirname(fname) }
+          )[1]
+
+          if found then return vim.fs.dirname(found) end
+
+          return vim.fs.dirname(fname)
+        end,
+      },
+
+      djlsp = {
+        cmd = { "django-template-lsp" }, -- the executable installed by Mason
+        filetypes = {
+          "html",
+          "htmldjango",
+          "djangohtml",
+          "django",
+        },
+        root_dir = function(fname)
+          local util = require "lspconfig.util"
+
+          -- 1. Prefer Django/Jinja project configs
+          local root =
+            util.root_pattern("manage.py", "pyproject.toml", "requirements.txt", "setup.py", "Pipfile", ".git")(fname)
+
+          if root then return root end
+
+          -- 2. Fallback to file directory
+          return vim.fs.dirname(fname)
+        end,
+      },
+
       eslint = {
         filetypes = {
           "javascript",
@@ -54,6 +119,7 @@ return {
           "css", -- ⭐ add this
         },
       },
+
       jinja_lsp = {
         filetypes = { "jinja-html", "jinja" },
       },
@@ -67,9 +133,44 @@ return {
       -- the key is the server that is being setup with `lspconfig`
       -- rust_analyzer = false, -- setting a handler to false will disable the set up of that language server
       -- pyright = function(_, opts) require("lspconfig").pyright.setup(opts) end -- or a custom handler function can be passed
+      codebook = function(_, opts) require("lspconfig").codebook.setup(opts) end,
+      djlsp = function(_, opts) require("lspconfig").djlsp.setup(opts) end,
     },
     -- Configure buffer local auto commands to add when attaching a language server
     autocmds = {
+      codebook_force_diagnostics = {
+        event = "BufEnter",
+        desc = "Force Codebook diagnostics on file open",
+        callback = function(args)
+          local bufnr = args.buf
+
+          -- Get active LSP clients for this buffer (new API)
+          local clients = vim.lsp.get_clients { bufnr = bufnr }
+          local codebook = nil
+
+          for _, c in ipairs(clients) do
+            if c.name == "codebook" then
+              codebook = c
+              break
+            end
+          end
+
+          if not codebook then return end
+
+          -- If Codebook supports pull diagnostics, request them
+          if codebook.supports_method "workspace/diagnostic" then
+            vim.lsp.buf_request(bufnr, "workspace/diagnostic", {
+              identifier = "codebook-open",
+              previousResultIds = {},
+            })
+            return
+          end
+
+          -- Fallback: apply a reversible "fake edit" to trigger didChange
+          vim.api.nvim_buf_set_text(bufnr, 0, 0, 0, 0, { "" })
+          vim.api.nvim_buf_set_text(bufnr, 0, 0, 1, 0, {})
+        end,
+      },
       -- first key is the `augroup` to add the auto commands to (:h augroup)
       lsp_codelens_refresh = {
         -- Optional condition to create/delete auto command group
