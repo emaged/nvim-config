@@ -2,13 +2,19 @@
 -- =========================
 
 -- open current file with alt + b
+vim.keymap.set("n", "<Leader>N", "<Cmd>echo 'something'<CR>", {
+  silent = true,
+  nowait = true, -- <- this prevents the trailing N from running
+})
+
+-- open current file with alt + b
 vim.keymap.set("n", "<A-b>", ":!xdg-open % &<CR><CR>", {
   noremap = true,
   silent = true,
 })
 
--- Select all with leader + A
-vim.keymap.set("n", "<leader>a", "ggVG", {
+-- Select all with Leader + A
+vim.keymap.set("n", "<Leader>a", "ggVG", {
   noremap = true,
   silent = true,
 })
@@ -20,67 +26,84 @@ vim.keymap.set("n", "<CR>", "o<Esc>", {
 })
 
 -- Delete s without yank in normal Mode
-vim.keymap.set("n", "<leader>s", '"_s', {
+vim.keymap.set("n", "<Leader>s", '"_s', {
   noremap = true,
   silent = true,
 })
 
 -- Delete x without yank in normal Mode
-vim.keymap.set("n", "<leader>x", '"_x', {
+vim.keymap.set("n", "<Leader>x", '"_x', {
   noremap = true,
   silent = true,
 })
 
 -- Delete s without yank in Visual Mode
-vim.keymap.set("v", "<leader>s", '"_c', {
+vim.keymap.set("v", "<Leader>s", '"_c', {
   noremap = true,
   silent = true,
 })
 
 -- Delete x without yank in Visual Mode
-vim.keymap.set("v", "<leader>x", '"_d', {
+vim.keymap.set("v", "<Leader>x", '"_d', {
   noremap = true,
   silent = true,
 })
 
 --- When not having clipboard=unnamed ---
 --[[ -- Yank to + register
-vim.keymap.set({ "v", "n" }, "<leader>y", '"+y', {
+vim.keymap.set({ "v", "n" }, "<Leader>y", '"+y', {
   noremap = true,
   silent = true,
 })
 
 -- Yank to + register
-vim.keymap.set({ "v", "n" }, "<leader>Y", '"+Y', {
+vim.keymap.set({ "v", "n" }, "<Leader>Y", '"+Y', {
   noremap = true,
   silent = true,
 }) ]]
 
 -- Alternative cut c to black hole
-vim.keymap.set({ "v", "n" }, "<leader>k", '"_c', {
+vim.keymap.set({ "v", "n" }, "<Leader>k", '"_c', {
   noremap = true,
   silent = true,
 })
 
 -- Alternative delete
-vim.keymap.set({ "v", "n" }, "<leader>d", '"_d', {
+vim.keymap.set({ "v", "n" }, "<Leader>d", '"_d', {
   noremap = true,
   silent = true,
 })
-vim.keymap.set({ "v", "n" }, "<leader>D", '"_D', {
+vim.keymap.set({ "v", "n" }, "<Leader>D", '"_D', {
   noremap = true,
   silent = true,
 })
 
 -- Alternative paste without yank -- deprecated,
 -- can use P for this
--- vim.keymap.set("v", "<leader>p", '"_dP', {
+-- vim.keymap.set("v", "<Leader>p", '"_dP', {
 --   noremap = true,
 --   silent = true,
 -- })
 
+-- -- Make Ctrl+q Visual Visual Block Mode
+vim.keymap.set({ "v", "n" }, "<C-q>", "<C-v>", {
+  noremap = true,
+  silent = true,
+  desc = "Visual Block Mode",
+})
+
 -- Visual mode: copy selection to system clipboard
-vim.keymap.set({ "v", "n", "i" }, "<C-v>", '"_dP', {
+vim.keymap.set("i", "<C-v>", "<A-p>", {
+  noremap = true,
+  silent = true,
+  desc = "regular paste",
+})
+vim.keymap.set({ "v", "n" }, "<C-v>", "p", {
+  noremap = true,
+  silent = true,
+  desc = "regular paste",
+})
+vim.keymap.set({ "v", "n" }, "<C-v>", "P", {
   noremap = true,
   silent = true,
   desc = "regular paste",
@@ -91,13 +114,6 @@ vim.keymap.set({ "v", "n" }, "<C-c>", '"+y', {
   noremap = true,
   silent = true,
   desc = "Copy selection to clipboard",
-})
-
--- -- Make Ctrl+q Visual Visual Block Mode
-vim.keymap.set({ "v", "n" }, "<C-q>", "<C-v>", {
-  noremap = true,
-  silent = true,
-  desc = "Visual Block Mode",
 })
 
 --Regular Regular cut with Ctrl-x
@@ -135,7 +151,7 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", {
 
 vim.keymap.set("n", "<M-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 --long running sessions
-vim.keymap.set("n", "<M-l>", "<cmd>silent !tmux neww tmux-sessionizer -s 0<CR>")
-vim.keymap.set("n", "<M-o>", "<cmd>silent !tmux neww tmux-sessionizer -s 1<CR>")
-vim.keymap.set("n", "<M-p>", "<cmd>silent !tmux neww tmux-sessionizer -s 2<CR>")
-vim.keymap.set("n", "<M-r>", "<cmd>silent !tmux neww tmux-sessionizer -s 3<CR>")
+-- vim.keymap.set("n", "<M-l>", "<cmd>silent !tmux neww tmux-sessionizer -s 0<CR>")
+-- vim.keymap.set("n", "<M-o>", "<cmd>silent !tmux neww tmux-sessionizer -s 1<CR>")
+-- vim.keymap.set("n", "<M-p>", "<cmd>silent !tmux neww tmux-sessionizer -s 2<CR>")
+-- vim.keymap.set("n", "<M-r>", "<cmd>silent !tmux neww tmux-sessionizer -s 3<CR>")

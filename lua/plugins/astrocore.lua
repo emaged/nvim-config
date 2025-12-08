@@ -83,7 +83,7 @@ return {
         -- ["<C-S>"] = false,
 
         -- remap all quickfix mappings to X instead of x
-        ["<leader>x"] = false,
+        ["<Leader>x"] = false,
         ["<Leader>xq"] = false,
         ["<Leader>xl"] = false,
         ["<Leader>xt"] = false,
@@ -94,7 +94,7 @@ return {
         ["<Leader>xx"] = false,
 
         -- remaps to X
-        ["<leader>X"] = {
+        ["<Leader>X"] = {
           desc = " Quickfix/Lists",
         },
         ["<Leader>Xq"] = { "<Cmd>copen<CR>", desc = " Quickfix List" },
@@ -128,12 +128,9 @@ return {
         ["<Leader>du"] = false,
         ["<Leader>dh"] = false,
 
-        -- setting Noice which-key group
-        ["<leader>N"] = { desc = " Noice" },
-
         -- set DAP mappings to <leader>r
         -- DAP on <Leader>r
-        ["<leader>r"] = {
+        ["<Leader>r"] = {
           desc = " Debugger",
         },
 

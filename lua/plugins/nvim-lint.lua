@@ -17,22 +17,26 @@ return {
     linters = {
       selene = {
         cmd = "selene",
-        stdin = false,
-        args = function(ctx)
-          -- Find selene.toml starting from the file location
-          local config = vim.fs.find("selene.toml", {
-            path = vim.fn.fnamemodify(ctx.filename, ":h"),
-            upward = true,
-            type = "file",
-          })[1]
-
-          -- If no config found, Selene will use defaults
-          if config then
-            return { "--config", config, ctx.filename }
-          else
-            return { ctx.filename }
-          end
-        end,
+        stdin = true, -- use stdin; nvim-lint will pipe the current buffer
+        args = {
+          -- first arg: config flag if found, otherwise a harmless fallback flag
+          function()
+            local filename = vim.api.nvim_buf_get_name(0)
+            local config = vim.fs.find("selene.toml", {
+              path = vim.fs.dirname(filename),
+              upward = true,
+              type = "file",
+            })[1]
+            if config then return "--config=" .. config end
+            -- fallback so we never return nil (duplicate display-style is fine)
+            return "--display-style=json"
+          end,
+          "--display-style",
+          "json",
+          "-", -- read from stdin
+        },
+        stream = "stdout",
+        ignore_exitcode = true,
       },
       eslint_d = (function()
         -- resolve to a string now (not a function) so astrocommunity’s check is happy
