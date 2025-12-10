@@ -74,7 +74,7 @@ return {
       ---------------------------------------------------------------------------
       vim.keymap.set(
         "n",
-        "<leader>H",
+        "<Leader>H",
         function()
           Snacks.picker {
             finder = harpoon_finder,

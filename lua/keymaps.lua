@@ -2,12 +2,6 @@
 -- =========================
 
 -- open current file with alt + b
-vim.keymap.set("n", "<Leader>N", "<Cmd>echo 'something'<CR>", {
-  silent = true,
-  nowait = true, -- <- this prevents the trailing N from running
-})
-
--- open current file with alt + b
 vim.keymap.set("n", "<A-b>", ":!xdg-open % &<CR><CR>", {
   noremap = true,
   silent = true,

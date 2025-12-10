@@ -1,4 +1,4 @@
-local prefix = "<leader>O"
+local prefix = "<Leader>O"
 
 return {
   "folke/sidekick.nvim",

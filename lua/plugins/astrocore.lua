@@ -42,6 +42,7 @@ return {
     -- vim options can be configured here
     options = {
       opt = { -- vim.opt.<key>
+        mouse = "nvi",
         relativenumber = true, -- sets vim.opt.relativenumber
         number = true, -- sets vim.opt.number
         spell = false, -- sets vim.opt.spell
@@ -107,6 +108,11 @@ return {
         ["<Leader>Xx"] = {
           "<Cmd>Trouble diagnostics toggle filter.buf=0<CR>",
           desc = " Trouble Document Diagnostics",
+        },
+
+        -- Noice group for <Leader>N
+        ["<Leader>N"] = {
+          desc = " Noice",
         },
 
         -- Remove all default DAP mappings from <leader>d

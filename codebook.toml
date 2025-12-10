@@ -42,6 +42,7 @@ words = [
     "mkdp",
     "neotest",
     "nofile",
+    "nohlsearch",
     "noice",
     "noremap",
     "nvim",
