@@ -83,6 +83,12 @@ return {
         -- setting a mapping to false will disable it
         -- ["<C-S>"] = false,
 
+        -- smart-splits swap buffers
+        ["<leader><leader>h"] = { function() require("smart-splits").swap_buf_left() end, desc = "Swap left split" },
+        ["<leader><leader>j"] = { function() require("smart-splits").swap_buf_down() end, desc = "Swap below split" },
+        ["<leader><leader>k"] = { function() require("smart-splits").swap_buf_up() end, desc = "Swap above split" },
+        ["<leader><leader>l"] = { function() require("smart-splits").swap_buf_right() end, desc = "Swap right split" },
+
         -- remap all quickfix mappings to X instead of x
         ["<Leader>x"] = false,
         ["<Leader>xq"] = false,

@@ -9,7 +9,7 @@ return {
       javascriptreact = { "eslint_d" },
       typescript = { "eslint_d" },
       typescriptreact = { "eslint_d" },
-      python = { "ruff" },
+      -- python = { "ruff" },
       htmldjango = { "djlint" },
       jinja = { "djlint" },
       ["jinja-html"] = { "djlint" },

@@ -1,5 +1,11 @@
 -- lua/plugins/blink.lua
 return {
+  {
+    "saghen/blink.compat",
+    version = "*",
+    lazy = true, -- Automatically loads when required by blink.cmp
+    opts = {},
+  },
   { -- override blink.cmp plugin
     "Saghen/blink.cmp",
     opts = {
@@ -13,6 +19,9 @@ return {
         ["<A-space>"] = { "show", "show_documentation", "hide_documentation" },
       },
       completion = {
+        menu = {
+          -- auto_show_delay_ms = 500,
+        },
         list = {
           selection = {
             preselect = true, -- auto-select the first candidate
@@ -34,16 +43,11 @@ return {
         use_nvim_cmp_as_default = true,
         nerd_font_variant = "mono",
       },
+      -- end of nvim-html-css block
 
       -- enable ghost text
       cmdline = { completion = { ghost_text = { enabled = true } } },
     },
-  },
-  {
-    "saghen/blink.compat",
-    version = "*",
-    lazy = true, -- Automatically loads when required by blink.cmp
-    opts = {},
   },
   {
     "catppuccin",

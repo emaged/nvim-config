@@ -123,6 +123,15 @@ return {
       jinja_lsp = {
         filetypes = { "jinja-html", "jinja" },
       },
+
+      ruff = {
+        capabilities = {
+          general = {
+            -- positionEncodings = { "utf-8", "utf-16", "utf-32" }  <--- this is the default
+            positionEncodings = { "utf-16" },
+          },
+        },
+      },
     },
     -- customize how language servers are attached
     handlers = {
