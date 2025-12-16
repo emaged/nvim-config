@@ -1,159 +1,121 @@
 -- Keymaps (run immediately)
 -- =========================
 
--- smart-splits keymaps
-
--- swapping buffers between windows
--- vim.keymap.set("n", "<leader><leader>h", require("smart-splits").swap_buf_left)
--- vim.keymap.set("n", "<leader><leader>j", require("smart-splits").swap_buf_down)
--- vim.keymap.set("n", "<leader><leader>k", require("smart-splits").swap_buf_up)
--- vim.keymap.set("n", "<leader><leader>l", require("smart-splits").swap_buf_right)
-
 -- open current file with alt + b
 vim.keymap.set("n", "<A-b>", ":!xdg-open % &<CR><CR>", {
-  noremap = true,
   silent = true,
 })
 
 -- Select all with Leader + A
 vim.keymap.set("n", "<Leader>a", "ggVG", {
-  noremap = true,
   silent = true,
 })
 
--- New line with enter in normal mode
-vim.keymap.set("n", "<CR>", "o<Esc>", {
-  noremap = true,
+-- Copy buffer content
+vim.keymap.set("n", "<Leader>y", ":%y<CR>", {
   silent = true,
+})
+
+-- New line with enter/ shift enter in normal mode
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "*",
+  callback = function()
+    if vim.bo.buftype == "" then
+      vim.keymap.set("n", "<CR>", "o<Esc>", { buffer = true, silent = true })
+      vim.keymap.set("n", "<S-CR>", "O<Esc>", { buffer = true, silent = true })
+    end
+  end,
 })
 
 -- Delete s without yank in normal Mode
 vim.keymap.set("n", "<Leader>s", '"_s', {
-  noremap = true,
   silent = true,
 })
 
 -- Delete x without yank in normal Mode
 vim.keymap.set("n", "<Leader>x", '"_x', {
-  noremap = true,
   silent = true,
 })
 
 -- Delete s without yank in Visual Mode
 vim.keymap.set("v", "<Leader>s", '"_c', {
-  noremap = true,
   silent = true,
 })
 
 -- Delete x without yank in Visual Mode
 vim.keymap.set("v", "<Leader>x", '"_d', {
-  noremap = true,
   silent = true,
 })
-
---- When not having clipboard=unnamed ---
---[[ -- Yank to + register
-vim.keymap.set({ "v", "n" }, "<Leader>y", '"+y', {
-  noremap = true,
-  silent = true,
-})
-
--- Yank to + register
-vim.keymap.set({ "v", "n" }, "<Leader>Y", '"+Y', {
-  noremap = true,
-  silent = true,
-}) ]]
 
 -- Alternative cut c to black hole
 vim.keymap.set({ "v", "n" }, "<Leader>k", '"_c', {
-  noremap = true,
   silent = true,
 })
 
 -- Alternative delete
 vim.keymap.set({ "v", "n" }, "<Leader>d", '"_d', {
-  noremap = true,
   silent = true,
 })
 vim.keymap.set({ "v", "n" }, "<Leader>D", '"_D', {
-  noremap = true,
   silent = true,
 })
 
--- Alternative paste without yank -- deprecated,
--- can use P for this
--- vim.keymap.set("v", "<Leader>p", '"_dP', {
---   noremap = true,
---   silent = true,
--- })
-
 -- -- Make Ctrl+q Visual Visual Block Mode
 vim.keymap.set({ "v", "n" }, "<C-q>", "<C-v>", {
-  noremap = true,
   silent = true,
   desc = "Visual Block Mode",
 })
 
 -- Visual mode: copy selection to system clipboard
-vim.keymap.set("i", "<C-v>", "<A-p>", {
-  noremap = true,
+vim.keymap.set("i", "<C-v>", "<C-o>p", {
   silent = true,
   desc = "regular paste",
 })
-vim.keymap.set({ "v", "n" }, "<C-v>", "p", {
-  noremap = true,
+vim.keymap.set("n", "<C-v>", "p", {
   silent = true,
   desc = "regular paste",
 })
-vim.keymap.set({ "v", "n" }, "<C-v>", "P", {
-  noremap = true,
+vim.keymap.set("v", "<C-v>", "P", {
   silent = true,
   desc = "regular paste",
 })
 
 -- Visual mode: copy selection to system clipboard
-vim.keymap.set({ "v", "n" }, "<C-c>", '"+y', {
-  noremap = true,
+vim.keymap.set({ "v", "n" }, "<C-c>", "y", {
   silent = true,
   desc = "Copy selection to clipboard",
 })
 
 --Regular Regular cut with Ctrl-x
 vim.keymap.set({ "v" }, "<C-x>", "c", {
-  noremap = true,
   silent = true,
   desc = "Regular cut with Ctrl-x",
 })
 
 -- Primeagen Keymaps Keymaps
 vim.keymap.set("n", "<C-d>", "<C-d>zz", {
-  noremap = true,
   silent = true,
   desc = "Center on down",
 })
 vim.keymap.set("n", "<C-u>", "<C-u>zz", {
-  noremap = true,
   silent = true,
   desc = "Center on up",
 })
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", {
-  noremap = true,
   silent = true,
   desc = "Move selection down",
 })
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", {
-  noremap = true,
   silent = true,
   desc = "Move selection up",
 })
 
 -- tmux sessionizer keymaps --
 -- ------------------------ --
-
 vim.keymap.set("n", "<M-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 --long running sessions
--- vim.keymap.set("n", "<M-l>", "<cmd>silent !tmux neww tmux-sessionizer -s 0<CR>")
--- vim.keymap.set("n", "<M-o>", "<cmd>silent !tmux neww tmux-sessionizer -s 1<CR>")
--- vim.keymap.set("n", "<M-p>", "<cmd>silent !tmux neww tmux-sessionizer -s 2<CR>")
--- vim.keymap.set("n", "<M-r>", "<cmd>silent !tmux neww tmux-sessionizer -s 3<CR>")
+vim.keymap.set("n", "<M-l>", "<cmd>silent !tmux neww tmux-sessionizer -s 0<CR>")
+vim.keymap.set("n", "<M-o>", "<cmd>silent !tmux neww tmux-sessionizer -s 1<CR>")
+vim.keymap.set("n", "<M-p>", "<cmd>silent !tmux neww tmux-sessionizer -s 2<CR>")
+vim.keymap.set("n", "<M-r>", "<cmd>silent !tmux neww tmux-sessionizer -s 3<CR>")
