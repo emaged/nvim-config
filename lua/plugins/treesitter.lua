@@ -38,7 +38,7 @@ return {
 
       -- Templates
       "htmldjango", -- Jinja/Django
-      "jinja", -- (optional: remove if you only use htmldjango)
+      -- "jinja", -- buggy, doesn't show html templates
 
       -- Web frameworks
       "svelte",

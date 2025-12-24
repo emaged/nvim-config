@@ -9,6 +9,8 @@
 -- polish.lua
 
 -- vim.treesitter.language.register("html", "jinja-html")
+-- vim.treesitter.language.register("jinja2", "html")
+-- vim.treesitter.language.register("jinja", "html")
 -- vim.treesitter.language.register("jinja", "jinja-html")
 -- vim.treesitter.language.register("htmldjango", "jinja-html")
 
