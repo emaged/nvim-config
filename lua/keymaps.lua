@@ -22,7 +22,7 @@ vim.api.nvim_create_autocmd("FileType", {
   callback = function()
     if vim.bo.buftype == "" then
       vim.keymap.set("n", "<CR>", "o<Esc>", { buffer = true, silent = true })
-      vim.keymap.set("n", "<S-CR>", "O<Esc>", { buffer = true, silent = true })
+      vim.keymap.set("n", "<S-CR>", "O<Esc>j", { buffer = true, silent = true })
     end
   end,
 })
