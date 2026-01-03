@@ -6,7 +6,7 @@ return {
       css = { "prettierd", "prettier", stop_after_first = true },
       javascript = { "prettierd", "prettier", stop_after_first = true },
       lua = { "stylua" },
-      python = false,
+      python = {},
       -- python = { "ruff_format", stop_after_first = true }, -- only ruff
       htmldjango = { "djlint" },
       jinja = { "djlint" },

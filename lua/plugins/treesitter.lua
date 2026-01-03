@@ -46,7 +46,7 @@ return {
 
       -- Optional languages
       "php",
-      "latex",
+      -- "latex",
       "typst",
 
       -- Utilities
