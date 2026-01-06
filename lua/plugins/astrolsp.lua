@@ -131,6 +131,10 @@ return {
             positionEncodings = { "utf-16" },
           },
         },
+        on_attach = function(client, bufnr)
+          -- Ruff should NEVER answer hover requests (it causes the double-K bug)
+          client.server_capabilities.hoverProvider = false
+        end,
       },
     },
     -- customize how language servers are attached
