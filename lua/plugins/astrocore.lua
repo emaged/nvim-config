@@ -24,6 +24,7 @@ return {
       virtual_text = true,
       virtual_lines = false,
       underline = true,
+      update_in_insert = false,
     },
     -- passed to `vim.filetype.add`
     filetypes = {

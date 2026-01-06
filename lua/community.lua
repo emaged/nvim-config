@@ -20,6 +20,7 @@ return {
   -- Full community plugin pack (import after specific recipes)
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.pack.python" },
+  { import = "astrocommunity.pack.python-ruff" },
   { import = "astrocommunity.pack.cmake" },
   { import = "astrocommunity.pack.cpp" },
   { import = "astrocommunity.pack.html-css" },

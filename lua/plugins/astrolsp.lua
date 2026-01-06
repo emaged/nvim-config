@@ -131,9 +131,35 @@ return {
             positionEncodings = { "utf-16" },
           },
         },
-        on_attach = function(client, bufnr)
-          -- Ruff should NEVER answer hover requests (it causes the double-K bug)
-          client.server_capabilities.hoverProvider = false
+        root_dir = function(_)
+          local fname = vim.api.nvim_buf_get_name(0)
+          -- Search upward from the buffer's directory
+          local found = vim.fs.find(
+            { "pyproject.toml", "ruff.toml", ".ruff.toml", ".git", ".venv", "manage.py" },
+            { upward = true, path = vim.fs.dirname(fname) }
+          )[1]
+
+          if found then return vim.fs.dirname(found) end
+          return vim.fs.dirname(fname)
+        end,
+      },
+      basedpyright = {
+        root_dir = function(_)
+          local fname = vim.api.nvim_buf_get_name(0)
+          -- Search upward from the buffer's directory
+          local found = vim.fs.find({
+            "pyproject.toml",
+            "setup.py",
+            "setup.cfg",
+            "requirements.txt",
+            "Pipfile",
+            "manage.py",
+            ".git",
+            ".venv",
+            "manage.py",
+          }, { upward = true, path = vim.fs.dirname(fname) })[1]
+          if found then return vim.fs.dirname(found) end
+          return vim.fs.dirname(fname)
         end,
       },
     },
