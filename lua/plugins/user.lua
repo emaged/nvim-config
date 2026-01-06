@@ -38,21 +38,30 @@ return { -- == Examples of Adding Plugins ==
   },
 
   {
+    "JoosepAlviste/nvim-ts-context-commentstring",
+    enabled = true,
+    lazy = true,
+    opts = {
+      enable_autocmd = false,
+    },
+  },
+  -- {
+  --   "echasnovski/mini.comment",
+  --   event = "VeryLazy",
+  --   opts = {
+  --     options = {
+  --       custom_commentstring = function()
+  --         return require("ts_context_commentstring.internal").calculate_commentstring() or vim.bo.commentstring
+  --       end,
+  --     },
+  --   },
+  -- },
+  {
     "numToStr/Comment.nvim",
     enabled = true, -- <- this is required
     event = "VeryLazy",
     opts = {
       pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
-    },
-  },
-
-  -- nvim-ts-context-commentstring setup (optional, but lazy-load with Comment.nvim)
-  {
-    "JoosepAlviste/nvim-ts-context-commentstring",
-    enabled = true,
-    lazy = true, -- only load when required by Comment.nvim
-    opts = {
-      enable_autocmd = false, -- important
     },
   },
 
@@ -83,32 +92,6 @@ return { -- == Examples of Adding Plugins ==
   },
 
   {
-    "iamcco/markdown-preview.nvim",
-    ft = { "markdown", "markdown.mdx" },
-    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-    init = function()
-      local plugin = require("lazy.core.config").spec.plugins["markdown-preview.nvim"]
-      vim.g.mkdp_filetypes = require("lazy.core.plugin").values(plugin, "ft", true)
-    end,
-    dependencies = {
-      { "AstroNvim/astroui", opts = { icons = { Markdown = "" } } },
-      {
-        "AstroNvim/astrocore",
-        optional = true,
-        opts = function(_, opts)
-          local maps = opts.mappings
-          local prefix = "<Leader>P"
-
-          maps.n[prefix] = { desc = require("astroui").get_icon("Markdown", 1, true) .. "Markdown" }
-          maps.n[prefix .. "p"] = { "<cmd>MarkdownPreview<cr>", desc = "Preview" }
-          maps.n[prefix .. "s"] = { "<cmd>MarkdownPreviewStop<cr>", desc = "Stop preview" }
-          maps.n[prefix .. "t"] = { "<cmd>MarkdownPreviewToggle<cr>", desc = "Toggle preview" }
-        end,
-      },
-    },
-  },
-
-  {
     "olrtg/nvim-emmet",
     config = function() vim.keymap.set({ "n", "v" }, "<A-S-w>", require("nvim-emmet").wrap_with_abbreviation) end,
   },
@@ -128,16 +111,6 @@ return { -- == Examples of Adding Plugins ==
       },
     },
   },
-
-  -- {
-  --   "folke/edgy.nvim",
-  --   event = "VeryLazy",
-  --   opts = {
-  --     animate = {
-  --       enabled = false,
-  --     },
-  --   },
-  -- },
 
   {
     "folke/flash.nvim",
@@ -163,61 +136,4 @@ return { -- == Examples of Adding Plugins ==
   },
 
   { "nvim-tree/nvim-web-devicons", opts = {} },
-
-  {
-    "Jezda1337/nvim-html-css",
-    ft = {
-      "html",
-      "htmldjango",
-      "tsx",
-      "jsx",
-      "erb",
-      "svelte",
-      "vue",
-      "blade",
-      "php",
-      "templ",
-      "astro",
-    },
-    dependencies = { "saghen/blink.cmp", "nvim-treesitter/nvim-treesitter" }, -- Use this if you're using blink.cmp
-    opts = {
-      enable_on = { -- Example file types
-        "html",
-        "htmldjango",
-        "tsx",
-        "jsx",
-        "erb",
-        "svelte",
-        "vue",
-        "blade",
-        "php",
-        "templ",
-        "astro",
-      },
-      handlers = {
-        definition = {
-          bind = "gD",
-        },
-        hover = {
-          bind = "K",
-          wrap = true,
-          border = "none",
-          position = "cursor",
-        },
-      },
-      documentation = {
-        auto_show = true,
-      },
-      style_sheets = {
-        -- "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css",
-        -- "https://cdnjs.cloudflare.com/ajax/libs/bulma/1.0.3/css/bulma.min.css",
-        -- "./index.css", -- `./` refers to the current working directory.
-      },
-    },
-  },
-
-  {
-    "mrjones2014/smart-splits.nvim",
-    lazy = false,
-  },
 }

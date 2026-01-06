@@ -1,6 +1,15 @@
 -- list of currently deactivated plugins
 return {
   -- {
+  --   "folke/edgy.nvim",
+  --   event = "VeryLazy",
+  --   opts = {
+  --     animate = {
+  --       enabled = false,
+  --     },
+  --   },
+  -- },
+  -- {
   --   "saghen/filler-begone.nvim",
   --   dependencies = {
   --     {
@@ -54,5 +63,10 @@ return {
   --
   -- {
   --   "knubie/vim-kitty-navigator",
+  -- },
+  --
+  -- {
+  --   "mrjones2014/smart-splits.nvim",
+  --   lazy = false,
   -- },
 }
