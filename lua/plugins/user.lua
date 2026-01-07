@@ -12,13 +12,6 @@ return { -- == Examples of Adding Plugins ==
     enabled = false,
   },
 
-  -- {
-  --   "serhez/bento.nvim",
-  --   opts = {
-  --     main_keymap = "<Leader>;",
-  --   },
-  -- },
-
   {
     "catppuccin",
     optional = true,
