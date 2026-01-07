@@ -212,13 +212,6 @@ return {
           if found then return vim.fs.dirname(found) end
           return vim.fs.dirname(fname)
         end,
-        on_init = function(client)
-          local old = client.rpc.stderr
-          client.rpc.stderr = function(msg)
-            if msg and msg:match "^%s*INFO" then return end
-            old(msg)
-          end
-        end,
         on_attach = function(client, bufnr)
           client.server_capabilities.codeActionProvider = false
           client.server_capabilities.hoverProvider = false
@@ -236,9 +229,6 @@ return {
     -- customize how language servers are attached
     handlers = {
       emmet_ls = false,
-      -- basedpyright = false,
-      ruff = false,
-      pyrefly = false,
       -- a function without a key is simply the default handler, functions take two parameters, the server name and the configured options table for that server
       -- function(server, opts) require("lspconfig")[server].setup(opts) end
 

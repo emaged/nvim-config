@@ -52,7 +52,7 @@ return {
 
   -- Utility
   { import = "astrocommunity.editing-support.nvim-treesitter-context" },
-  { import = "astrocommunity.utility.noice-nvim" },
+  -- { import = "astrocommunity.utility.noice-nvim" },
 
   -- Testing
   { import = "astrocommunity.utility.lua-json5" },

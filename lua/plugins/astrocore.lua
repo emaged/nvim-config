@@ -46,6 +46,7 @@ return {
     -- vim options can be configured here
     options = {
       opt = { -- vim.opt.<key>
+        cmdheight = 0,
         mouse = "nvi",
         relativenumber = true, -- sets vim.opt.relativenumber
         number = true, -- sets vim.opt.number
