@@ -31,10 +31,6 @@ return {
       -- see `:h vim.filetype.add` for usage
       extension = {
         foo = "fooscript",
-        -- jinja = "html",
-        -- jinja2 = "html",
-        -- j2 = "html",
-        -- ["jinja-html"] = "jinja-html",
       },
       filename = {
         [".foorc"] = "fooscript",

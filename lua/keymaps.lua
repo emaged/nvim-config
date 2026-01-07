@@ -1,5 +1,10 @@
 -- Keymaps (run immediately)
 -- =========================
+-- easy arrow keymap
+vim.keymap.set("i", "<C-l>", "<space>=><space>")
+
+-- Search and replace word under the cursor
+vim.keymap.set("n", "<Leader>re", [[:%s/\<<C-r><C-w>\>//g<Left><Left>]])
 
 -- open current file with alt + b
 vim.keymap.set("n", "<A-b>", ":!xdg-open % &<CR><CR>", {
