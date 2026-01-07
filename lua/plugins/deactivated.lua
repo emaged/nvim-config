@@ -1,5 +1,6 @@
 -- list of currently deactivated plugins
 return {
+  -- { "lepture/vim-jinja" },
   -- {
   --   "folke/edgy.nvim",
   --   event = "VeryLazy",

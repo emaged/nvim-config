@@ -5,7 +5,6 @@
 -- Here are some examples:
 ---@type LazySpec
 return { -- == Examples of Adding Plugins ==
-
   -- customize dashboard options
   -- You can disable default plugins as follows:
   {
@@ -13,11 +12,21 @@ return { -- == Examples of Adding Plugins ==
     enabled = false,
   },
 
+  -- {
+  --   "serhez/bento.nvim",
+  --   opts = {
+  --     main_keymap = "<Leader>;",
+  --   },
+  -- },
+
   {
     "catppuccin",
     optional = true,
     ---@type CatppuccinOptions
-    opts = { integrations = { which_key = true } },
+    opts = {
+      auto_integrations = true,
+      integrations = { which_key = true },
+    },
   },
 
   -- Lorem ipsum generator
@@ -45,6 +54,14 @@ return { -- == Examples of Adding Plugins ==
       enable_autocmd = false,
     },
   },
+  {
+    "numToStr/Comment.nvim",
+    enabled = true, -- <- this is required
+    event = "VeryLazy",
+    opts = {
+      pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
+    },
+  },
   -- {
   --   "echasnovski/mini.comment",
   --   event = "VeryLazy",
@@ -56,14 +73,6 @@ return { -- == Examples of Adding Plugins ==
   --     },
   --   },
   -- },
-  {
-    "numToStr/Comment.nvim",
-    enabled = true, -- <- this is required
-    event = "VeryLazy",
-    opts = {
-      pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
-    },
-  },
 
   {
     "linux-cultist/venv-selector.nvim",

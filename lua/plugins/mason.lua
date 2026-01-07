@@ -25,6 +25,7 @@ return {
         "some-sass-language-server",
         "stylelint-lsp",
         "sqlls",
+        "pyrefly",
 
         -- install formatters && linters
         "stylua",

@@ -41,7 +41,7 @@ return {
     servers = {
       "codebook",
       "djlsp",
-      -- "pyright"
+      "pyrefly",
     },
     -- customize language server configuration options passed to `lspconfig`
     ---@diagnostic disable: missing-fields
@@ -85,6 +85,7 @@ return {
 
           return vim.fs.dirname(fname)
         end,
+        settings = {},
       },
 
       djlsp = {
@@ -142,6 +143,11 @@ return {
           if found then return vim.fs.dirname(found) end
           return vim.fs.dirname(fname)
         end,
+        on_attach = function(client, bufnr)
+          client.server_capabilities.hoverProvider = false
+          client.server_capabilities.documentFormattingProvider = false
+          client.server_capabilities.documentRangeFormattingProvider = false
+        end,
       },
       basedpyright = {
         root_dir = function(_)
@@ -161,6 +167,60 @@ return {
           if found then return vim.fs.dirname(found) end
           return vim.fs.dirname(fname)
         end,
+        on_attach = function(client, bufnr)
+          client.server_capabilities.completionProvider = false
+          client.server_capabilities.definitionProvider = false
+          client.server_capabilities.documentHighlightProvider = false
+          client.server_capabilities.renameProvider = false
+          client.server_capabilities.semanticTokensProvider = false
+        end,
+        settings = { -- see https://docs.basedpyright.com/latest/configuration/language-server-settings/
+          basedpyright = {
+            disableOrganizeImports = true, -- use ruff instead of it
+            analysis = {
+              autoImportCompletions = true,
+              autoSearchPaths = true, -- auto serach command paths like 'src'
+              diagnosticMode = "openFilesOnly",
+              useLibraryCodeForTypes = true,
+              diagnosticSeverityOverrides = {
+                reportUnknownMemberType = "none", -- ignore warning : cannot infer member type of object like matplot
+              },
+            },
+          },
+        },
+      },
+      pyrefly = {
+        cmd = { "pyrefly", "lsp" },
+        filetypes = { "python" },
+        root_dir = function(_)
+          local fname = vim.api.nvim_buf_get_name(0)
+          -- Search upward from the buffer's directory
+          local found = vim.fs.find({
+            "pyrefly.toml",
+            "pyproject.toml",
+            "setup.py",
+            "setup.cfg",
+            "requirements.txt",
+            "Pipfile",
+            ".git",
+            ".venv",
+            "manage.py",
+          }, { upward = true, path = vim.fs.dirname(fname) })[1]
+          if found then return vim.fs.dirname(found) end
+          return vim.fs.dirname(fname)
+        end,
+        on_attach = function(client, bufnr)
+          client.server_capabilities.codeActionProvider = false
+          client.server_capabilities.hoverProvider = false
+          client.server_capabilities.documentSymbolProvider = false
+          client.server_capabilities.inlayHintProvider = false
+          client.server_capabilities.signatureHelpProvider = false
+          client.server_capabilities.referencesProvider = false
+        end,
+        on_exit = function(code, _, _)
+          vim.notify("Closing Pyrefly LSP exited with code: " .. code, vim.log.levels.INFO)
+        end,
+        settings = {},
       },
     },
     -- customize how language servers are attached
@@ -172,8 +232,8 @@ return {
       -- the key is the server that is being setup with `lspconfig`
       -- rust_analyzer = false, -- setting a handler to false will disable the set up of that language server
       -- pyright = function(_, opts) require("lspconfig").pyright.setup(opts) end -- or a custom handler function can be passed
-      codebook = function(_, opts) require("lspconfig").codebook.setup(opts) end,
-      djlsp = function(_, opts) require("lspconfig").djlsp.setup(opts) end,
+      -- codebook = function(_, opts) require("lspconfig").codebook.setup(opts) end,
+      -- djlsp = function(_, opts) require("lspconfig").djlsp.setup(opts) end,
     },
     -- Configure buffer local auto commands to add when attaching a language server
     autocmds = {

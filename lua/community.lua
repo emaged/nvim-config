@@ -19,16 +19,16 @@ return {
 
   -- Full community plugin pack (import after specific recipes)
   { import = "astrocommunity.pack.lua" },
-  { import = "astrocommunity.pack.python" },
-  { import = "astrocommunity.pack.python-ruff" },
   { import = "astrocommunity.pack.cmake" },
   { import = "astrocommunity.pack.cpp" },
-  { import = "astrocommunity.pack.html-css" },
   { import = "astrocommunity.pack.java" },
-  { import = "astrocommunity.pack.markdown" },
+  { import = "astrocommunity.pack.python" },
+  { import = "astrocommunity.pack.python-ruff" },
+  { import = "astrocommunity.pack.html-css" },
   { import = "astrocommunity.pack.prettier" },
   { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.pack.sql" },
+  { import = "astrocommunity.pack.markdown" },
 
   -- completion (buggy?)
   -- { import = "astrocommunity.completion.blink-cmp-tmux" },
