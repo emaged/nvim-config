@@ -150,6 +150,9 @@ return {
         end,
       },
       basedpyright = {
+        flags = {
+          debounce_text_changes = 2000,
+        },
         root_dir = function(_)
           local fname = vim.api.nvim_buf_get_name(0)
           -- Search upward from the buffer's directory
@@ -179,7 +182,7 @@ return {
             disableOrganizeImports = true, -- use ruff instead of it
             analysis = {
               autoImportCompletions = true,
-              autoSearchPaths = true, -- auto serach command paths like 'src'
+              autoSearchPaths = true, -- auto search command paths like 'src'
               diagnosticMode = "openFilesOnly",
               useLibraryCodeForTypes = true,
               diagnosticSeverityOverrides = {
@@ -190,7 +193,7 @@ return {
         },
       },
       pyrefly = {
-        cmd = { "pyrefly", "lsp" },
+        cmd = { "bash", "-c", "pyrefly lsp 2>/dev/null" },
         filetypes = { "python" },
         root_dir = function(_)
           local fname = vim.api.nvim_buf_get_name(0)
@@ -209,6 +212,13 @@ return {
           if found then return vim.fs.dirname(found) end
           return vim.fs.dirname(fname)
         end,
+        on_init = function(client)
+          local old = client.rpc.stderr
+          client.rpc.stderr = function(msg)
+            if msg and msg:match "^%s*INFO" then return end
+            old(msg)
+          end
+        end,
         on_attach = function(client, bufnr)
           client.server_capabilities.codeActionProvider = false
           client.server_capabilities.hoverProvider = false
@@ -226,50 +236,17 @@ return {
     -- customize how language servers are attached
     handlers = {
       emmet_ls = false,
+      -- basedpyright = false,
+      ruff = false,
+      pyrefly = false,
       -- a function without a key is simply the default handler, functions take two parameters, the server name and the configured options table for that server
       -- function(server, opts) require("lspconfig")[server].setup(opts) end
 
       -- the key is the server that is being setup with `lspconfig`
       -- rust_analyzer = false, -- setting a handler to false will disable the set up of that language server
-      -- pyright = function(_, opts) require("lspconfig").pyright.setup(opts) end -- or a custom handler function can be passed
-      -- codebook = function(_, opts) require("lspconfig").codebook.setup(opts) end,
-      -- djlsp = function(_, opts) require("lspconfig").djlsp.setup(opts) end,
     },
     -- Configure buffer local auto commands to add when attaching a language server
     autocmds = {
-      codebook_force_diagnostics = {
-        event = "BufEnter",
-        desc = "Force Codebook diagnostics on file open",
-        callback = function(args)
-          local bufnr = args.buf
-
-          -- Get active LSP clients for this buffer (new API)
-          local clients = vim.lsp.get_clients { bufnr = bufnr }
-          local codebook = nil
-
-          for _, c in ipairs(clients) do
-            if c.name == "codebook" then
-              codebook = c
-              break
-            end
-          end
-
-          if not codebook then return end
-
-          -- If Codebook supports pull diagnostics, request them
-          if codebook.supports_method "workspace/diagnostic" then
-            vim.lsp.buf_request(bufnr, "workspace/diagnostic", {
-              identifier = "codebook-open",
-              previousResultIds = {},
-            })
-            return
-          end
-
-          -- Fallback: apply a reversible "fake edit" to trigger didChange
-          vim.api.nvim_buf_set_text(bufnr, 0, 0, 0, 0, { "" })
-          vim.api.nvim_buf_set_text(bufnr, 0, 0, 1, 0, {})
-        end,
-      },
       -- first key is the `augroup` to add the auto commands to (:h augroup)
       lsp_codelens_refresh = {
         -- Optional condition to create/delete auto command group
