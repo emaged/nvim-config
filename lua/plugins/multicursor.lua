@@ -31,15 +31,15 @@ return {
       set("x", "A", mc.appendVisual)
 
       -- Add a cursor and jump to the next/previous search result.
-      set("n", "<Leader>/m", function() mc.searchAddCursor(1) end, { desc = "add cursor to search match forward" })
-      set("n", "<Leader>/M", function() mc.searchAddCursor(-1) end, { desc = "add cursor to search match backward" })
+      set("n", "<Leader>,m", function() mc.searchAddCursor(1) end, { desc = "add cursor to search match forward" })
+      set("n", "<Leader>,M", function() mc.searchAddCursor(-1) end, { desc = "add cursor to search match backward" })
 
       -- Jump to the next/previous search result without adding a cursor.
-      set("n", "<Leader>/z", function() mc.searchSkipCursor(1) end, { desc = "Skip search match forward" })
-      set("n", "<Leader>/Z", function() mc.searchSkipCursor(-1) end, { desc = "Skip search match backward" })
+      set("n", "<Leader>,z", function() mc.searchSkipCursor(1) end, { desc = "Skip search match forward" })
+      set("n", "<Leader>,Z", function() mc.searchSkipCursor(-1) end, { desc = "Skip search match backward" })
 
       -- Add a cursor to every search result in the buffer.
-      set("n", "<Leader>/A", mc.searchAllAddCursors, { desc = "Add cursors to all search matches" })
+      set("n", "<Leader>,A", mc.searchAllAddCursors, { desc = "Add cursors to all search matches" })
 
       -- Add and remove cursors with control + left click.
       set("n", "<c-leftmouse>", mc.handleMouse)
@@ -48,6 +48,18 @@ return {
 
       -- Disable and enable cursors.
       set({ "n", "x" }, "gm", mc.toggleCursor, { desc = "enable/disable cursor" })
+
+      -- Pressing `gaip` will add a cursor on each line of a paragraph.
+      -- Can also be used to add cursor for each line of visual selection.
+      set({ "n", "x" }, "ga", mc.addCursorOperator, { desc = "add cursor to visual selection, or gaip" })
+
+      -- bring back cursors if you accidentally clear them
+      set("n", "<leader>gv", mc.restoreCursors, { desc = "bring back cursors" })
+
+      -- Pressing `<leader>miwap` will create a cursor in every match of the
+      -- string captured by `iw` inside range `ap`.
+      -- This action is highly customizable, see `:h multicursor-operator`.
+      set({ "n", "x" }, "<leader>,m", mc.operator, { desc = "create a cursor in every match of the string" })
 
       -- Mappings defined in a keymap layer only apply when there are
       -- multiple cursors. This lets you have overlapping mappings.
