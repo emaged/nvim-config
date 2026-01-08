@@ -223,6 +223,7 @@ return {
           client.server_capabilities.inlayHintProvider = false -- basedpyright has more kinds
           client.server_capabilities.referenceProvider = false -- basedpyright has more kinds
           client.server_capabilities.signatureHelpProvider = false -- basedpyright has more kinds
+          -- client.server_capabilities.semanticTokensProvider = false -- for treesitter only highlighting
         end,
         on_exit = function(code, _, _)
           vim.notify("Closing Pyrefly LSP exited with code: " .. code, vim.log.levels.INFO)
