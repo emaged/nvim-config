@@ -72,8 +72,8 @@ return {
         },
         root_markers = { ".git", "codebook.toml", ".codebook.toml" },
         -- use closest codebook.toml file, starting at file itself not project folder
-        root_dir = function(_)
-          local fname = vim.api.nvim_buf_get_name(0)
+        root_dir = function(fname)
+          if not fname or fname == "" then return nil end
 
           -- Search upward from the buffer's directory
           local found = vim.fs.find(
@@ -130,8 +130,8 @@ return {
         flags = {
           debounce_text_changes = 2000,
         },
-        root_dir = function(_)
-          local fname = vim.api.nvim_buf_get_name(0)
+        root_dir = function(fname)
+          if not fname or fname == "" then return nil end
           -- Search upward from the buffer's directory
           local found = vim.fs.find({
             "pyproject.toml",
@@ -142,7 +142,6 @@ return {
             "manage.py",
             ".git",
             ".venv",
-            "manage.py",
           }, { upward = true, path = vim.fs.dirname(fname) })[1]
           if found then return vim.fs.dirname(found) end
           return vim.fs.dirname(fname)
@@ -183,8 +182,8 @@ return {
         -- cmd = { "pyrefly", "lsp" },
         cmd = { "bash", "-c", "pyrefly lsp 2>/dev/null" },
         filetypes = { "python" },
-        root_dir = function(_)
-          local fname = vim.api.nvim_buf_get_name(0)
+        root_dir = function(fname)
+          if not fname or fname == "" then return nil end
           -- Search upward from the buffer's directory
           local found = vim.fs.find({
             "pyrefly.toml",
@@ -228,6 +227,7 @@ return {
         on_exit = function(code, _, _)
           vim.notify("Closing Pyrefly LSP exited with code: " .. code, vim.log.levels.INFO)
         end,
+        settings = {},
       },
 
       ruff = {
@@ -237,8 +237,8 @@ return {
             positionEncodings = { "utf-16" },
           },
         },
-        root_dir = function(_)
-          local fname = vim.api.nvim_buf_get_name(0)
+        root_dir = function(fname)
+          if not fname or fname == "" then return nil end
           -- Search upward from the buffer's directory
           local found = vim.fs.find(
             { "pyproject.toml", "ruff.toml", ".ruff.toml", ".git", ".venv", "manage.py" },

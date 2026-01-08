@@ -30,13 +30,13 @@ return {
     filetypes = {
       -- see `:h vim.filetype.add` for usage
       extension = {
-        foo = "fooscript",
+        -- foo = "fooscript",
       },
       filename = {
-        [".foorc"] = "fooscript",
+        -- [".foorc"] = "fooscript",
       },
       pattern = {
-        [".*/etc/foo/.*"] = "fooscript",
+        -- [".*/etc/foo/.*"] = "fooscript",
       },
     },
     -- vim options can be configured here
