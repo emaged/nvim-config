@@ -125,30 +125,7 @@ return {
         filetypes = { "jinja-html", "jinja" },
       },
 
-      ruff = {
-        capabilities = {
-          general = {
-            -- positionEncodings = { "utf-8", "utf-16", "utf-32" }  <--- this is the default
-            positionEncodings = { "utf-16" },
-          },
-        },
-        root_dir = function(_)
-          local fname = vim.api.nvim_buf_get_name(0)
-          -- Search upward from the buffer's directory
-          local found = vim.fs.find(
-            { "pyproject.toml", "ruff.toml", ".ruff.toml", ".git", ".venv", "manage.py" },
-            { upward = true, path = vim.fs.dirname(fname) }
-          )[1]
-
-          if found then return vim.fs.dirname(found) end
-          return vim.fs.dirname(fname)
-        end,
-        on_attach = function(client, bufnr)
-          client.server_capabilities.hoverProvider = false
-          client.server_capabilities.documentFormattingProvider = false
-          client.server_capabilities.documentRangeFormattingProvider = false
-        end,
-      },
+      -- Python LSP Configuration
       basedpyright = {
         flags = {
           debounce_text_changes = 2000,
@@ -186,13 +163,24 @@ return {
               diagnosticMode = "openFilesOnly",
               useLibraryCodeForTypes = true,
               diagnosticSeverityOverrides = {
-                reportUnknownMemberType = "none", -- ignore warning : cannot infer member type of object like matplot
+                reportUnusedImport = "none",
+                reportUnusedFunction = "none",
+                reportUnusedVariable = "none",
+                reportUnusedParameter = "none",
+                reportUnknownMemberType = "none",
+                reportPrivateImportUsage = "none",
+                -- keep real type errors
+                reportGeneralTypeIssues = "error",
+                reportOptionalMemberAccess = "error",
+                reportOptionalSubscript = "error",
               },
             },
           },
         },
       },
+
       pyrefly = {
+        -- cmd = { "pyrefly", "lsp" },
         cmd = { "bash", "-c", "pyrefly lsp 2>/dev/null" },
         filetypes = { "python" },
         root_dir = function(_)
@@ -212,23 +200,65 @@ return {
           if found then return vim.fs.dirname(found) end
           return vim.fs.dirname(fname)
         end,
+        handlers = {
+          ["textDocument/publishDiagnostics"] = function(err, result, ctx, config)
+            if result and result.diagnostics then
+              local filtered = {}
+              for _, diag in ipairs(result.diagnostics) do
+                local code = diag.code
+                if type(code) == "table" then code = code.value end
+                if code ~= "unused-import" and code ~= "unused-variable" and code ~= "unused-parameter" then
+                  table.insert(filtered, diag)
+                end
+              end
+              result.diagnostics = filtered
+            end
+            vim.lsp.handlers["textDocument/publishDiagnostics"](err, result, ctx, config)
+          end,
+        },
         on_attach = function(client, bufnr)
-          client.server_capabilities.codeActionProvider = false
-          client.server_capabilities.hoverProvider = false
-          client.server_capabilities.documentSymbolProvider = false
-          client.server_capabilities.inlayHintProvider = false
-          client.server_capabilities.signatureHelpProvider = false
-          client.server_capabilities.referencesProvider = false
+          -- Disable all UX features from Pyrefly
+          client.server_capabilities.codeActionProvider = false -- basedpyright has more kinds
+          client.server_capabilities.documentSymbolProvider = false -- basedpyright has more kinds
+          client.server_capabilities.hoverProvider = false -- basedpyright has more kinds
+          client.server_capabilities.inlayHintProvider = false -- basedpyright has more kinds
+          client.server_capabilities.referenceProvider = false -- basedpyright has more kinds
+          client.server_capabilities.signatureHelpProvider = false -- basedpyright has more kinds
         end,
         on_exit = function(code, _, _)
           vim.notify("Closing Pyrefly LSP exited with code: " .. code, vim.log.levels.INFO)
         end,
-        settings = {},
+      },
+
+      ruff = {
+        capabilities = {
+          general = {
+            -- positionEncodings = { "utf-8", "utf-16", "utf-32" }, -- <--- this is the default,
+            positionEncodings = { "utf-16" },
+          },
+        },
+        root_dir = function(_)
+          local fname = vim.api.nvim_buf_get_name(0)
+          -- Search upward from the buffer's directory
+          local found = vim.fs.find(
+            { "pyproject.toml", "ruff.toml", ".ruff.toml", ".git", ".venv", "manage.py" },
+            { upward = true, path = vim.fs.dirname(fname) }
+          )[1]
+          if found then return vim.fs.dirname(found) end
+          return vim.fs.dirname(fname)
+        end,
+        on_attach = function(client, bufnr)
+          client.server_capabilities.hoverProvider = false
+          client.server_capabilities.documentFormattingProvider = false
+          client.server_capabilities.documentRangeFormattingProvider = false
+        end,
       },
     },
+
     -- customize how language servers are attached
     handlers = {
       emmet_ls = false,
+      -- ruff = false,
       -- a function without a key is simply the default handler, functions take two parameters, the server name and the configured options table for that server
       -- function(server, opts) require("lspconfig")[server].setup(opts) end
 

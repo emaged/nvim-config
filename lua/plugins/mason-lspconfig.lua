@@ -9,9 +9,9 @@ return {
     --
     -- To exclude certain servers from being automatically enabled:
     -- ```lua
-    --   automatic_enable = {
-    --     exclude = { "rust_analyzer", "ts_ls" }
-    --   }
+    -- automatic_enable = {
+    --   exclude = { "pyrefly", "ruff", "basedpyright" },
+    -- },
     -- ```
     --
     -- To only enable certain servers to be automatically enabled:

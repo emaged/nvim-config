@@ -1,6 +1,23 @@
 -- list of currently deactivated plugins
 return {
   -- { "lepture/vim-jinja" },
+  --
+  -- {
+  --   "linux-cultist/venv-selector.nvim",
+  --   dependencies = {
+  --     "neovim/nvim-lspconfig",
+  --     "folke/snacks.nvim",
+  --   },
+  --   keys = { -- this is in the default opts
+  --     { "<Leader>v", "<cmd>VenvSelect<cr>" }, -- Open picker on keymap
+  --   },
+  --   opts = { -- this can be an empty lua table - just showing below for clarity.
+  --     picker = "snacks", -- <— SWITCH TO SNACKS HERE
+  --     search = {}, -- if you add your own searches, they go here.
+  --     options = {}, -- if you add plugin options, they go here.
+  --   },
+  -- },
+  --
   -- {
   --   "folke/edgy.nvim",
   --   event = "VeryLazy",

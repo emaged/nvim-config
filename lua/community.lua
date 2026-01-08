@@ -29,6 +29,7 @@ return {
   { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.pack.sql" },
   { import = "astrocommunity.pack.markdown" },
+  { import = "astrocommunity.pack.toml" },
 
   -- completion (buggy?)
   -- { import = "astrocommunity.completion.blink-cmp-tmux" },

@@ -68,23 +68,6 @@ return { -- == Examples of Adding Plugins ==
   -- },
 
   {
-    "linux-cultist/venv-selector.nvim",
-    dependencies = {
-      "neovim/nvim-lspconfig",
-      "folke/snacks.nvim",
-    },
-    ft = "python", -- Load when opening Python files
-    -- keys = { -- this is in the default opts
-    --   { "<Leader>v", "<cmd>VenvSelect<cr>" }, -- Open picker on keymap
-    -- },
-    opts = { -- this can be an empty lua table - just showing below for clarity.
-      picker = "snacks", -- <— SWITCH TO SNACKS HERE
-      search = {}, -- if you add your own searches, they go here.
-      options = {}, -- if you add plugin options, they go here.
-    },
-  },
-
-  {
     "MeanderingProgrammer/render-markdown.nvim",
     ft = { "markdown" },
     dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-mini/mini.icons" }, -- if you use standalone mini plugins
