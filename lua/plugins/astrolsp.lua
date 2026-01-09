@@ -56,6 +56,7 @@ return {
           "go",
           "haskell",
           "html",
+          "htmldjango",
           "java",
           "javascript",
           "javascriptreact",
@@ -88,28 +89,6 @@ return {
         settings = {},
       },
 
-      djlsp = {
-        cmd = { "django-template-lsp" }, -- the executable installed by Mason
-        filetypes = {
-          "html",
-          "htmldjango",
-          "djangohtml",
-          "django",
-        },
-        root_dir = function(fname)
-          local util = require "lspconfig.util"
-
-          -- 1. Prefer Django/Jinja project configs
-          local root =
-            util.root_pattern("manage.py", "pyproject.toml", "requirements.txt", "setup.py", "Pipfile", ".git")(fname)
-
-          if root then return root end
-
-          -- 2. Fallback to file directory
-          return vim.fs.dirname(fname)
-        end,
-      },
-
       eslint = {
         filetypes = {
           "javascript",
@@ -121,10 +100,6 @@ return {
         },
       },
 
-      jinja_lsp = {
-        filetypes = { "jinja-html", "jinja" },
-      },
-
       -- Python LSP Configuration
       basedpyright = {
         flags = {
@@ -134,6 +109,7 @@ return {
           if not fname or fname == "" then return nil end
           -- Search upward from the buffer's directory
           local found = vim.fs.find({
+            "pyrightconfig.json",
             "pyproject.toml",
             "setup.py",
             "setup.cfg",
@@ -141,7 +117,7 @@ return {
             "Pipfile",
             "manage.py",
             ".git",
-            ".venv",
+            ".venv", -- dangerous
           }, { upward = true, path = vim.fs.dirname(fname) })[1]
           if found then return vim.fs.dirname(found) end
           return vim.fs.dirname(fname)
@@ -178,9 +154,39 @@ return {
         },
       },
 
+      djlsp = {
+        cmd = { "djlsp" }, -- the executable installed by Mason
+        filetypes = {
+          "html",
+          "htmldjango",
+          "django",
+        },
+        root_dir = function(fname)
+          if not fname or fname == "" then return nil end
+          -- Search upward from the buffer's directory -
+          local found = vim.fs.find({
+            "pyproject.toml",
+            "requirements.txt",
+            "manage.py",
+            ".git",
+            ".venv",
+          }, { upward = true, path = vim.fs.dirname(fname) })[1]
+          if found then return vim.fs.dirname(found) end
+          return vim.fs.dirname(fname)
+        end,
+        init_options = {
+          django_settings_module = "mysite.settings",
+        },
+      },
+
       pyrefly = {
+        cmd = {
+          "bash",
+          "-c",
+          vim.fn.stdpath "data" .. "/mason/bin/pyrefly lsp 2>/dev/null",
+        },
         -- cmd = { "pyrefly", "lsp" },
-        cmd = { "bash", "-c", "pyrefly lsp 2>/dev/null" },
+        -- cmd = { "bash", "-c", "pyrefly lsp 2>/dev/null" },
         filetypes = { "python" },
         root_dir = function(fname)
           if not fname or fname == "" then return nil end
@@ -193,8 +199,8 @@ return {
             "requirements.txt",
             "Pipfile",
             ".git",
-            ".venv",
             "manage.py",
+            ".venv", -- dangerous
           }, { upward = true, path = vim.fs.dirname(fname) })[1]
           if found then return vim.fs.dirname(found) end
           return vim.fs.dirname(fname)
@@ -253,6 +259,10 @@ return {
           client.server_capabilities.documentFormattingProvider = false
           client.server_capabilities.documentRangeFormattingProvider = false
         end,
+      },
+
+      jinja_lsp = {
+        filetypes = { "jinja-html", "jinja" },
       },
     },
 

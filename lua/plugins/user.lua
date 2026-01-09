@@ -13,6 +13,34 @@ return { -- == Examples of Adding Plugins ==
   },
 
   {
+    "windwp/nvim-autopairs",
+    config = function(plugin, opts)
+      require "astronvim.plugins.configs.nvim-autopairs"(plugin, opts)
+
+      local npairs = require "nvim-autopairs"
+      local Rule = require "nvim-autopairs.rule"
+      local cond = require "nvim-autopairs.conds"
+
+      npairs.add_rules {
+        Rule("%", "%", { "htmldjango", "django" })
+          :with_pair(function(opts)
+            -- Only double % when it follows {
+            return opts.line:sub(opts.col - 1, opts.col - 1) == "{"
+          end)
+          :with_move(cond.none())
+          :with_cr(cond.none())
+          :with_del(cond.none()),
+
+        Rule("#", "#", { "htmldjango", "django" })
+          :with_pair(function(opts) return opts.line:sub(opts.col - 1, opts.col - 1) == "{" end)
+          :with_move(cond.none())
+          :with_cr(cond.none())
+          :with_del(cond.none()),
+      }
+    end,
+  },
+
+  {
     "catppuccin",
     optional = true,
     ---@type CatppuccinOptions

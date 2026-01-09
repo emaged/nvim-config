@@ -22,7 +22,7 @@ return {
   { import = "astrocommunity.pack.cmake" },
   { import = "astrocommunity.pack.cpp" },
   { import = "astrocommunity.pack.java" },
-  { import = "astrocommunity.pack.python" },
+  -- { import = "astrocommunity.pack.python" }, -- included in python-ruff
   { import = "astrocommunity.pack.python-ruff" },
   { import = "astrocommunity.pack.html-css" },
   { import = "astrocommunity.pack.prettier" },
