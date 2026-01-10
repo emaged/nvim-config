@@ -49,8 +49,6 @@ return {
         --"copilot-language-server",
 
         -- spellcheck
-        "cspell",
-        "cspell-lsp",
         "codebook",
       },
       -- debounce_hours = 5, -- at least 5 hours between attempts to install/update
