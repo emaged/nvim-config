@@ -56,9 +56,14 @@ return {
   { import = "astrocommunity.utility.noice-nvim" },
 
   -- Testing
-  { import = "astrocommunity.utility.lua-json5" },
   { import = "astrocommunity.test.neotest" },
+  { import = "astrocommunity.code-runner.overseer-nvim" },
+  { import = "astrocommunity.utility.lua-json5" },
   { import = "astrocommunity.diagnostics.trouble-nvim" },
+
+  -- Debug
+  { import = "astrocommunity.debugging.nvim-dap-virtual-text" },
+  { import = "astrocommunity.debugging.nvim-dap-repl-highlights" },
 
   -- -- You can also import/override your own plugins after community plugins
   -- -- { import = "your.plugins.override" },

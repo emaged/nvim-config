@@ -1,5 +1,5 @@
 -- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
---
+
 -- You can also add or configure plugins by creating files in this `plugins/` folder
 -- PLEASE REMOVE THE EXAMPLES YOU HAVE NO INTEREST IN BEFORE ENABLING THIS FILE
 -- Here are some examples:
@@ -10,6 +10,143 @@ return { -- == Examples of Adding Plugins ==
   {
     "max397574/better-escape.nvim",
     enabled = false,
+  },
+
+  { "rafamadriz/friendly-snippets" },
+  {
+    "L3MON4D3/LuaSnip",
+    dependencies = { "rafamadriz/friendly-snippets" },
+    opts = function(_, opts)
+      require("luasnip.loaders.from_vscode").lazy_load()
+      return opts
+    end,
+  },
+
+  {
+    "stevearc/overseer.nvim",
+    dependencies = { "franco-ruggeri/overseer-extra.nvim" },
+    opts = function(_, opts)
+      opts.templates = opts.templates or {}
+      vim.list_extend(opts.templates, { "extra" })
+      return opts
+    end,
+  },
+
+  {
+    "michaelb/sniprun",
+    branch = "master",
+    build = "sh install.sh 1",
+    -- do 'sh install.sh 1' if you want to force compile locally
+    -- (instead of fetching a binary from the github release). Requires Rust >= 1.65
+    keys = {
+      -- Run current line / motion / selection
+      { "<Leader>rr", "<Plug>SnipRun", mode = { "n", "v" }, desc = "Run snippet / selection" },
+      { "<Leader>rf", "<Plug>SnipRunOperator", desc = "Run via operator (motion)" },
+
+      -- Info & status
+      { "<Leader>ri", "<Plug>SnipInfo", desc = "SnipRun info" },
+
+      -- Session management
+      { "<Leader>rz", "<Plug>SnipReset", desc = "Reset SnipRun" },
+      { "<Leader>rc", "<Plug>SnipReplMemoryClean", desc = "Clear SnipRun REPL memory" },
+      { "<Leader>rx", "<Plug>SnipClose", desc = "Close SnipRun windows" },
+
+      -- Live mode (auto-run on edit)
+      -- { "<Leader>rl", "<Plug>SnipLive", desc = "Toggle SnipRun live mode" },
+    },
+
+    config = function()
+      require("sniprun").setup {
+        selected_interpreters = { "Python3_fifo" },
+        repl_enable = { "Python3_fifo" },
+
+        display = { "Terminal" },
+        display_options = {
+          terminal_scrollback = vim.o.scrollback, -- change terminal display scrollback lines
+          terminal_line_number = false, -- whether show line number in terminal window
+          terminal_signcolumn = false, -- whether show signcolumn in terminal window
+          terminal_position = "vertical", --# or "horizontal", to open as horizontal split instead of vertical split
+          -- terminal_width = 45, --# change the terminal display option width (if vertical)
+          -- terminal_height = 20, --# change the terminal display option height (if horizontal)
+        },
+      }
+    end,
+  },
+
+  {
+    "andrewferrier/debugprint.nvim",
+    dependencies = {
+      -- "nvim-mini/mini.hipatterns", -- Optional: Needed for line highlighting ('fine-grained' hipatterns plugin)
+      "folke/snacks.nvim", -- Optional: If you want to use the `:Debugprint search` command with snacks.nvim
+    },
+    lazy = false,
+    version = "*",
+    opts = {
+      keymaps = {
+        normal = {
+          -- creation
+          plain_below = "gpp",
+          plain_above = "gpP",
+          variable_below = "gpv",
+          variable_above = "gpV",
+          surround_plain = "gpsp",
+          surround_variable = "gpsv",
+          textobj_below = "gpo",
+          textobj_above = "gpO",
+          textobj_surround = "gpso",
+
+          -- management (gpx…)
+          toggle_comment_debug_prints = "gpxc",
+          delete_debug_prints = "gpxd",
+          reset_counter = "gpxr", -- not in docs but supported
+          search = "gpxs",
+          qflist = "gpxq",
+        },
+        insert = {
+          plain = "<C-G>p",
+          variable = "<C-G>v",
+        },
+        visual = {
+          variable_below = "gpv",
+          variable_above = "gpV",
+        },
+      },
+    },
+    keys = {
+      { "gpxr", "<cmd>Debugprint resetcounter<CR>", desc = "Reset debug print counter" },
+      { "gpxs", "<cmd>Debugprint search<CR>", desc = "Search debug prints (project)" },
+      { "gpxq", "<cmd>Debugprint qflist<CR>", desc = "Debug prints → quickfix" },
+    },
+  },
+
+  {
+    "Weissle/persistent-breakpoints.nvim",
+    event = "BufReadPost",
+    opts = function(_, opts)
+      return require("astrocore").extend_tbl(opts, {
+        load_breakpoints_event = { "BufReadPost" },
+      })
+    end,
+    keys = {
+      {
+        "<Leader>db",
+        function() require("persistent-breakpoints.api").toggle_breakpoint() end,
+        desc = "Toggle Breakpoint",
+        silent = true,
+      },
+      {
+        "<Leader>dB",
+        function() require("persistent-breakpoints.api").clear_all_breakpoints() end,
+        desc = "Clear Breakpoints",
+        silent = true,
+      },
+      {
+        "<Leader>dC",
+        function() require("persistent-breakpoints.api").set_conditional_breakpoint() end,
+        desc = "Conditional Breakpoint",
+        silent = true,
+      },
+    },
   },
 
   {
@@ -83,17 +220,6 @@ return { -- == Examples of Adding Plugins ==
       pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
     },
   },
-  -- {
-  --   "echasnovski/mini.comment",
-  --   event = "VeryLazy",
-  --   opts = {
-  --     options = {
-  --       custom_commentstring = function()
-  --         return require("ts_context_commentstring.internal").calculate_commentstring() or vim.bo.commentstring
-  --       end,
-  --     },
-  --   },
-  -- },
 
   {
     "MeanderingProgrammer/render-markdown.nvim",

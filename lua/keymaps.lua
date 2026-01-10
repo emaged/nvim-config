@@ -1,10 +1,28 @@
 -- Keymaps (run immediately)
 -- =========================
+
+-- luansip
+-- local ls = require "luasnip"
+-- vim.keymap.set({ "i" }, "<C-K>", function() ls.expand() end, { silent = true })
+-- vim.keymap.set({ "i", "s" }, "<C-L>", function() ls.jump(1) end, { silent = true })
+-- vim.keymap.set({ "i", "s" }, "<C-J>", function() ls.jump(-1) end, { silent = true })
+--
+-- vim.keymap.set({ "i", "s" }, "<C-E>", function()
+--   if ls.choice_active() then ls.change_choice(1) end
+-- end, { silent = true })
+
+--reload package
+vim.keymap.set("n", "<Leader><Leader>p", ":Lazy reload ", { desc = "reload package" })
+-- source current file
+vim.keymap.set("n", "<Leader><Leader>s", "<cmd>source %<cr>", { desc = "source current file" })
+-- AstroReload
+vim.keymap.set("n", "<Leader><Leader>R", "<cmd>AstroReload<cr>", { desc = "AstroReload !Experimental" })
+
 -- easy arrow keymap
 vim.keymap.set("i", "<C-l>", "<space>=><space>")
 
 -- Search and replace word under the cursor
-vim.keymap.set("n", "<Leader>re", [[:%s/\<<C-r><C-w>\>//g<Left><Left>]])
+vim.keymap.set("n", "gre", [[:%s/\<<C-r><C-w>\>//g<Left><Left>]], { desc = "native search and replace" })
 
 -- open current file with alt + b
 vim.keymap.set("n", "<A-b>", ":!xdg-open % &<CR><CR>", {
@@ -32,36 +50,43 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
+vim.keymap.set({ "v", "n" }, "<localleader>,", ",", { desc = "backwards search" })
+
+-- Delete c without yank
+vim.keymap.set({ "v", "n" }, "<localleader>c", '"_c', {
+  silent = true,
+})
+vim.keymap.set({ "v", "n" }, "<localleader>C", '"_C', {
+  silent = true,
+})
+
 -- Delete s without yank in normal Mode
-vim.keymap.set("n", "<Leader>s", '"_s', {
+vim.keymap.set("n", "<localleader>s", '"_s', {
+  silent = true,
+})
+-- Delete s without yank in Visual Mode
+vim.keymap.set("v", "<localleader>s", '"_c', {
+  silent = true,
+})
+-- Delete S without yank
+vim.keymap.set({ "v", "n" }, "<localleader>S", '"_S', {
   silent = true,
 })
 
 -- Delete x without yank in normal Mode
-vim.keymap.set("n", "<Leader>x", '"_x', {
+vim.keymap.set("n", "<localleader>x", '"_x', {
   silent = true,
 })
-
--- Delete s without yank in Visual Mode
-vim.keymap.set("v", "<Leader>s", '"_c', {
-  silent = true,
-})
-
 -- Delete x without yank in Visual Mode
-vim.keymap.set("v", "<Leader>x", '"_d', {
-  silent = true,
-})
-
--- Alternative cut c to black hole
-vim.keymap.set({ "v", "n" }, "<Leader>k", '"_c', {
+vim.keymap.set("v", "<localleader>x", '"_d', {
   silent = true,
 })
 
 -- Alternative delete
-vim.keymap.set({ "v", "n" }, "<Leader>d", '"_d', {
+vim.keymap.set({ "v", "n" }, "<localleader>d", '"_d', {
   silent = true,
 })
-vim.keymap.set({ "v", "n" }, "<Leader>D", '"_D', {
+vim.keymap.set({ "v", "n" }, "<localleader>D", '"_D', {
   silent = true,
 })
 
@@ -72,30 +97,30 @@ vim.keymap.set({ "v", "n" }, "<C-q>", "<C-v>", {
 })
 
 -- Visual mode: copy selection to system clipboard
-vim.keymap.set("i", "<C-v>", "<C-o>p", {
-  silent = true,
-  desc = "regular paste",
-})
-vim.keymap.set("n", "<C-v>", "p", {
-  silent = true,
-  desc = "regular paste",
-})
-vim.keymap.set("v", "<C-v>", "P", {
-  silent = true,
-  desc = "regular paste",
-})
+-- vim.keymap.set("i", "<C-v>", "<C-o>p", {
+--   silent = true,
+--   desc = "regular paste",
+-- })
+-- vim.keymap.set("n", "<C-v>", "p", {
+--   silent = true,
+--   desc = "regular paste",
+-- })
+-- vim.keymap.set("v", "<C-v>", "P", {
+--   silent = true,
+--   desc = "regular paste",
+-- })
 
 -- Visual mode: copy selection to system clipboard
-vim.keymap.set({ "v", "n" }, "<C-c>", "y", {
-  silent = true,
-  desc = "Copy selection to clipboard",
-})
+-- vim.keymap.set({ "v", "n" }, "<C-c>", "y", {
+--   silent = true,
+--   desc = "Copy selection to clipboard",
+-- })
 
 --Regular Regular cut with Ctrl-x
-vim.keymap.set({ "v" }, "<C-x>", "c", {
-  silent = true,
-  desc = "Regular cut with Ctrl-x",
-})
+-- vim.keymap.set({ "v" }, "<C-x>", "c", {
+--   silent = true,
+--   desc = "Regular cut with Ctrl-x",
+-- })
 
 -- Primeagen Keymaps Keymaps
 vim.keymap.set("n", "<C-d>", "<C-d>zz", {

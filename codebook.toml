@@ -35,6 +35,7 @@ words = [
     "htmldjango",
     "keymaps",
     "lefthand",
+    "localleader",
     "loclist",
     "lopen",
     "lspconfig",
