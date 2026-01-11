@@ -8,11 +8,54 @@ return { -- == Examples of Adding Plugins ==
   -- customize dashboard options
   -- You can disable default plugins as follows:
   {
+    "danymat/neogen",
+    dependencies = {
+      { "AstroNvim/astroui", opts = { icons = { Neogen = "󰷉" } } },
+      {
+        "AstroNvim/astrocore",
+        opts = function(_, opts)
+          local maps = opts.mappings
+          local prefix = "<Leader>A"
+          maps.n[prefix] = { desc = require("astroui").get_icon("Neogen", 1, true) .. "Annotation" }
+          maps.n[prefix .. "<CR>"] = { function() require("neogen").generate { type = "any" } end, desc = "Current" }
+          maps.n[prefix .. "c"] = { function() require("neogen").generate { type = "class" } end, desc = "Class" }
+          maps.n[prefix .. "f"] = { function() require("neogen").generate { type = "func" } end, desc = "Function" }
+          maps.n[prefix .. "t"] = { function() require("neogen").generate { type = "type" } end, desc = "Type" }
+          maps.n[prefix .. "F"] = { function() require("neogen").generate { type = "file" } end, desc = "File" }
+        end,
+      },
+    },
+    cmd = "Neogen",
+    opts = {
+      snippet_engine = "luasnip",
+      languages = {
+        javascript = { template = { annotation_convention = "jsdoc" } },
+        javascriptreact = { template = { annotation_convention = "jsdoc" } },
+        lua = { template = { annotation_convention = "ldoc" } },
+        ruby = { template = { annotation_convention = "yard" } },
+        typescript = { template = { annotation_convention = "tsdoc" } },
+        typescriptreact = { template = { annotation_convention = "tsdoc" } },
+      },
+    },
+  },
+
+  {
     "max397574/better-escape.nvim",
     enabled = false,
   },
 
-  { "rafamadriz/friendly-snippets" },
+  -- { "Vimjas/vim-python-pep8-indent" },
+
+  -- {
+  --   "gbprod/yanky.nvim",
+  --   opts = {
+  --     highlight = {
+  --       on_put = false,
+  --       timer = 150,
+  --     },
+  --   },
+  -- },
+
   {
     "L3MON4D3/LuaSnip",
     dependencies = { "rafamadriz/friendly-snippets" },
@@ -42,15 +85,12 @@ return { -- == Examples of Adding Plugins ==
       -- Run current line / motion / selection
       { "<Leader>rr", "<Plug>SnipRun", mode = { "n", "v" }, desc = "Run snippet / selection" },
       { "<Leader>rf", "<Plug>SnipRunOperator", desc = "Run via operator (motion)" },
-
       -- Info & status
       { "<Leader>ri", "<Plug>SnipInfo", desc = "SnipRun info" },
-
       -- Session management
       { "<Leader>rz", "<Plug>SnipReset", desc = "Reset SnipRun" },
       { "<Leader>rc", "<Plug>SnipReplMemoryClean", desc = "Clear SnipRun REPL memory" },
       { "<Leader>rx", "<Plug>SnipClose", desc = "Close SnipRun windows" },
-
       -- Live mode (auto-run on edit)
       -- { "<Leader>rl", "<Plug>SnipLive", desc = "Toggle SnipRun live mode" },
     },
@@ -59,7 +99,6 @@ return { -- == Examples of Adding Plugins ==
       require("sniprun").setup {
         selected_interpreters = { "Python3_fifo" },
         repl_enable = { "Python3_fifo" },
-
         display = { "Terminal" },
         display_options = {
           terminal_scrollback = vim.o.scrollback, -- change terminal display scrollback lines
@@ -85,67 +124,37 @@ return { -- == Examples of Adding Plugins ==
       keymaps = {
         normal = {
           -- creation
-          plain_below = "gpp",
-          plain_above = "gpP",
-          variable_below = "gpv",
-          variable_above = "gpV",
-          surround_plain = "gpsp",
-          surround_variable = "gpsv",
-          textobj_below = "gpo",
+          plain_below = "g?p",
+          plain_above = "g?P",
+          variable_below = "g?v",
+          variable_above = "g?V",
+          surround_plain = "g?sp",
+          surround_variable = "g?sv",
+          textobj_below = "g?o",
           textobj_above = "gpO",
-          textobj_surround = "gpso",
-
+          textobj_surround = "g?so",
           -- management (gpx…)
-          toggle_comment_debug_prints = "gpxc",
-          delete_debug_prints = "gpxd",
-          reset_counter = "gpxr", -- not in docs but supported
-          search = "gpxs",
-          qflist = "gpxq",
+          toggle_comment_debug_prints = "g?xc",
+          delete_debug_prints = "g?xd",
+          reset_counter = "g?xr", -- not in docs but supported
+          search = "g?xs",
+          qflist = "g?xq",
         },
+
         insert = {
           plain = "<C-G>p",
           variable = "<C-G>v",
         },
         visual = {
-          variable_below = "gpv",
-          variable_above = "gpV",
+          variable_below = "g?v",
+          variable_above = "g?V",
         },
       },
     },
     keys = {
-      { "gpxr", "<cmd>Debugprint resetcounter<CR>", desc = "Reset debug print counter" },
-      { "gpxs", "<cmd>Debugprint search<CR>", desc = "Search debug prints (project)" },
-      { "gpxq", "<cmd>Debugprint qflist<CR>", desc = "Debug prints → quickfix" },
-    },
-  },
-
-  {
-    "Weissle/persistent-breakpoints.nvim",
-    event = "BufReadPost",
-    opts = function(_, opts)
-      return require("astrocore").extend_tbl(opts, {
-        load_breakpoints_event = { "BufReadPost" },
-      })
-    end,
-    keys = {
-      {
-        "<Leader>db",
-        function() require("persistent-breakpoints.api").toggle_breakpoint() end,
-        desc = "Toggle Breakpoint",
-        silent = true,
-      },
-      {
-        "<Leader>dB",
-        function() require("persistent-breakpoints.api").clear_all_breakpoints() end,
-        desc = "Clear Breakpoints",
-        silent = true,
-      },
-      {
-        "<Leader>dC",
-        function() require("persistent-breakpoints.api").set_conditional_breakpoint() end,
-        desc = "Conditional Breakpoint",
-        silent = true,
-      },
+      { "g?xr", "<cmd>Debugprint resetcounter<CR>", desc = "Reset debug print counter" },
+      { "g?xs", "<cmd>Debugprint search<CR>", desc = "Search debug prints (project)" },
+      { "g?xq", "<cmd>Debugprint qflist<CR>", desc = "Debug prints → quickfix" },
     },
   },
 
@@ -153,7 +162,6 @@ return { -- == Examples of Adding Plugins ==
     "windwp/nvim-autopairs",
     config = function(plugin, opts)
       require "astronvim.plugins.configs.nvim-autopairs"(plugin, opts)
-
       local npairs = require "nvim-autopairs"
       local Rule = require "nvim-autopairs.rule"
       local cond = require "nvim-autopairs.conds"
@@ -205,23 +213,6 @@ return { -- == Examples of Adding Plugins ==
   },
 
   {
-    "JoosepAlviste/nvim-ts-context-commentstring",
-    enabled = true,
-    lazy = true,
-    opts = {
-      enable_autocmd = false,
-    },
-  },
-  {
-    "numToStr/Comment.nvim",
-    enabled = true, -- <- this is required
-    event = "VeryLazy",
-    opts = {
-      pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
-    },
-  },
-
-  {
     "MeanderingProgrammer/render-markdown.nvim",
     ft = { "markdown" },
     dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-mini/mini.icons" }, -- if you use standalone mini plugins
@@ -237,18 +228,34 @@ return { -- == Examples of Adding Plugins ==
 
   {
     "andymass/vim-matchup",
+    event = "User AstroFile",
     dependencies = {
-      "AstroNvim/astrocore",
-      opts = {
-        options = {
-          g = {
-            matchup_matchparen_offscreen = { method = "popup" },
-            matchup_treesitter_stopline = 500,
-            matchup_treesitter_enabled = true,
+      { "nvim-treesitter/nvim-treesitter", optional = true },
+      {
+        "AstroNvim/astrocore",
+        opts = {
+          options = {
+            g = {
+              matchup_matchparen_nomode = "i",
+              matchup_matchparen_deferred = 1,
+              matchup_matchparen_offscreen = { method = "popup" },
+              matchup_treesitter_stopline = 500,
+              matchup_treesitter_enabled = true,
+            },
           },
         },
       },
     },
+    config = function()
+      -- Disable matchup highlighting only for Django / Jinja templates
+      vim.api.nvim_create_autocmd("FileType", {
+        pattern = { "htmldjango", "django", "jinja", "jinja2" },
+        callback = function()
+          vim.b.matchup_matchparen_enabled = 0
+          -- vim.b.matchup_matchparen_fallback = 0
+        end,
+      })
+    end,
   },
 
   {

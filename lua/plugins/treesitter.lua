@@ -78,7 +78,7 @@ return {
     ------------------------------------------------------------
     indent = {
       enable = true,
-      -- disable = { "python" }, -- optional: Treesitter python indent is imperfect
+      disable = { "python" }, -- optional: Treesitter python indent is imperfect
     },
 
     ------------------------------------------------------------

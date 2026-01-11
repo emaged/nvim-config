@@ -23,4 +23,13 @@ vim.api.nvim_create_user_command("WatchRun", function()
   end)
 end, {})
 
+-- -- Disable match-up's matchparen highlighting for Django templates
+-- vim.api.nvim_create_autocmd("FileType", {
+--   pattern = { "htmldjango", "django" },
+--   callback = function()
+--     vim.b.matchup_matchparen_enabled = 0
+--     vim.b.matchup_matchparen_fallback = 0
+--   end,
+-- })
+
 return {}

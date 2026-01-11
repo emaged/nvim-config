@@ -68,30 +68,4 @@ return {
       },
     }, keys)
   end,
-
-  -- replace "specs" with proper AstroNvim-style overrides
-  dependencies = {
-    -- Add the which-key group
-    {
-      "AstroNvim/astrocore",
-      opts = function(_, opts)
-        opts.mappings = opts.mappings or {}
-        opts.mappings.n = opts.mappings.n or {}
-
-        opts.mappings.n[prefix] = {
-          desc = require("astroui").get_icon("sidekick", 1, true) .. "Sidekick",
-        }
-      end,
-    },
-
-    -- add icon
-    {
-      "AstroNvim/astroui",
-      opts = {
-        icons = {
-          sidekick = "󱙺",
-        },
-      },
-    },
-  },
 }
