@@ -12,11 +12,11 @@
 -- end, { silent = true })
 
 --reload package
-vim.keymap.set("n", "<Leader><Leader>p", ":Lazy reload ", { desc = "reload package" })
+vim.keymap.set("n", "<Leader>pl", ":Lazy reload ", { desc = "reload package" })
+-- AstroReload
+vim.keymap.set("n", "<Leader>pA", "<cmd>AstroReload<cr>", { desc = "AstroReload, experimental!" })
 -- source current file
 vim.keymap.set("n", "<Leader><Leader>s", "<cmd>source %<cr>", { desc = "source current file" })
--- AstroReload
-vim.keymap.set("n", "<Leader><Leader>R", "<cmd>AstroReload<cr>", { desc = "AstroReload !Experimental" })
 
 -- easy arrow keymap
 vim.keymap.set("i", "<C-l>", "<space>=><space>")

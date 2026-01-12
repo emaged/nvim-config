@@ -83,6 +83,11 @@ return {
         -- setting a mapping to false will disable it
         -- ["<C-S>"] = false,
 
+        -- snacks picker additional mappings
+        ["<leader>fe"] = { function() require("snacks").picker.explorer() end, desc = "File Explorer" },
+        ["<leader>f:"] = { function() require("snacks").picker.command_history() end, desc = "Command History" },
+        ["<leader>pp"] = { function() require("snacks").picker.lazy() end, desc = "Search for Plugin Spec" },
+
         -- smart-splits swap buffers
         ["<leader><leader>h"] = { function() require("smart-splits").swap_buf_left() end, desc = "Swap left split" },
         ["<leader><leader>j"] = { function() require("smart-splits").swap_buf_down() end, desc = "Swap below split" },

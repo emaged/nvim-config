@@ -3,6 +3,9 @@
 -- AstroCommunity: import any community modules here
 -- We import this file in `lazy_setup.lua` before the `plugins/` folder.
 -- This guarantees that the specs are processed before any user plugins.
+-- TODO:
+--
+-- -- WARN
 
 ---@type LazySpec
 return {
@@ -22,7 +25,6 @@ return {
   { import = "astrocommunity.pack.cmake" },
   { import = "astrocommunity.pack.cpp" },
   { import = "astrocommunity.pack.java" },
-  -- { import = "astrocommunity.pack.python" }, -- included in python-ruff
   { import = "astrocommunity.pack.python-ruff" },
   { import = "astrocommunity.pack.html-css" },
   { import = "astrocommunity.pack.prettier" },
@@ -37,10 +39,6 @@ return {
 
   -- Movement
   { import = "astrocommunity.motion.mini-surround" },
-  -- { import = "astrocommunity.motion.vim-matchup" }, -- in user plugin file
-
-  -- -- splits & windows
-  -- { import = "astrocommunity.split-and-window.edgy-nvim" },
 
   -- Tools
   { import = "astrocommunity.pack.full-dadbod" },
@@ -67,7 +65,7 @@ return {
   -- Enable when debugging
   -- { import = "astrocommunity.debugging.nvim-dap-virtual-text" },
   -- { import = "astrocommunity.debugging.nvim-dap-repl-highlights" },
-  -- { import = "astrocommunity.debugging.persistent-breakpoint-nvim" },
+  -- { import = "astrocommunity.debugging.persistent-breakpoint-nvim" }, -- slow on startup
 
   -- -- You can also import/override your own plugins after community plugins
   -- -- { import = "your.plugins.override" },
