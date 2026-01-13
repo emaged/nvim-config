@@ -35,7 +35,7 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
-vim.keymap.set({ "n", "x" }, "<leader>sl", function()
+vim.keymap.set({ "n", "x" }, "<Leader>sl", function()
   local search = vim.fn.getreg "/"
   -- surround with \b if "word" search (such as when pressing `*`)
   if search and vim.startswith(search, "\\<") and vim.endswith(search, "\\>") then

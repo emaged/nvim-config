@@ -23,6 +23,8 @@ vim.keymap.set("n", "sxx", require("substitute.exchange").line, { noremap = true
 vim.keymap.set("x", "X", require("substitute.exchange").visual, { noremap = true })
 vim.keymap.set("n", "sxc", require("substitute.exchange").cancel, { noremap = true })
 
+vim.keymap.set("n", "<Leader>ux", ":YankyClearHistory<cr>", { desc = "Clear Yanky history" })
+
 -- luansip
 -- local ls = require "luasnip"
 -- vim.keymap.set({ "i" }, "<C-K>", function() ls.expand() end, { silent = true })
@@ -119,24 +121,24 @@ vim.keymap.set({ "v", "n" }, "<C-q>", "<C-v>", {
 })
 
 -- Visual mode: copy selection to system clipboard
--- vim.keymap.set("i", "<C-v>", "<C-o>p", {
---   silent = true,
---   desc = "regular paste",
--- })
--- vim.keymap.set("n", "<C-v>", "p", {
---   silent = true,
---   desc = "regular paste",
--- })
--- vim.keymap.set("v", "<C-v>", "P", {
---   silent = true,
---   desc = "regular paste",
--- })
+vim.keymap.set("i", "<C-v>", "<C-o>p", {
+  silent = true,
+  desc = "regular paste",
+})
+vim.keymap.set("n", "<C-v>", "p", {
+  silent = true,
+  desc = "regular paste",
+})
+vim.keymap.set("v", "<C-v>", "P", {
+  silent = true,
+  desc = "regular paste",
+})
 
 -- Visual mode: copy selection to system clipboard
--- vim.keymap.set({ "v", "n" }, "<C-c>", "y", {
---   silent = true,
---   desc = "Copy selection to clipboard",
--- })
+vim.keymap.set({ "v", "n" }, "<C-c>", "y", {
+  silent = true,
+  desc = "Copy selection to clipboard",
+})
 
 --Regular Regular cut with Ctrl-x
 -- vim.keymap.set({ "v" }, "<C-x>", "c", {

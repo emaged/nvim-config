@@ -7,13 +7,19 @@
 return { -- == Examples of Adding Plugins ==
   -- customize dashboard options
   -- You can disable default plugins as follows:
+  --
+  {
+    "chentoast/marks.nvim",
+    event = "VeryLazy",
+    opts = {},
+  },
 
   {
     "gbprod/substitute.nvim",
     cond = true,
     opts = function()
       return {
-        -- on_substitute = require("yanky.integration").substitute(),
+        on_substitute = require("yanky.integration").substitute(),
         highlight_substituted_text = {
           enabled = true,
           timer = 200,
@@ -80,9 +86,13 @@ return { -- == Examples of Adding Plugins ==
       opts = astrocore.extend_tbl(opts, {
 
         highlight = { timer = 200 },
-        ring = { storage = (is_windows or is_vscode) and "shada" or "sqlite" },
-        system_clipboard = { -- TODO: impement better fix
-          sync_with_ring = false,
+        ring = {
+          storage = (is_windows or is_vscode) and "shada" or "sqlite",
+          -- ignore_registers = { "*", "_" }, -- probably not needed
+        },
+        system_clipboard = {
+          clipboard_register = "+", -- default is primary selection
+          sync_with_ring = true,
         },
       })
       return opts

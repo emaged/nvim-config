@@ -69,12 +69,12 @@ return {
       set({ "n", "x" }, "ga", mc.addCursorOperator, { desc = "add cursor to visual selection, or gaip" })
 
       -- resture cursors if you accidentally clear them
-      set("n", "<leader>,r", mc.restoreCursors, { desc = "restore cursors" })
+      set("n", "<Leader>,r", mc.restoreCursors, { desc = "restore cursors" })
 
-      -- Pressing `<leader>miwap` will create a cursor in every match of the
+      -- Pressing `<Leader>miwap` will create a cursor in every match of the
       -- string captured by `iw` inside range `ap`.
       -- This action is highly customizable, see `:h multicursor-operator`.
-      set({ "n", "x" }, "<leader>,m", mc.operator, { desc = "create a cursor in every match of the string" })
+      set({ "n", "x" }, "<Leader>,m", mc.operator, { desc = "create a cursor in every match of the string" })
 
       -- Mappings defined in a keymap layer only apply when there are
       -- multiple cursors. This lets you have overlapping mappings.

@@ -96,8 +96,8 @@ return {
         -- smart-splits swap buffers
         ["<Leader><Leader>h"] = { function() require("smart-splits").swap_buf_left() end, desc = "Swap left split" },
         ["<Leader><Leader>j"] = { function() require("smart-splits").swap_buf_down() end, desc = "Swap below split" },
-        ["<leader><Leader>k"] = { function() require("smart-splits").swap_buf_up() end, desc = "Swap above split" },
-        ["<leader><Leader>l"] = { function() require("smart-splits").swap_buf_right() end, desc = "Swap right split" },
+        ["<Leader><Leader>k"] = { function() require("smart-splits").swap_buf_up() end, desc = "Swap above split" },
+        ["<Leader><Leader>l"] = { function() require("smart-splits").swap_buf_right() end, desc = "Swap right split" },
 
         -- Noice group for <Leader>N
         ["<Leader>N"] = { desc = " Noice" },
