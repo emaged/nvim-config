@@ -1,6 +1,28 @@
 -- Keymaps (run immediately)
 -- =========================
 
+-- Lua
+-- substitute.nvim
+vim.keymap.set("n", "s", require("substitute").operator, { noremap = true })
+vim.keymap.set("n", "ss", require("substitute").line, { noremap = true })
+vim.keymap.set("n", "S", require("substitute").eol, { noremap = true })
+vim.keymap.set("x", "s", require("substitute").visual, { noremap = true })
+
+vim.keymap.set("n", "<localleader>s", require("substitute.range").operator, { noremap = true })
+vim.keymap.set("x", "<localleader>s", require("substitute.range").visual, { noremap = true })
+vim.keymap.set("n", "<localleader>ss", require("substitute.range").word, { noremap = true, desc = "Substitute word" })
+vim.keymap.set(
+  { "v", "n" },
+  "<localleader>sb",
+  function() require("substitute.range").operator { range = "%" } end,
+  { desc = "Substitute in whole buffer" }
+)
+
+vim.keymap.set("n", "sx", require("substitute.exchange").operator, { noremap = true })
+vim.keymap.set("n", "sxx", require("substitute.exchange").line, { noremap = true })
+vim.keymap.set("x", "X", require("substitute.exchange").visual, { noremap = true })
+vim.keymap.set("n", "sxc", require("substitute.exchange").cancel, { noremap = true })
+
 -- luansip
 -- local ls = require "luasnip"
 -- vim.keymap.set({ "i" }, "<C-K>", function() ls.expand() end, { silent = true })
@@ -61,17 +83,17 @@ vim.keymap.set({ "v", "n" }, "<localleader>C", '"_C', {
 })
 
 -- Delete s without yank in normal Mode
-vim.keymap.set("n", "<localleader>s", '"_s', {
-  silent = true,
-})
--- Delete s without yank in Visual Mode
-vim.keymap.set("v", "<localleader>s", '"_c', {
-  silent = true,
-})
--- Delete S without yank
-vim.keymap.set({ "v", "n" }, "<localleader>S", '"_S', {
-  silent = true,
-})
+-- vim.keymap.set("n", "<localleader>s", '"_s', {
+--   silent = true,
+-- })
+-- -- Delete s without yank in Visual Mode
+-- vim.keymap.set("v", "<localleader>s", '"_c', {
+--   silent = true,
+-- })
+-- -- Delete S without yank
+-- vim.keymap.set({ "v", "n" }, "<localleader>S", '"_S', {
+--   silent = true,
+-- })
 
 -- Delete x without yank in normal Mode
 vim.keymap.set("n", "<localleader>x", '"_x', {

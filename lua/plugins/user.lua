@@ -7,6 +7,29 @@
 return { -- == Examples of Adding Plugins ==
   -- customize dashboard options
   -- You can disable default plugins as follows:
+
+  {
+    "gbprod/substitute.nvim",
+    cond = true,
+    opts = function()
+      return {
+        -- on_substitute = require("yanky.integration").substitute(),
+        highlight_substituted_text = {
+          enabled = true,
+          timer = 200,
+        },
+      }
+    end,
+    config = function(_, opts)
+      require("substitute").setup(opts)
+      -- cancel pending range highlights on <Esc>
+      vim.keymap.set("n", "<Esc>", function()
+        pcall(require("substitute.range").clear_match)
+        return "<Esc>"
+      end, { expr = true, silent = true })
+    end,
+  },
+
   {
     "danymat/neogen",
     dependencies = {
@@ -46,15 +69,25 @@ return { -- == Examples of Adding Plugins ==
 
   -- { "Vimjas/vim-python-pep8-indent" },
 
-  -- {
-  --   "gbprod/yanky.nvim",
-  --   opts = {
-  --     highlight = {
-  --       on_put = false,
-  --       timer = 150,
-  --     },
-  --   },
-  -- },
+  {
+    "gbprod/yanky.nvim",
+    opts = function(_, opts)
+      local astrocore = require "astrocore"
+
+      local is_windows = vim.fn.has "win32" == 1
+      local is_vscode = vim.g.vscode ~= nil
+
+      opts = astrocore.extend_tbl(opts, {
+
+        highlight = { timer = 200 },
+        ring = { storage = (is_windows or is_vscode) and "shada" or "sqlite" },
+        system_clipboard = { -- TODO: impement better fix
+          sync_with_ring = false,
+        },
+      })
+      return opts
+    end,
+  },
 
   {
     "L3MON4D3/LuaSnip",

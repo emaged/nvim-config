@@ -84,23 +84,42 @@ return {
         -- ["<C-S>"] = false,
 
         -- snacks picker additional mappings
-        ["<leader>fe"] = { function() require("snacks").picker.explorer() end, desc = "File Explorer" },
-        ["<leader>f:"] = { function() require("snacks").picker.command_history() end, desc = "Command History" },
-        ["<leader>pp"] = { function() require("snacks").picker.lazy() end, desc = "Search for Plugin Spec" },
+        ["<Leader>fe"] = { function() require("snacks").picker.explorer() end, desc = "File Explorer" },
+        ["<Leader>f:"] = { function() require("snacks").picker.command_history() end, desc = "Command History" },
+        ["<Leader>pp"] = { function() require("snacks").picker.lazy() end, desc = "Search for Plugin Spec" },
+
+        -- aerial opener
+        ["<Leader>fS"] = { function() require("aerial").open() end, desc = "Open Aerial" },
+
+        -- grug search within added
 
         -- smart-splits swap buffers
-        ["<leader><leader>h"] = { function() require("smart-splits").swap_buf_left() end, desc = "Swap left split" },
-        ["<leader><leader>j"] = { function() require("smart-splits").swap_buf_down() end, desc = "Swap below split" },
-        ["<leader><leader>k"] = { function() require("smart-splits").swap_buf_up() end, desc = "Swap above split" },
-        ["<leader><leader>l"] = { function() require("smart-splits").swap_buf_right() end, desc = "Swap right split" },
+        ["<Leader><Leader>h"] = { function() require("smart-splits").swap_buf_left() end, desc = "Swap left split" },
+        ["<Leader><Leader>j"] = { function() require("smart-splits").swap_buf_down() end, desc = "Swap below split" },
+        ["<leader><Leader>k"] = { function() require("smart-splits").swap_buf_up() end, desc = "Swap above split" },
+        ["<leader><Leader>l"] = { function() require("smart-splits").swap_buf_right() end, desc = "Swap right split" },
 
         -- Noice group for <Leader>N
         ["<Leader>N"] = { desc = " Noice" },
         -- snipRun group
-        ["<leader>r"] = { desc = "󰜎 Run (SnipRun)" },
+        ["<Leader>r"] = { desc = "󰜎 Run (SnipRun)" },
         -- Multicursor group
-        ["<leader>,"] = { desc = "󰗧 Multicursor" },
-        ["<leader>O"] = { desc = "󱙺 Sidekick" },
+        ["<Leader>,"] = { desc = "󰗧 Multicursor" },
+        ["<Leader>O"] = { desc = "󱙺 Sidekick" },
+      },
+      x = {
+        -- groups
+        ["<Leader>r"] = { desc = "󰜎 Run (SnipRun)" },
+        ["<Leader>,"] = { desc = "󰗧 Multicursor" },
+        ["<Leader>O"] = { desc = "󱙺 Sidekick" },
+
+        -- grug-far keybinds
+        ["<Leader>s"] = { desc = "󰛔" },
+        ["<Leader>sr"] = { function() require("grug-far").open() end, desc = "Replace selection" },
+        ["<Leader>si"] = {
+          function() require("grug-far").open { visualSelectionUsage = "operate-within-range" } end,
+          desc = "Search inside selection",
+        },
       },
     },
   },

@@ -6,7 +6,6 @@ return {
       "<Esc>",
       function()
         -- run your actions
-        vim.cmd "nohlsearch"
         vim.cmd "NoiceDismiss"
         -- return <Esc> so Flash sees it
         return "<Esc>"
