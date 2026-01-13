@@ -3,7 +3,6 @@ return {
     "nvim-neotest/neotest",
     dependencies = {
       "nvim-treesitter/nvim-treesitter",
-      "nvim-neotest/neotest-python",
     },
     opts = function(_, opts)
       -- for new adapters not in astrocommunity
@@ -27,6 +26,7 @@ return {
   -- override astrocommunity settings like this
   {
     "nvim-neotest/neotest-python",
+    ft = "python",
     opts = {
       dap = { justMyCode = false },
       args = { "--log-level", "DEBUG" },

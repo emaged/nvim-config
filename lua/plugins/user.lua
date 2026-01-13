@@ -7,7 +7,20 @@
 return { -- == Examples of Adding Plugins ==
   -- customize dashboard options
   -- You can disable default plugins as follows:
-  --
+  {
+    "max397574/better-escape.nvim",
+    enabled = false,
+  },
+
+  {
+    "nvimtools/none-ls.nvim",
+    enabled = false,
+  },
+  {
+    "jay-babu/mason-null-ls.nvim",
+    enabled = false,
+  },
+
   {
     "chentoast/marks.nvim",
     event = "VeryLazy",
@@ -33,6 +46,32 @@ return { -- == Examples of Adding Plugins ==
         pcall(require("substitute.range").clear_match)
         return "<Esc>"
       end, { expr = true, silent = true })
+
+      -- substitute keymaps
+      vim.keymap.set("n", "s", require("substitute").operator, { noremap = true })
+      vim.keymap.set("n", "ss", require("substitute").line, { noremap = true })
+      vim.keymap.set("n", "S", require("substitute").eol, { noremap = true })
+      vim.keymap.set("x", "s", require("substitute").visual, { noremap = true })
+
+      vim.keymap.set("n", "<localleader>s", require("substitute.range").operator, { noremap = true })
+      vim.keymap.set("x", "<localleader>s", require("substitute.range").visual, { noremap = true })
+      vim.keymap.set(
+        "n",
+        "<localleader>ss",
+        require("substitute.range").word,
+        { noremap = true, desc = "Substitute word" }
+      )
+      vim.keymap.set(
+        { "v", "n" },
+        "<localleader>sb",
+        function() require("substitute.range").operator { range = "%" } end,
+        { desc = "Substitute in whole buffer" }
+      )
+
+      vim.keymap.set("n", "sx", require("substitute.exchange").operator, { noremap = true })
+      vim.keymap.set("n", "sxx", require("substitute.exchange").line, { noremap = true })
+      vim.keymap.set("x", "X", require("substitute.exchange").visual, { noremap = true })
+      vim.keymap.set("n", "sxc", require("substitute.exchange").cancel, { noremap = true })
     end,
   },
 
@@ -66,11 +105,6 @@ return { -- == Examples of Adding Plugins ==
         typescriptreact = { template = { annotation_convention = "tsdoc" } },
       },
     },
-  },
-
-  {
-    "max397574/better-escape.nvim",
-    enabled = false,
   },
 
   -- { "Vimjas/vim-python-pep8-indent" },
@@ -266,6 +300,7 @@ return { -- == Examples of Adding Plugins ==
 
   {
     "olrtg/nvim-emmet",
+    ft = { "html", "css", "scss", "sass", "javascript", "htmldjango" },
     config = function() vim.keymap.set({ "n", "v" }, "<A-S-w>", require("nvim-emmet").wrap_with_abbreviation) end,
   },
 

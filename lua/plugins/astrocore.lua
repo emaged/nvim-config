@@ -89,7 +89,7 @@ return {
         ["<Leader>pp"] = { function() require("snacks").picker.lazy() end, desc = "Search for Plugin Spec" },
 
         -- aerial opener
-        ["<Leader>fS"] = { function() require("aerial").open() end, desc = "Open Aerial" },
+        -- ["<Leader>fS"] = { function() require("aerial").open() end, desc = "Open Aerial" },
 
         -- grug search within added
 

@@ -1,36 +1,16 @@
 -- Keymaps (run immediately)
 -- =========================
 
--- Lua
--- substitute.nvim
-vim.keymap.set("n", "s", require("substitute").operator, { noremap = true })
-vim.keymap.set("n", "ss", require("substitute").line, { noremap = true })
-vim.keymap.set("n", "S", require("substitute").eol, { noremap = true })
-vim.keymap.set("x", "s", require("substitute").visual, { noremap = true })
-
-vim.keymap.set("n", "<localleader>s", require("substitute.range").operator, { noremap = true })
-vim.keymap.set("x", "<localleader>s", require("substitute.range").visual, { noremap = true })
-vim.keymap.set("n", "<localleader>ss", require("substitute.range").word, { noremap = true, desc = "Substitute word" })
-vim.keymap.set(
-  { "v", "n" },
-  "<localleader>sb",
-  function() require("substitute.range").operator { range = "%" } end,
-  { desc = "Substitute in whole buffer" }
-)
-
-vim.keymap.set("n", "sx", require("substitute.exchange").operator, { noremap = true })
-vim.keymap.set("n", "sxx", require("substitute.exchange").line, { noremap = true })
-vim.keymap.set("x", "X", require("substitute.exchange").visual, { noremap = true })
-vim.keymap.set("n", "sxc", require("substitute.exchange").cancel, { noremap = true })
-
+-- yanky clear history
 vim.keymap.set("n", "<Leader>ux", ":YankyClearHistory<cr>", { desc = "Clear Yanky history" })
+vim.keymap.set("n", "y,", "<Plug>(YankyPreviousEntry)")
+vim.keymap.set("n", "y.", "<Plug>(YankyNextEntry)")
 
 -- luansip
 -- local ls = require "luasnip"
 -- vim.keymap.set({ "i" }, "<C-K>", function() ls.expand() end, { silent = true })
 -- vim.keymap.set({ "i", "s" }, "<C-L>", function() ls.jump(1) end, { silent = true })
 -- vim.keymap.set({ "i", "s" }, "<C-J>", function() ls.jump(-1) end, { silent = true })
---
 -- vim.keymap.set({ "i", "s" }, "<C-E>", function()
 --   if ls.choice_active() then ls.change_choice(1) end
 -- end, { silent = true })
