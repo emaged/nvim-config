@@ -40,6 +40,9 @@ return {
         "selene",
         "stylelint",
         "sql-formatter",
+        "sqlfluff",
+        "sqlls",
+        "hadolint",
 
         -- install debuggers
         "debugpy",
@@ -51,7 +54,7 @@ return {
         -- spellcheck
         "codebook",
       },
-      -- debounce_hours = 5, -- at least 5 hours between attempts to install/update
+      debounce_hours = 5, -- at least 5 hours between attempts to install/update
     },
   },
 }

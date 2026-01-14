@@ -1,3 +1,56 @@
+-- some recommended exclusions. you can use `:lua print(vim.bo.filetype)` to
+-- get the filetype string of the current buffer
+local excluded_filetypes = {
+  -- this one is especially useful if you use neovim as a commit message editor
+  "gitcommit",
+  -- most of these are usually set to non-modifiable, which prevents autosaving
+  -- by default, but it doesn't hurt to be extra safe.
+  "NvimTree",
+  "Outline",
+  "TelescopePrompt",
+  "alpha",
+  "dashboard",
+  "lazygit",
+  "neo-tree",
+  "oil",
+  "prompt",
+  "toggleterm",
+}
+
+local excluded_filenames = {
+  "do-not-autosave-me.lua",
+}
+
+local roots = {
+  vim.fs.normalize(vim.fn.expand "~/projects"),
+  vim.fs.normalize(vim.fn.expand "~/Dropbox/projects"),
+}
+
+local function save_condition(buf)
+  buf = buf or vim.api.nvim_get_current_buf()
+
+  -- 1. filetype / filename / special buffers
+  if
+    vim.tbl_contains(excluded_filetypes, vim.bo[buf].filetype)
+    or vim.tbl_contains(excluded_filenames, vim.fn.fnamemodify(vim.api.nvim_buf_get_name(buf), ":t"))
+  then
+    return false
+  end
+
+  if vim.bo[buf].buftype ~= "" then return false end
+
+  -- 2. file path
+  local filepath = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(buf), ":p")
+  if filepath == "" then return false end
+
+  -- 3. inside allowed roots
+  for _, root in ipairs(roots) do
+    if vim.fs.relpath(root, filepath) then return true end
+  end
+
+  return false
+end
+
 return {
   "okuuva/auto-save.nvim",
   event = { "User AstroFile", "InsertEnter" },
@@ -46,7 +99,14 @@ return {
       },
     },
   },
-  -- ADD THIS BLOCK ↓↓↓
+
+  keys = {
+    { "<Leader>W", "<cmd>ASToggle<CR>", desc = "Toggle auto-save" },
+  },
+  opts = {
+    condition = save_condition,
+  },
+
   config = function(_, opts)
     -- set up the plugin with its opts
     require("auto-save").setup(opts)
@@ -66,58 +126,4 @@ return {
       callback = function() vim.notify("AutoSave disabled", vim.log.levels.INFO) end,
     })
   end,
-  -- END BLOCK ↑↑↑
-  opts = {
-    condition = function(buf)
-      -- when using fyler enable this:
-      -- if vim.tbl_contains({
-      --   "Fyler",
-      -- }, vim.fn.getbufvar(buf, "&filetype")) then return false end
-
-      -- 1. Set Excludes
-      local excluded_filetypes = {
-        "gitcommit",
-        "NvimTree",
-        "Outline",
-        "TelescopePrompt",
-        "alpha",
-        "dashboard",
-        "lazygit",
-        "neo-tree",
-        "oil",
-        "prompt",
-        "toggleterm",
-      }
-
-      local excluded_filenames = {
-        "do-not-autosave-me.lua",
-      }
-
-      -- 2. GET FILE PATH
-      local filepath = vim.api.nvim_buf_get_name(buf)
-      if filepath == "" then return false end
-
-      -- exclude certain filetypes
-      if vim.tbl_contains(excluded_filetypes, vim.bo[buf].filetype) then return false end
-
-      -- exclude by filename
-      local filename = vim.fn.fnamemodify(filepath, ":t")
-      if vim.tbl_contains(excluded_filenames, filename) then return false end
-
-      -- 3. ONLY AUTOSAVE IN ~/projects
-      local root = vim.fn.expand "~/projects"
-      if filepath:find(root, 1, true) ~= 1 then return false end
-
-      -- 4. ONLY AUTOSAVE WRITABLE FILE BUFFERS
-      if vim.bo[buf].buftype ~= "" then return false end
-      -- this is checked by auto-save.nvim
-      -- if not vim.bo[buf].modifiable then return false end
-      if vim.bo[buf].readonly then return false end
-
-      return true
-    end,
-  },
-  keys = {
-    { "<Leader>W", "<cmd>ASToggle<CR>", desc = "Toggle auto-save" },
-  },
 }

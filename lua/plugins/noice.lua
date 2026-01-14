@@ -15,15 +15,6 @@ return {
       silent = true,
       desc = "Clear search + dismiss Noice",
     },
-    -- map leader group
-    -- {
-    --   "<Leader>N",
-    --   mode = "n",
-    --   silent = true,
-    --   desc = " Noice",
-    --   group = true,
-    -- },
-    -- Noice last message
     {
       "<Leader>Nl",
       function() require("noice").cmd "last" end,
@@ -116,6 +107,7 @@ return {
       desc = "Noice LSP scroll (up)",
     },
   },
+
   opts = {
     routes = {
       {

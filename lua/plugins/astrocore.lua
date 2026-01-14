@@ -88,10 +88,8 @@ return {
         ["<Leader>f:"] = { function() require("snacks").picker.command_history() end, desc = "Command History" },
         ["<Leader>pp"] = { function() require("snacks").picker.lazy() end, desc = "Search for Plugin Spec" },
 
-        -- aerial opener
-        -- ["<Leader>fS"] = { function() require("aerial").open() end, desc = "Open Aerial" },
-
-        -- grug search within added
+        -- aerial symbol opener
+        ["<Leader>fS"] = { function() require("aerial").open() end, desc = "Open Aerial" },
 
         -- smart-splits swap buffers
         ["<Leader><Leader>h"] = { function() require("smart-splits").swap_buf_left() end, desc = "Swap left split" },
@@ -103,8 +101,9 @@ return {
         ["<Leader>N"] = { desc = " Noice" },
         -- snipRun group
         ["<Leader>r"] = { desc = "󰜎 Run (SnipRun)" },
-        -- Multicursor group
+        -- multicursor group
         ["<Leader>,"] = { desc = "󰗧 Multicursor" },
+        -- sidekick group
         ["<Leader>O"] = { desc = "󱙺 Sidekick" },
       },
       x = {

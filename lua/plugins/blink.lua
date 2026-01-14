@@ -6,6 +6,7 @@ return {
     lazy = true, -- Automatically loads when required by blink.cmp
     opts = {},
   },
+
   { -- override blink.cmp plugin
     "Saghen/blink.cmp",
     opts = {
@@ -57,6 +58,7 @@ return {
       cmdline = { completion = { ghost_text = { enabled = true } } },
     },
   },
+
   {
     "catppuccin",
     optional = true,
