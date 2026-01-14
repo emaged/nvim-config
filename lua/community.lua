@@ -28,7 +28,7 @@ return {
   { import = "astrocommunity.pack.python-ruff" },
   { import = "astrocommunity.pack.html-css" },
   { import = "astrocommunity.pack.prettier" },
-  { import = "astrocommunity.pack.typescript" },
+  -- { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.pack.sql" },
   { import = "astrocommunity.pack.markdown" },
   { import = "astrocommunity.pack.toml" },

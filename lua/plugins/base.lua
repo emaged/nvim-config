@@ -8,6 +8,32 @@ return {
   {
     "gbprod/substitute.nvim",
     cond = true,
+    keys = {
+      { "s", function() require("substitute").operator() end, mode = "n" },
+      { "ss", function() require("substitute").line() end, mode = "n" },
+      { "S", function() require("substitute").eol() end, mode = "n" },
+      { "s", function() require("substitute").visual() end, mode = "x" },
+
+      { "<localleader>s", function() require("substitute.range").operator() end, mode = "n" },
+      { "<localleader>s", function() require("substitute.range").visual() end, mode = "x" },
+      {
+        "<localleader>ss",
+        function() require("substitute.range").word() end,
+        mode = "n",
+        desc = "Substitute word",
+      },
+      {
+        "<localleader>sb",
+        function() require("substitute.range").operator { range = "%" } end,
+        mode = { "n", "v" },
+        desc = "Substitute in whole buffer",
+      },
+      { "sx", function() require("substitute.exchange").operator() end, mode = "n" },
+      { "sxx", function() require("substitute.exchange").line() end, mode = "n" },
+      { "X", function() require("substitute.exchange").visual() end, mode = "x" },
+      { "sxc", function() require("substitute.exchange").cancel() end, mode = "n" },
+    },
+
     opts = function()
       return {
         on_substitute = require("yanky.integration").substitute(),
@@ -24,32 +50,6 @@ return {
         pcall(require("substitute.range").clear_match)
         return "<Esc>"
       end, { expr = true, silent = true })
-
-      -- substitute keymaps
-      vim.keymap.set("n", "s", require("substitute").operator, { noremap = true })
-      vim.keymap.set("n", "ss", require("substitute").line, { noremap = true })
-      vim.keymap.set("n", "S", require("substitute").eol, { noremap = true })
-      vim.keymap.set("x", "s", require("substitute").visual, { noremap = true })
-
-      vim.keymap.set("n", "<localleader>s", require("substitute.range").operator, { noremap = true })
-      vim.keymap.set("x", "<localleader>s", require("substitute.range").visual, { noremap = true })
-      vim.keymap.set(
-        "n",
-        "<localleader>ss",
-        require("substitute.range").word,
-        { noremap = true, desc = "Substitute word" }
-      )
-      vim.keymap.set(
-        { "v", "n" },
-        "<localleader>sb",
-        function() require("substitute.range").operator { range = "%" } end,
-        { desc = "Substitute in whole buffer" }
-      )
-
-      vim.keymap.set("n", "sx", require("substitute.exchange").operator, { noremap = true })
-      vim.keymap.set("n", "sxx", require("substitute.exchange").line, { noremap = true })
-      vim.keymap.set("x", "X", require("substitute.exchange").visual, { noremap = true })
-      vim.keymap.set("n", "sxc", require("substitute.exchange").cancel, { noremap = true })
     end,
   },
 
@@ -62,7 +62,6 @@ return {
       local is_vscode = vim.g.vscode ~= nil
 
       opts = astrocore.extend_tbl(opts, {
-
         highlight = { timer = 200 },
         ring = {
           storage = (is_windows or is_vscode) and "shada" or "sqlite",
@@ -75,6 +74,18 @@ return {
       })
       return opts
     end,
+  },
+
+  {
+    "AstroNvim/astrocore",
+    opts = {
+      mappings = {
+        n = {
+          ["y,"] = { "<Plug>(YankyPreviousEntry)" },
+          ["y."] = { "<Plug>(YankyNextEntry)" },
+        },
+      },
+    },
   },
 
   {

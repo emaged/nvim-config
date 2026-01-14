@@ -83,6 +83,11 @@ return {
         -- setting a mapping to false will disable it
         -- ["<C-S>"] = false,
 
+        -- astro reload
+        ["<Leader>pA"] = { "<cmd>AstroReload", desc = "AstroReload, experimental!" },
+        --reload package
+        ["<Leader>pl"] = { ":Lazy reload ", desc = "reload package" },
+
         -- snacks picker additional mappings
         ["<Leader>fe"] = { function() require("snacks").picker.explorer() end, desc = "File Explorer" },
         ["<Leader>f:"] = { function() require("snacks").picker.command_history() end, desc = "Command History" },

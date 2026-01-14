@@ -1,9 +1,6 @@
 return {
   {
     "nvim-neotest/neotest",
-    dependencies = {
-      "nvim-treesitter/nvim-treesitter",
-    },
     opts = function(_, opts)
       -- for new adapters not in astrocommunity
       -- opts.adapters = opts.adapters or {}

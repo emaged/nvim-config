@@ -1,24 +1,6 @@
 -- Keymaps (run immediately)
 -- =========================
 
--- yanky clear history
-vim.keymap.set("n", "<Leader>ux", ":YankyClearHistory<cr>", { desc = "Clear Yanky history" })
-vim.keymap.set("n", "y,", "<Plug>(YankyPreviousEntry)")
-vim.keymap.set("n", "y.", "<Plug>(YankyNextEntry)")
-
--- luansip
--- local ls = require "luasnip"
--- vim.keymap.set({ "i" }, "<C-K>", function() ls.expand() end, { silent = true })
--- vim.keymap.set({ "i", "s" }, "<C-L>", function() ls.jump(1) end, { silent = true })
--- vim.keymap.set({ "i", "s" }, "<C-J>", function() ls.jump(-1) end, { silent = true })
--- vim.keymap.set({ "i", "s" }, "<C-E>", function()
---   if ls.choice_active() then ls.change_choice(1) end
--- end, { silent = true })
-
---reload package
-vim.keymap.set("n", "<Leader>pl", ":Lazy reload ", { desc = "reload package" })
--- AstroReload
-vim.keymap.set("n", "<Leader>pA", "<cmd>AstroReload<cr>", { desc = "AstroReload, experimental!" })
 -- source current file
 vim.keymap.set("n", "<Leader><Leader>s", "<cmd>source %<cr>", { desc = "source current file" })
 
