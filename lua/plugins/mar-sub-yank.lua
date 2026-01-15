@@ -43,14 +43,6 @@ return {
         },
       }
     end,
-    config = function(_, opts)
-      require("substitute").setup(opts)
-      -- cancel pending range highlights on <Esc>
-      vim.keymap.set("n", "<Esc>", function()
-        pcall(require("substitute.range").clear_match)
-        return "<Esc>"
-      end, { expr = true, silent = true })
-    end,
   },
 
   {

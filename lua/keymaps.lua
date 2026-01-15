@@ -1,6 +1,23 @@
 -- Keymaps (run immediately)
 -- =========================
 
+-- =========================================================
+-- Universal <Esc> (dismiss everything, then send real <Esc>)
+-- =========================================================
+vim.keymap.set("n", "<Esc>", function()
+  -- Dismiss Noice if present
+  pcall(vim.cmd, "NoiceDismiss")
+
+  -- Clear substitute.nvim range highlights if present
+  pcall(function() require("substitute.range").clear_match() end)
+
+  -- You can stack more later:
+  -- pcall(vim.cmd, "noh")
+  -- pcall(require("flash").dismiss)
+
+  return "<Esc>"
+end, { expr = true, silent = true, desc = "Universal dismiss" })
+
 -- source current file
 vim.keymap.set("n", "<Leader><Leader>s", "<cmd>source %<cr>", { desc = "source current file" })
 

@@ -66,7 +66,7 @@ return {
   -- Enable when debugging
   -- { import = "astrocommunity.debugging.nvim-dap-virtual-text" },
   -- { import = "astrocommunity.debugging.nvim-dap-repl-highlights" },
-  -- { import = "astrocommunity.debugging.persistent-breakpoint-nvim" }, -- slow on startup
+  -- { import = "astrocommunity.debugging.persistent-breakpoints-nvim" }, -- slow on startup
 
   -- -- You can also import/override your own plugins after community plugins
   -- -- { import = "your.plugins.override" },

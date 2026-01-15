@@ -22,83 +22,88 @@ local function get_python_path()
 end
 
 return {
-  "mfussenegger/nvim-dap",
-  lazy = true,
-  dependencies = {
-    {
-      "jbyuki/one-small-step-for-vimkind",
-      ft = "lua",
-      keys = {
-        {
-          "<Leader>dl",
-          function() require("osv").launch { port = 8086 } end,
-          desc = "Launch Lua adapter",
+  {
+    "mfussenegger/nvim-dap",
+    dependencies = {
+      {
+        "jbyuki/one-small-step-for-vimkind",
+        keys = {
+          {
+            "<Leader>dl",
+            function() require("osv").launch { port = 8086 } end,
+            desc = "Launch Lua adapter",
+          },
         },
       },
-    },
-  },
-  opts = function(_, _)
-    local dap = require "dap"
-    -----------------------
-    -- PYTHON
-    -----------------------
-    dap.configurations.python = dap.configurations.python or {}
-
-    table.insert(dap.configurations.python, {
-      type = "python",
-      request = "launch",
-      name = "Django: runserver",
-      program = "${workspaceFolder}/manage.py",
-      args = { "runserver", "--noreload" },
-      console = "integratedTerminal",
-      django = true,
-      pythonPath = get_python_path,
-    })
-
-    table.insert(dap.configurations.python, {
-      type = "python",
-      request = "launch",
-      name = "Pytest: current file",
-      module = "pytest",
-      args = { "${file}" },
-      console = "integratedTerminal",
-      pythonPath = get_python_path,
-    })
-
-    -----------------------
-    -- C / C++ / RUST
-    -----------------------
-    dap.configurations.cpp = dap.configurations.cpp or {}
-
-    table.insert(dap.configurations.cpp, {
-      name = "Attach to gdbserver",
-      type = "codelldb",
-      request = "attach",
-      cwd = "${workspaceFolder}",
-      connect = function()
-        local host = vim.fn.input "gdbserver host [localhost]: "
-        if host == "" then host = "localhost" end
-        local port = vim.fn.input "gdbserver port: "
-        return { host = host, port = tonumber(port) }
-      end,
-      program = function() return vim.fn.input("Path to local binary: ", vim.fn.getcwd() .. "/tests", "file") end,
-    })
-
-    dap.configurations.c = dap.configurations.cpp
-    -- dap.configurations.rust = dap.configurations.rust or dap.configurations.cpp
-
-    -----------------------
-    -- LUA
-    -----------------------
-    dap.adapters.nlua = function(callback, config)
-      callback { type = "server", host = config.host or "127.0.0.1", port = config.port or 8086 }
-    end
-    dap.configurations.lua = {
       {
-        type = "nlua",
-        request = "attach",
-        name = "Attach to running Neovim instance",
+        "mfussenegger/nvim-dap-python",
+        lazy = true,
+        ft = false,
       },
-    }
-  end,
+    },
+    opts = function(_, _)
+      local dap = require "dap"
+      -----------------------
+      -- PYTHON
+      -----------------------
+      dap.configurations.python = dap.configurations.python or {}
+
+      table.insert(dap.configurations.python, {
+        type = "python",
+        request = "launch",
+        name = "Django: runserver",
+        program = "${workspaceFolder}/manage.py",
+        args = { "runserver", "--noreload" },
+        console = "integratedTerminal",
+        django = true,
+        pythonPath = get_python_path,
+      })
+
+      table.insert(dap.configurations.python, {
+        type = "python",
+        request = "launch",
+        name = "Pytest: current file",
+        module = "pytest",
+        args = { "${file}" },
+        console = "integratedTerminal",
+        pythonPath = get_python_path,
+      })
+
+      -----------------------
+      -- C / C++ / RUST
+      -----------------------
+      dap.configurations.cpp = dap.configurations.cpp or {}
+
+      table.insert(dap.configurations.cpp, {
+        name = "Attach to gdbserver",
+        type = "codelldb",
+        request = "attach",
+        cwd = "${workspaceFolder}",
+        connect = function()
+          local host = vim.fn.input "gdbserver host [localhost]: "
+          if host == "" then host = "localhost" end
+          local port = vim.fn.input "gdbserver port: "
+          return { host = host, port = tonumber(port) }
+        end,
+        program = function() return vim.fn.input("Path to local binary: ", vim.fn.getcwd() .. "/tests", "file") end,
+      })
+
+      dap.configurations.c = dap.configurations.cpp
+      -- dap.configurations.rust = dap.configurations.rust or dap.configurations.cpp
+
+      -----------------------
+      -- LUA
+      -----------------------
+      dap.adapters.nlua = function(callback, config)
+        callback { type = "server", host = config.host or "127.0.0.1", port = config.port or 8086 }
+      end
+      dap.configurations.lua = {
+        {
+          type = "nlua",
+          request = "attach",
+          name = "Attach to running Neovim instance",
+        },
+      }
+    end,
+  },
 }

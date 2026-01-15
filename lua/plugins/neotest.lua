@@ -23,7 +23,7 @@ return {
   -- override astrocommunity settings like this
   {
     "nvim-neotest/neotest-python",
-    ft = "python",
+    lazy = true,
     opts = {
       dap = { justMyCode = false },
       args = { "--log-level", "DEBUG" },

@@ -3,19 +3,6 @@ return {
   keys = {
     -- Clear search + dismiss Noice
     {
-      "<Esc>",
-      function()
-        -- run your actions
-        vim.cmd "NoiceDismiss"
-        -- return <Esc> so Flash sees it
-        return "<Esc>"
-      end,
-      mode = "n",
-      expr = true, -- THIS is required so the return value is sent as keys
-      silent = true,
-      desc = "Clear search + dismiss Noice",
-    },
-    {
       "<Leader>Nl",
       function() require("noice").cmd "last" end,
       mode = "n",

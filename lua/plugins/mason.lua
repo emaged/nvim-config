@@ -8,9 +8,9 @@ return {
   {
     "WhoIsSethDaniel/mason-tool-installer.nvim",
     -- overrides `require("mason-tool-installer").setup(...)`
-    opts = {
+    opts = function(_, opts)
       -- Make sure to use the names found in `:Mason`
-      ensure_installed = {
+      require("astrocore").list_insert_unique(opts.ensure_installed, {
         -- install language servers
         "basedpyright",
         -- "lua-language-server",
@@ -53,8 +53,11 @@ return {
 
         -- spellcheck
         "codebook",
-      },
-      debounce_hours = 5, -- at least 5 hours between attempts to install/update
-    },
+      })
+      -- opts.auto_update = false
+      -- opts.run_on_start = true
+      -- opts.start_delay = 0
+      opts.debounce_hours = 5 -- at least 5 hours between attempts to install/update
+    end,
   },
 }
