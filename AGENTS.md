@@ -45,6 +45,25 @@
 
 ## Server-Specific Usage Rules
 
+### Serena
+
+**Primary functions:**
+
+- Semantic codebase understanding
+- Symbol-level navigation (definitions, references, relationships)
+- Precise, structured code edits
+- Reducing unnecessary full-file reads
+
+**Rules:**
+
+- When working in a codebase, activate the current directory as a Serena project before inspecting or modifying code.
+- Prefer Serena’s semantic tools over raw filesystem reads when locating symbols, understanding relationships, or planning edits.
+- Use Serena to identify the minimal scope of changes before proposing file edits.
+- Do not perform blind or large-scale refactors without first consulting Serena’s project index.
+- Fall back to Filesystem tools only when Serena is unavailable or insufficient, and explain why.
+
+---
+
 ### Context7
 
 **Primary functions:**
