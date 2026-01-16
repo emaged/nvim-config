@@ -23,6 +23,12 @@ return { -- == Examples of Adding Plugins ==
   -- { "Vimjas/vim-python-pep8-indent" },
 
   {
+    "chentoast/marks.nvim",
+    event = "VeryLazy",
+    opts = {},
+  },
+
+  {
     "L3MON4D3/LuaSnip",
     dependencies = { "rafamadriz/friendly-snippets" },
     opts = function(_, opts)
@@ -84,6 +90,66 @@ return { -- == Examples of Adding Plugins ==
       mode = "simple", -- lighter refresh, less flicker
       -- current_only = true, -- fewer windows to redraw
     },
+  },
+
+  {
+    "andymass/vim-matchup",
+    event = "User AstroFile",
+    dependencies = {
+      { "nvim-treesitter/nvim-treesitter", optional = true },
+      {
+        "AstroNvim/astrocore",
+        opts = {
+          options = {
+            g = {
+              matchup_matchparen_nomode = "i",
+              matchup_matchparen_deferred = 1,
+              matchup_matchparen_offscreen = { method = "popup" },
+              matchup_treesitter_stopline = 500,
+              matchup_treesitter_enabled = true,
+            },
+          },
+        },
+      },
+    },
+    config = function()
+      -- Disable matchup highlighting only for Django / Jinja templates
+      vim.api.nvim_create_autocmd("FileType", {
+        pattern = { "htmldjango", "django", "jinja", "jinja2" },
+        callback = function()
+          vim.b.matchup_matchparen_enabled = 0
+          -- vim.b.matchup_matchparen_fallback = 0
+        end,
+      })
+    end,
+  },
+
+  {
+    "windwp/nvim-autopairs",
+    config = function(plugin, opts)
+      require "astronvim.plugins.configs.nvim-autopairs"(plugin, opts)
+      local npairs = require "nvim-autopairs"
+      local Rule = require "nvim-autopairs.rule"
+      local cond = require "nvim-autopairs.conds"
+
+      -- add django rules
+      npairs.add_rules {
+        Rule("%", "%", { "htmldjango", "django" })
+          :with_pair(function(opts)
+            -- Only double % when it follows {
+            return opts.line:sub(opts.col - 1, opts.col - 1) == "{"
+          end)
+          :with_move(cond.none())
+          :with_cr(cond.none())
+          :with_del(cond.none()),
+
+        Rule("#", "#", { "htmldjango", "django" })
+          :with_pair(function(opts) return opts.line:sub(opts.col - 1, opts.col - 1) == "{" end)
+          :with_move(cond.none())
+          :with_cr(cond.none())
+          :with_del(cond.none()),
+      }
+    end,
   },
 
   { "nvim-tree/nvim-web-devicons", opts = {} },

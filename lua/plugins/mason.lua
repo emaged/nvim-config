@@ -41,7 +41,6 @@ return {
         "stylelint",
         "sql-formatter",
         "sqlfluff",
-        "sqlls",
         "hadolint",
 
         -- install debuggers

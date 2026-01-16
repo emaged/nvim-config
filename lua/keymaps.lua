@@ -1,6 +1,29 @@
 -- Keymaps (run immediately)
 -- =========================
 
+-- Undo keymaps
+-- main
+-- vim.keymap.set("i", ",", ",<C-g>u")
+-- vim.keymap.set("i", ".", ".<C-g>u")
+-- vim.keymap.set("i", "!", "!<C-g>u")
+-- vim.keymap.set("i", "?", "?<C-g>u")
+-- vim.keymap.set("i", ";", ";<C-g>u")
+-- vim.keymap.set("i", ":", ":<C-g>u")
+-- vim.keymap.set("i", " ", " <C-g>u")
+-- vim.keymap.set("i", "<cr>", "<cr><C-g>u")
+-- vim.keymap.set("i", "<C-u>", "<C-u><C-g>u")
+-- vim.keymap.set("i", "<C-w>", "<C-w><C-g>u")
+-- -- optional
+-- vim.keymap.set("i", "[", "[<C-g>u")
+-- vim.keymap.set("i", "{", "{<C-g>u")
+-- vim.keymap.set("i", "=", "=<C-g>u")
+-- vim.keymap.set("i", "\\", "\\<C-g>u")
+-- vim.keymap.set("i", "/", "/<C-g>u")
+--
+-- -- VS Code-style undo/redo in INSERT mode, using normal-mode undo/redo
+-- vim.keymap.set("i", "<C-z>", "<C-o>u", { desc = "Undo (insert)" })
+-- vim.keymap.set("i", "<C-S-z>", "<C-o><C-r>", { desc = "Redo (insert)" })
+
 -- =========================================================
 -- Universal <Esc> (dismiss everything, then send real <Esc>)
 -- =========================================================
@@ -9,7 +32,7 @@ vim.keymap.set("n", "<Esc>", function()
   pcall(vim.cmd, "NoiceDismiss")
 
   -- Clear substitute.nvim range highlights if present
-  pcall(function() require("substitute.range").clear_match() end)
+  vim.cmd "silent! lua require('substitute.range').clear_match()"
 
   -- You can stack more later:
   -- pcall(vim.cmd, "noh")

@@ -84,7 +84,7 @@ return {
         -- ["<C-S>"] = false,
 
         -- astro reload
-        ["<Leader>pA"] = { "<cmd>AstroReload", desc = "AstroReload, experimental!" },
+        ["<Leader>pA"] = { "<cmd>AstroReload<cr>", desc = "AstroReload, experimental!" },
         --reload package
         ["<Leader>pl"] = { ":Lazy reload ", desc = "reload package" },
 

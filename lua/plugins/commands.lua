@@ -48,10 +48,4 @@ vim.keymap.set({ "n", "x" }, "<Leader>sl", function()
   }
 end, { desc = "grug-far: Search using @/ register value or visual selection" })
 
--- substitute
-vim.keymap.set({ "n", "x", "o" }, "<Esc>", function()
-  pcall(require("substitute.range").clear_match)
-  return "<Esc>"
-end, { expr = true })
-
 return {}

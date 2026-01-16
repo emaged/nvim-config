@@ -41,8 +41,8 @@ return {
       -- "jinja", -- buggy, doesn't show html templates
 
       -- Web frameworks
-      "svelte",
-      "vue",
+      -- "svelte",
+      -- "vue",
 
       -- Optional languages
       "php",

@@ -8,7 +8,7 @@ return {
   },
 
   { -- override blink.cmp plugin
-    "Saghen/blink.cmp",
+    "saghen/blink.cmp",
     opts = {
       -- your normal blink settings (optional)
       -- completion = { ... },
