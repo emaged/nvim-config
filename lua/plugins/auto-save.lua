@@ -22,8 +22,8 @@ local excluded_filenames = {
 }
 
 local roots = {
-  vim.fs.normalize(vim.fn.expand "~/projects"),
-  vim.fs.normalize(vim.fn.expand "~/Dropbox/projects"),
+  vim.fs.normalize "~/Dropbox/projects",
+  vim.fs.normalize "~/projects",
 }
 
 local function save_condition(buf)
@@ -42,10 +42,13 @@ local function save_condition(buf)
   -- 2. file path
   local filepath = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(buf), ":p")
   if filepath == "" then return false end
+  filepath = vim.fs.normalize(filepath)
 
   -- 3. inside allowed roots
   for _, root in ipairs(roots) do
-    if vim.fs.relpath(root, filepath) then return true end
+    local rel = vim.fs.relpath(root, filepath)
+    -- also check for ../ matches
+    if rel and not rel:match "^%.%." then return true end
   end
 
   return false
