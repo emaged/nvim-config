@@ -33,9 +33,11 @@ return {
   { import = "astrocommunity.pack.markdown" },
   { import = "astrocommunity.pack.toml" },
 
-  -- completion (buggy?)
-  -- { import = "astrocommunity.completion.blink-cmp-tmux" },
-  -- { import = "astrocommunity.completion.cmp-spell" }, --
+  -- AI
+  { import = "astrocommunity.ai.sidekick-nvim" },
+
+  -- completion
+  { import = "astrocommunity.completion.copilot-lua-cmp" },
 
   -- Movement
   { import = "astrocommunity.motion.mini-surround" },

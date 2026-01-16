@@ -1,29 +1,6 @@
 -- Keymaps (run immediately)
 -- =========================
 
--- Undo keymaps
--- main
--- vim.keymap.set("i", ",", ",<C-g>u")
--- vim.keymap.set("i", ".", ".<C-g>u")
--- vim.keymap.set("i", "!", "!<C-g>u")
--- vim.keymap.set("i", "?", "?<C-g>u")
--- vim.keymap.set("i", ";", ";<C-g>u")
--- vim.keymap.set("i", ":", ":<C-g>u")
--- vim.keymap.set("i", " ", " <C-g>u")
--- vim.keymap.set("i", "<cr>", "<cr><C-g>u")
--- vim.keymap.set("i", "<C-u>", "<C-u><C-g>u")
--- vim.keymap.set("i", "<C-w>", "<C-w><C-g>u")
--- -- optional
--- vim.keymap.set("i", "[", "[<C-g>u")
--- vim.keymap.set("i", "{", "{<C-g>u")
--- vim.keymap.set("i", "=", "=<C-g>u")
--- vim.keymap.set("i", "\\", "\\<C-g>u")
--- vim.keymap.set("i", "/", "/<C-g>u")
---
--- -- VS Code-style undo/redo in INSERT mode, using normal-mode undo/redo
--- vim.keymap.set("i", "<C-z>", "<C-o>u", { desc = "Undo (insert)" })
--- vim.keymap.set("i", "<C-S-z>", "<C-o><C-r>", { desc = "Redo (insert)" })
-
 -- =========================================================
 -- Universal <Esc> (dismiss everything, then send real <Esc>)
 -- =========================================================
@@ -175,3 +152,23 @@ vim.keymap.set("n", "<M-l>", "<cmd>silent !tmux neww tmux-sessionizer -s 0<CR>")
 vim.keymap.set("n", "<M-o>", "<cmd>silent !tmux neww tmux-sessionizer -s 1<CR>")
 vim.keymap.set("n", "<M-p>", "<cmd>silent !tmux neww tmux-sessionizer -s 2<CR>")
 vim.keymap.set("n", "<M-r>", "<cmd>silent !tmux neww tmux-sessionizer -s 3<CR>")
+
+-- Undo keymaps
+-- main
+-- vim.keymap.set("i", ",", ",<C-g>u")
+-- vim.keymap.set("i", ".", ".<C-g>u")
+-- vim.keymap.set("i", "!", "!<C-g>u")
+-- vim.keymap.set("i", "?", "?<C-g>u")
+-- vim.keymap.set("i", ";", ";<C-g>u")
+-- vim.keymap.set("i", ":", ":<C-g>u")
+-- vim.keymap.set("i", " ", " <C-g>u")
+-- vim.keymap.set("i", "<cr>", "<cr><C-g>u")
+-- vim.keymap.set("i", "<C-u>", "<C-u><C-g>u")
+-- vim.keymap.set("i", "<C-w>", "<C-w><C-g>u")
+--
+-- -- optional
+-- vim.keymap.set("i", "[", "[<C-g>u")
+-- vim.keymap.set("i", "{", "{<C-g>u")
+-- vim.keymap.set("i", "=", "=<C-g>u")
+-- vim.keymap.set("i", "/", "/<C-g>u")
+-- vim.keymap.set("i", "\\", "\\<C-g>u")

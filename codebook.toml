@@ -30,6 +30,7 @@ words = [
     "foorc",
     "fooscript",
     "gitcommit",
+    "grug",
     "heirline",
     "highlighturl",
     "htmldjango",
@@ -67,4 +68,5 @@ words = [
     "vimdocs",
     "vscode",
     "xdg",
+    "yanky",
 ]
