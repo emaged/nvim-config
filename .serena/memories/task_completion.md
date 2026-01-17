@@ -1,0 +1,1 @@
+After making config changes, consider running Lua format/lint tools if you use them (Stylua/Selene) and verifying Neovim starts cleanly (e.g., `nvim` and :checkhealth). No project-specific test commands found.
