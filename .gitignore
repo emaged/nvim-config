@@ -4,5 +4,5 @@
 .ruff_cache/
 .nvimlog
 nvim_verbose.log
-log/
+log
 .state/nvim/lsp.log
