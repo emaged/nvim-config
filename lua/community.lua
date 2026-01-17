@@ -37,7 +37,7 @@ return {
   { import = "astrocommunity.ai.sidekick-nvim" },
 
   -- completion
-  { import = "astrocommunity.completion.copilot-lua-cmp" },
+  -- { import = "astrocommunity.completion.copilot-lua-cmp" },
 
   -- Movement
   { import = "astrocommunity.motion.mini-surround" },
