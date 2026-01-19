@@ -54,8 +54,21 @@ return {
       },
       -- end of nvim-html-css block
 
-      -- enable ghost text
-      cmdline = { completion = { ghost_text = { enabled = true } } },
+      cmdline = {
+        enabled = true,
+        keymap = {
+          preset = "cmdline",
+          ["<Right>"] = false,
+          ["<Left>"] = false,
+        },
+        completion = {
+          list = { selection = { preselect = false } },
+          menu = {
+            auto_show = function(ctx) return vim.fn.getcmdtype() == ":" end,
+          },
+          ghost_text = { enabled = true },
+        },
+      },
     },
   },
 

@@ -48,7 +48,7 @@ return {
     servers = {
       "codebook",
       "djlsp",
-      "pyrefly",
+      -- "pyrefly",
     },
     -- customize language server configuration options passed to `lspconfig`
     ---@diagnostic disable: missing-fields
@@ -109,9 +109,9 @@ return {
 
       -- Python LSP Configuration
       basedpyright = {
-        flags = {
-          debounce_text_changes = 2000,
-        },
+        -- flags = {
+        --   debounce_text_changes = 2000,
+        -- },
         root_dir = function(fname)
           if not fname or fname == "" then return nil end
           -- Search upward from the buffer's directory
@@ -129,36 +129,36 @@ return {
           if found then return vim.fs.dirname(found) end
           return vim.fs.dirname(fname)
         end,
-        on_attach = function(client, bufnr)
-          client.server_capabilities.completionProvider = false
-          client.server_capabilities.definitionProvider = false
-          client.server_capabilities.documentHighlightProvider = false
-          client.server_capabilities.renameProvider = false
-          client.server_capabilities.semanticTokensProvider = false
-        end,
-        settings = { -- see https://docs.basedpyright.com/latest/configuration/language-server-settings/
-          basedpyright = {
-            disableOrganizeImports = true, -- use ruff instead of it
-            analysis = {
-              autoImportCompletions = true,
-              autoSearchPaths = true, -- auto search command paths like 'src'
-              diagnosticMode = "openFilesOnly",
-              useLibraryCodeForTypes = true,
-              diagnosticSeverityOverrides = {
-                reportUnusedImport = "none",
-                reportUnusedFunction = "none",
-                reportUnusedVariable = "none",
-                reportUnusedParameter = "none",
-                reportUnknownMemberType = "none",
-                reportPrivateImportUsage = "none",
-                -- keep real type errors
-                reportGeneralTypeIssues = "error",
-                reportOptionalMemberAccess = "error",
-                reportOptionalSubscript = "error",
-              },
-            },
-          },
-        },
+        -- on_attach = function(client, bufnr)
+        --   client.server_capabilities.completionProvider = false
+        --   client.server_capabilities.definitionProvider = false
+        --   client.server_capabilities.documentHighlightProvider = false
+        --   client.server_capabilities.renameProvider = false
+        --   client.server_capabilities.semanticTokensProvider = false
+        -- end,
+        -- settings = { -- see https://docs.basedpyright.com/latest/configuration/language-server-settings/
+        --   basedpyright = {
+        --     disableOrganizeImports = true, -- use ruff instead of it
+        --     analysis = {
+        --       autoImportCompletions = true,
+        --       autoSearchPaths = true, -- auto search command paths like 'src'
+        --       diagnosticMode = "openFilesOnly",
+        --       useLibraryCodeForTypes = true,
+        --       diagnosticSeverityOverrides = {
+        --         reportUnusedImport = "none",
+        --         reportUnusedFunction = "none",
+        --         reportUnusedVariable = "none",
+        --         reportUnusedParameter = "none",
+        --         reportUnknownMemberType = "none",
+        --         reportPrivateImportUsage = "none",
+        --         -- keep real type errors
+        --         reportGeneralTypeIssues = "error",
+        --         reportOptionalMemberAccess = "error",
+        --         reportOptionalSubscript = "error",
+        --       },
+        --     },
+        --   },
+        -- },
       },
 
       djlsp = {
@@ -186,63 +186,63 @@ return {
         },
       },
 
-      pyrefly = {
-        cmd = {
-          "bash",
-          "-c",
-          vim.fn.stdpath "data" .. "/mason/bin/pyrefly lsp 2>/dev/null",
-        },
-        -- cmd = { "pyrefly", "lsp" },
-        -- cmd = { "bash", "-c", "pyrefly lsp 2>/dev/null" },
-        filetypes = { "python" },
-        root_dir = function(fname)
-          if not fname or fname == "" then return nil end
-          -- Search upward from the buffer's directory
-          local found = vim.fs.find({
-            "pyrefly.toml",
-            "pyproject.toml",
-            "setup.py",
-            "setup.cfg",
-            "requirements.txt",
-            "Pipfile",
-            ".git",
-            "manage.py",
-            ".venv", -- dangerous
-          }, { upward = true, path = vim.fs.dirname(fname) })[1]
-          if found then return vim.fs.dirname(found) end
-          return vim.fs.dirname(fname)
-        end,
-        handlers = {
-          ["textDocument/publishDiagnostics"] = function(err, result, ctx, config)
-            if result and result.diagnostics then
-              local filtered = {}
-              for _, diag in ipairs(result.diagnostics) do
-                local code = diag.code
-                if type(code) == "table" then code = code.value end
-                if code ~= "unused-import" and code ~= "unused-variable" and code ~= "unused-parameter" then
-                  table.insert(filtered, diag)
-                end
-              end
-              result.diagnostics = filtered
-            end
-            vim.lsp.handlers["textDocument/publishDiagnostics"](err, result, ctx, config)
-          end,
-        },
-        on_attach = function(client, bufnr)
-          -- Disable all UX features from Pyrefly
-          client.server_capabilities.codeActionProvider = false -- basedpyright has more kinds
-          client.server_capabilities.documentSymbolProvider = false -- basedpyright has more kinds
-          client.server_capabilities.hoverProvider = false -- basedpyright has more kinds
-          client.server_capabilities.inlayHintProvider = false -- basedpyright has more kinds
-          client.server_capabilities.referenceProvider = false -- basedpyright has more kinds
-          client.server_capabilities.signatureHelpProvider = false -- basedpyright has more kinds
-          -- client.server_capabilities.semanticTokensProvider = false -- for treesitter only highlighting
-        end,
-        on_exit = function(code, _, _)
-          vim.notify("Closing Pyrefly LSP exited with code: " .. code, vim.log.levels.INFO)
-        end,
-        settings = {},
-      },
+      -- pyrefly = {
+      --   cmd = {
+      --     "bash",
+      --     "-c",
+      --     vim.fn.stdpath "data" .. "/mason/bin/pyrefly lsp 2>/dev/null",
+      --   },
+      --   -- cmd = { "pyrefly", "lsp" },
+      --   -- cmd = { "bash", "-c", "pyrefly lsp 2>/dev/null" },
+      --   filetypes = { "python" },
+      --   root_dir = function(fname)
+      --     if not fname or fname == "" then return nil end
+      --     -- Search upward from the buffer's directory
+      --     local found = vim.fs.find({
+      --       "pyrefly.toml",
+      --       "pyproject.toml",
+      --       "setup.py",
+      --       "setup.cfg",
+      --       "requirements.txt",
+      --       "Pipfile",
+      --       ".git",
+      --       "manage.py",
+      --       ".venv", -- dangerous
+      --     }, { upward = true, path = vim.fs.dirname(fname) })[1]
+      --     if found then return vim.fs.dirname(found) end
+      --     return vim.fs.dirname(fname)
+      --   end,
+      --   handlers = {
+      --     ["textDocument/publishDiagnostics"] = function(err, result, ctx, config)
+      --       if result and result.diagnostics then
+      --         local filtered = {}
+      --         for _, diag in ipairs(result.diagnostics) do
+      --           local code = diag.code
+      --           if type(code) == "table" then code = code.value end
+      --           if code ~= "unused-import" and code ~= "unused-variable" and code ~= "unused-parameter" then
+      --             table.insert(filtered, diag)
+      --           end
+      --         end
+      --         result.diagnostics = filtered
+      --       end
+      --       vim.lsp.handlers["textDocument/publishDiagnostics"](err, result, ctx, config)
+      --     end,
+      --   },
+      --   on_attach = function(client, bufnr)
+      --     -- Disable all UX features from Pyrefly
+      --     client.server_capabilities.codeActionProvider = false -- basedpyright has more kinds
+      --     client.server_capabilities.documentSymbolProvider = false -- basedpyright has more kinds
+      --     client.server_capabilities.hoverProvider = false -- basedpyright has more kinds
+      --     client.server_capabilities.inlayHintProvider = false -- basedpyright has more kinds
+      --     client.server_capabilities.referenceProvider = false -- basedpyright has more kinds
+      --     client.server_capabilities.signatureHelpProvider = false -- basedpyright has more kinds
+      --     -- client.server_capabilities.semanticTokensProvider = false -- for treesitter only highlighting
+      --   end,
+      --   on_exit = function(code, _, _)
+      --     vim.notify("Closing Pyrefly LSP exited with code: " .. code, vim.log.levels.INFO)
+      --   end,
+      --   settings = {},
+      -- },
 
       ruff = {
         capabilities = {
@@ -261,11 +261,11 @@ return {
           if found then return vim.fs.dirname(found) end
           return vim.fs.dirname(fname)
         end,
-        on_attach = function(client, bufnr)
-          client.server_capabilities.hoverProvider = false
-          client.server_capabilities.documentFormattingProvider = false
-          client.server_capabilities.documentRangeFormattingProvider = false
-        end,
+        -- on_attach = function(client, bufnr)
+        --   client.server_capabilities.hoverProvider = false
+        --   client.server_capabilities.documentFormattingProvider = false
+        --   client.server_capabilities.documentRangeFormattingProvider = false
+        -- end,
       },
 
       jinja_lsp = {

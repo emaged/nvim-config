@@ -125,6 +125,31 @@ return { -- == Examples of Adding Plugins ==
   },
 
   {
+    "folke/snacks.nvim",
+    opts = {
+      picker = {
+        sources = {
+          files = {
+            exclude = {
+              "__pycache__",
+              "*.pyc",
+              ".venv",
+              "venv",
+            },
+          },
+          --   explorer = {
+          --     exclude = {
+          --       "__pycache__",
+          --       ".venv",
+          --       "venv",
+          --     },
+          --   },
+        },
+      },
+    },
+  },
+
+  {
     "windwp/nvim-autopairs",
     config = function(plugin, opts)
       require "astronvim.plugins.configs.nvim-autopairs"(plugin, opts)
