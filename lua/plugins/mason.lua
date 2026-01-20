@@ -38,7 +38,7 @@ return {
         "prettierd",
         "ruff",
         "selene",
-        "stylelint",
+        -- "stylelint",
         "sql-formatter",
         "sqlfluff",
         "hadolint",

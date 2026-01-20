@@ -4,7 +4,7 @@ return {
     linters_by_ft = {
       lua = { "selene" },
       html = { "eslint_d", "htmlhint" },
-      css = { "stylelint", "eslint_d" },
+      css = { "eslint_d" },
       javascript = { "eslint_d" },
       javascriptreact = { "eslint_d" },
       typescript = { "eslint_d" },

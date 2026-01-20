@@ -23,6 +23,7 @@ return {
   -- override astrocommunity settings like this
   {
     "nvim-neotest/neotest-python",
+
     lazy = true,
     opts = {
       dap = { justMyCode = false },
@@ -30,7 +31,10 @@ return {
       runner = "pytest",
       python = ".venv/bin/python",
       pytest_discover_instances = true,
-      -- is_test_file = function(file) return file:match "test_.*%.py$" or file:match ".*_test%.py$" end,
+
+      is_test_file = function(file)
+        return file:match "tests%.py$" or file:match "test_.*%.py$" or file:match ".*_test%.py$"
+      end,
       django = true,
     },
   },

@@ -64,17 +64,17 @@ vim.keymap.set({ "v", "n" }, "<localleader>C", '"_C', {
 })
 
 -- Delete s without yank in normal Mode
--- vim.keymap.set("n", "<localleader>s", '"_s', {
---   silent = true,
--- })
--- -- Delete s without yank in Visual Mode
--- vim.keymap.set("v", "<localleader>s", '"_c', {
---   silent = true,
--- })
--- -- Delete S without yank
--- vim.keymap.set({ "v", "n" }, "<localleader>S", '"_S', {
---   silent = true,
--- })
+vim.keymap.set("n", "<localleader>s", '"_s', {
+  silent = true,
+})
+-- Delete s without yank in Visual Mode
+vim.keymap.set("v", "<localleader>s", '"_c', {
+  silent = true,
+})
+-- Delete S without yank
+vim.keymap.set({ "v", "n" }, "<localleader>S", '"_S', {
+  silent = true,
+})
 
 -- Delete x without yank in normal Mode
 vim.keymap.set("n", "<localleader>x", '"_x', {
@@ -165,6 +165,7 @@ vim.keymap.set("n", "<M-r>", "<cmd>silent !tmux neww tmux-sessionizer -s 3<CR>")
 -- vim.keymap.set("i", "<cr>", "<cr><C-g>u")
 -- vim.keymap.set("i", "<C-u>", "<C-u><C-g>u")
 -- vim.keymap.set("i", "<C-w>", "<C-w><C-g>u")
+-- vim.keymap.
 --
 -- -- optional
 -- vim.keymap.set("i", "[", "[<C-g>u")
@@ -172,3 +173,7 @@ vim.keymap.set("n", "<M-r>", "<cmd>silent !tmux neww tmux-sessionizer -s 3<CR>")
 -- vim.keymap.set("i", "=", "=<C-g>u")
 -- vim.keymap.set("i", "/", "/<C-g>u")
 -- vim.keymap.set("i", "\\", "\\<C-g>u")
+--
+-- ctrl + z for insert mode undo
+vim.keymap.set("i", "<C-z>", "<C-o>u")
+vim.keymap.set("i", "<C-s-z>", "<C-o><C-r>")
