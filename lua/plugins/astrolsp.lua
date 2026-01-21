@@ -127,6 +127,23 @@ return {
           if found then return vim.fs.dirname(found) end
           return vim.fs.dirname(fname)
         end,
+        settings = {
+          basedpyright = {
+            analysis = {
+              typeCheckingMode = "basic",
+              autoImportCompletions = true,
+              diagnosticSeverityOverrides = {
+                reportUnusedImport = "none",
+                reportUnusedFunction = "information",
+                reportUnusedVariable = "information",
+                reportGeneralTypeIssues = "none",
+                reportOptionalMemberAccess = "none",
+                reportOptionalSubscript = "none",
+                reportPrivateImportUsage = "none",
+              },
+            },
+          },
+        },
       },
 
       djlsp = {
@@ -181,7 +198,6 @@ return {
     -- customize how language servers are attached
     handlers = {
       emmet_ls = false,
-      -- ruff = false,
       -- a function without a key is simply the default handler, functions take two parameters, the server name and the configured options table for that server
       -- function(server, opts) require("lspconfig")[server].setup(opts) end
 
