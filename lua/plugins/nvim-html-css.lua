@@ -31,7 +31,7 @@ return {
       },
       handlers = {
         definition = {
-          bind = "gD",
+          bind = "gd",
         },
         hover = {
           bind = "K",

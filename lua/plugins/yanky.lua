@@ -11,7 +11,7 @@ return {
         highlight = { timer = 200 },
         ring = {
           storage = (is_windows or is_vscode) and "shada" or "sqlite",
-          -- ignore_registers = { "*", "_" }, -- probably not needed
+          ignore_registers = { "*", "_" }, -- probably not needed
         },
         system_clipboard = {
           clipboard_register = "+", -- default is primary selection
@@ -27,8 +27,8 @@ return {
     opts = {
       mappings = {
         n = {
-          ["y,"] = { "<Plug>(YankyPreviousEntry)" },
-          ["y."] = { "<Plug>(YankyNextEntry)" },
+          ["yp"] = { "<Plug>(YankyPreviousEntry)" },
+          ["yn"] = { "<Plug>(YankyNextEntry)" },
         },
       },
     },

@@ -110,9 +110,6 @@ return {
 
       -- Python LSP Configuration
       basedpyright = {
-        -- flags = {
-        --   debounce_text_changes = 2000,
-        -- },
         root_dir = function(fname)
           if not fname or fname == "" then return nil end
           -- Search upward from the buffer's directory
@@ -222,6 +219,25 @@ return {
           desc = "Declaration of current symbol",
           cond = "textDocument/declaration",
         },
+
+        gd = {
+          function() require("snacks.picker").lsp_definitions() end,
+          desc = "LSP Definitions",
+          cond = function(client, bufnr)
+            local ft = vim.bo[bufnr].filetype
+            return not vim.tbl_contains({
+              "html",
+              "htmldjango",
+              "tsx",
+              "jsx",
+              "svelte",
+              "vue",
+              "astro",
+              "templ",
+            }, ft)
+          end,
+        },
+
         ["<Leader>uY"] = {
           function() require("astrolsp.toggles").buffer_semantic_tokens() end,
           desc = "Toggle LSP semantic highlight (buffer)",
