@@ -54,6 +54,7 @@ return {
   -- Utility
   { import = "astrocommunity.editing-support.nvim-treesitter-context" },
   { import = "astrocommunity.editing-support.yanky-nvim" },
+  { import = "astrocommunity.utility.live-preview" },
   { import = "astrocommunity.utility.noice-nvim" },
   { import = "astrocommunity.search.grug-far-nvim" },
 
