@@ -19,6 +19,8 @@ return {
         "emmet-language-server",
         "html-lsp",
         "css-lsp",
+        "vtsls",
+        "vue-language-server",
         "jinja-lsp",
         "jdtls",
         "json-lsp",

@@ -108,6 +108,24 @@ return {
         },
       },
 
+      vtsls = {
+        filetypes = { "html", "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
+
+        root_dir = function(fname)
+          if not fname or fname == "" then return nil end
+          -- Search upward from the buffer's directory
+          local found = vim.fs.find({
+            "package-lock.json",
+            "yarn.lock",
+            "pnpm-lock.yaml",
+            "bun.lockb",
+            "bun.lock",
+          }, { upward = true, path = vim.fs.dirname(fname) })[1]
+          if found then return vim.fs.dirname(found) end
+          return vim.fs.dirname(fname)
+        end,
+      },
+
       -- Python LSP Configuration
       basedpyright = {
         root_dir = function(fname)
@@ -149,7 +167,7 @@ return {
       djlsp = {
         cmd = { "djlsp" }, -- the executable installed by Mason
         filetypes = {
-          "html",
+          -- "html",
           "htmldjango",
           "django",
         },
@@ -160,8 +178,6 @@ return {
             "pyproject.toml",
             "requirements.txt",
             "manage.py",
-            ".git",
-            ".venv",
           }, { upward = true, path = vim.fs.dirname(fname) })[1]
           if found then return vim.fs.dirname(found) end
           return vim.fs.dirname(fname)
@@ -236,23 +252,23 @@ return {
           cond = "textDocument/declaration",
         },
 
-        gd = {
-          function() require("snacks.picker").lsp_definitions() end,
-          desc = "LSP Definitions",
-          cond = function(client, bufnr)
-            local ft = vim.bo[bufnr].filetype
-            return not vim.tbl_contains({
-              "html",
-              "htmldjango",
-              "tsx",
-              "jsx",
-              "svelte",
-              "vue",
-              "astro",
-              "templ",
-            }, ft)
-          end,
-        },
+        -- gd = {
+        --   function() require("snacks.picker").lsp_definitions() end,
+        --   desc = "LSP Definitions",
+        --   cond = function(client, bufnr)
+        --     local ft = vim.bo[bufnr].filetype
+        --     return not vim.tbl_contains({
+        --       "html",
+        --       "htmldjango",
+        --       "tsx",
+        --       "jsx",
+        --       "svelte",
+        --       "vue",
+        --       "astro",
+        --       "templ",
+        --     }, ft)
+        --   end,
+        -- },
 
         ["<Leader>uY"] = {
           function() require("astrolsp.toggles").buffer_semantic_tokens() end,
