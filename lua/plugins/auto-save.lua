@@ -22,8 +22,9 @@ local excluded_filenames = {
 }
 
 local roots = {
-  vim.fs.normalize "~/projects",
   vim.fs.normalize "~/Dropbox/projects",
+  vim.fs.normalize "~/projects",
+  vim.fs.normalize "~/nextcloud",
 }
 
 local function save_condition(buf)

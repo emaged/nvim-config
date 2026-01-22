@@ -20,6 +20,8 @@ return { -- == Examples of Adding Plugins ==
     enabled = false,
   },
 
+  { "Vimjas/vim-python-pep8-indent" },
+
   {
     "chentoast/marks.nvim",
     event = "VeryLazy",
