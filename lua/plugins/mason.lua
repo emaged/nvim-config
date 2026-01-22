@@ -13,14 +13,15 @@ return {
       require("astrocore").list_insert_unique(opts.ensure_installed, {
         -- install language servers
         "basedpyright",
-        -- "lua-language-server",
         "clangd",
         "django-template-lsp",
         "emmet-language-server",
         "html-lsp",
         "css-lsp",
+        "tailwindcss-language-server",
         "vtsls",
         "vue-language-server",
+        -- "typescript-language-server",
         "jinja-lsp",
         "jdtls",
         "json-lsp",
@@ -40,7 +41,7 @@ return {
         "prettierd",
         "ruff",
         "selene",
-        -- "stylelint",
+        -- "stylelint", -- enabled as lsp
         "sql-formatter",
         "sqlfluff",
         "hadolint",
@@ -58,7 +59,7 @@ return {
       -- opts.auto_update = false
       -- opts.run_on_start = true
       -- opts.start_delay = 0
-      opts.debounce_hours = 5 -- at least 5 hours between attempts to install/update
+      -- opts.debounce_hours = 5 -- at least 5 hours between attempts to install/update
     end,
   },
 }
