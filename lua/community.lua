@@ -18,7 +18,7 @@ return {
   -- Specific community recipes (import these first)
   -- { import = "astrocommunity.recipes.auto-session-restore" },
   { import = "astrocommunity.recipes.vscode" },
-  { import = "astrocommunity.recipes.picker-lsp-mappings" },
+  { import = "astrocommunity.recipes.picker-lsp-mappings" }, -- breaks otter
 
   -- Full community plugin pack (import after specific recipes)
   { import = "astrocommunity.pack.lua" },

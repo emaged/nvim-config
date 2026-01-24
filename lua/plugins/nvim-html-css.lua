@@ -1,11 +1,16 @@
+-- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 return {
   {
     "Jezda1337/nvim-html-css",
     ft = {
       "html",
       "htmldjango",
-      "tsx",
-      "jsx",
+      "jinja",
+      "jinja.html",
+      "javascript",
+      "javascriptreact",
+      "typescript",
+      "typescriptreact",
       "erb",
       "svelte",
       "vue",
@@ -19,6 +24,9 @@ return {
       enable_on = { -- Example file types
         "html",
         "htmldjango",
+        "jinja.html",
+        "jinja",
+        "js",
         "tsx",
         "jsx",
         "erb",

@@ -23,6 +23,7 @@ return {
       "css",
       "json",
       "yaml",
+      "rust",
 
       -- Extra languages you use
       "c",
@@ -42,12 +43,12 @@ return {
       -- "jinja", -- buggy, doesn't show html templates
 
       -- Web frameworks
-      -- "svelte",
-      -- "vue",
+      "svelte",
+      "vue",
 
       -- Optional languages
       "php",
-      -- "latex",
+      -- "latex", -- too old
       "typst",
 
       -- Utilities
@@ -57,7 +58,7 @@ return {
       -- "llvm",
       -- "powershell",
       -- "ruby",
-      -- "norg",
+      "norg", -- snacks.image
     },
 
     ------------------------------------------------------------

@@ -30,7 +30,9 @@ return {
     filetypes = {
       -- see `:h vim.filetype.add` for usage
       extension = {
-        -- foo = "fooscript",
+        jinja = "jinja",
+        jinja2 = "jinja",
+        j2 = "jinja",
       },
       filename = {
         -- [".foorc"] = "fooscript",
@@ -109,7 +111,7 @@ return {
         -- multicursor group
         ["<Leader>,"] = { desc = "󰗧 Multicursor" },
         -- sidekick group
-        ["<Leader>O"] = { desc = "󱙺 Sidekick" },
+        ["<Leader>O"] = { desc = "󱙺 Otter" },
       },
       x = {
         -- groups

@@ -17,11 +17,13 @@ return {
         "django-template-lsp",
         "html-lsp",
         "css-lsp",
+        -- "css-variables-language-server",
+        -- "cssmodules-language-server",
         "eslint-lsp",
         "emmet-language-server",
-        "tailwindcss-language-server",
         "vtsls",
-        "vue-language-server",
+        -- "tailwindcss-language-server",
+        -- "vue-language-server",
         "jinja-lsp",
         "jdtls",
         "json-lsp",
@@ -29,6 +31,7 @@ return {
         "stylelint-lsp",
         "sqlls",
         "pyrefly",
+        "rust-analyzer",
 
         -- install formatters && linters
         "stylua",

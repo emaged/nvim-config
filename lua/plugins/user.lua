@@ -22,6 +22,8 @@ return { -- == Examples of Adding Plugins ==
 
   { "Vimjas/vim-python-pep8-indent" },
 
+  -- { "lepture/vim-jinja" },
+
   {
     "chentoast/marks.nvim",
     event = "VeryLazy",

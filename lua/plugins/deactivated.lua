@@ -2,7 +2,6 @@ if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 -- list of currently deactivated plugins
 --
 return {
-  -- { "lepture/vim-jinja" },
   --
   -- {
   --   "linux-cultist/venv-selector.nvim",

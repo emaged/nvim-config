@@ -18,7 +18,7 @@ return {
           surround_plain = "g?sp",
           surround_variable = "g?sv",
           textobj_below = "g?o",
-          textobj_above = "gpO",
+          textobj_above = "g?O",
           textobj_surround = "g?so",
           -- management (gpx…)
           toggle_comment_debug_prints = "g?xc",

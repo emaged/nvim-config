@@ -98,6 +98,10 @@ return {
         settings = {},
       },
 
+      html = {
+        filetypes = { "html", "templ", "htmldjango", "jinja.html", "jinja" },
+      },
+
       -- Python LSP Configuration
       basedpyright = {
         root_dir = function(fname)
@@ -179,7 +183,7 @@ return {
       },
 
       jinja_lsp = {
-        filetypes = { "jinja-html", "jinja" },
+        filetypes = { "html.jinja", "jinja", "rust", "python" },
       },
     },
 
@@ -218,26 +222,44 @@ return {
     mappings = {
       n = {
         -- a `cond` key can provided as the string of a server capability to be required to attach, or a function with `client` and `bufnr` parameters from the `on_attach` that returns a boolean
-        gD = {
-          function() vim.lsp.buf.declaration() end,
-          desc = "Declaration of current symbol",
-          cond = "textDocument/declaration",
-        },
 
         gd = {
           function() require("snacks.picker").lsp_definitions() end,
+          -- function() vim.lsp.buf.definition() end,
           desc = "LSP Definitions",
           cond = function(client, bufnr)
             local ft = vim.bo[bufnr].filetype
             return not vim.tbl_contains({
               "html",
               "htmldjango",
-              -- "tsx",
-              -- "jsx",
-              -- "svelte",
-              -- "vue",
-              -- "astro",
-              -- "templ",
+              "javascript",
+              "javascriptreact",
+              "typescript",
+              "typescriptreact",
+              "svelte",
+              "vue",
+              "astro",
+              "templ",
+            }, ft)
+          end,
+        },
+
+        K = {
+          function() vim.lsp.buf.hover() end,
+          desc = "Hover symbol details",
+          cond = function(client, bufnr)
+            local ft = vim.bo[bufnr].filetype
+            return not vim.tbl_contains({
+              "html",
+              "htmldjango",
+              "javascript",
+              "javascriptreact",
+              "typescript",
+              "typescriptreact",
+              "svelte",
+              "vue",
+              "astro",
+              "templ",
             }, ft)
           end,
         },
