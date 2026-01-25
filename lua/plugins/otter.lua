@@ -7,17 +7,17 @@ return {
 
     keys = {
       {
-        "<leader>Oa",
+        "<Leader>Oa",
         function() require("otter").activate() end,
         desc = "Otter: Activate Javascript",
       },
       {
-        "<leader>Ol",
+        "<Leader>Ol",
         "<cmd>ls!<cr>",
         desc = "Otter: List buffers",
       },
       {
-        "<leader>Oi",
+        "<Leader>Oi",
         "<cmd>LspInfo<cr>",
         desc = "Otter: LSP info",
       },
