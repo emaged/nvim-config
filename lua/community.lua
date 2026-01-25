@@ -41,6 +41,7 @@ return {
 
   -- Movement
   { import = "astrocommunity.motion.mini-surround" },
+  { import = "astrocommunity.motion.marks-nvim" },
 
   -- Tools
   { import = "astrocommunity.pack.full-dadbod" },

@@ -64,17 +64,17 @@ vim.keymap.set({ "v", "n" }, "<localleader>C", '"_C', {
 })
 
 -- Delete s without yank in normal Mode
-vim.keymap.set("n", "<localleader>s", '"_s', {
-  silent = true,
-})
--- Delete s without yank in Visual Mode
-vim.keymap.set("v", "<localleader>s", '"_c', {
-  silent = true,
-})
--- Delete S without yank
-vim.keymap.set({ "v", "n" }, "<localleader>S", '"_S', {
-  silent = true,
-})
+-- vim.keymap.set("n", "<localleader>s", '"_s', {
+--   silent = true,
+-- })
+-- -- Delete s without yank in Visual Mode
+-- vim.keymap.set("v", "<localleader>s", '"_c', {
+--   silent = true,
+-- })
+-- -- Delete S without yank
+-- vim.keymap.set({ "v", "n" }, "<localleader>S", '"_S', {
+--   silent = true,
+-- })
 
 -- Delete x without yank in normal Mode
 vim.keymap.set("n", "<localleader>x", '"_x', {
@@ -118,12 +118,6 @@ vim.keymap.set({ "v", "n" }, "<C-c>", "y", {
   silent = true,
   desc = "Copy selection to clipboard",
 })
-
---Regular Regular cut with Ctrl-x
--- vim.keymap.set({ "v" }, "<C-x>", "c", {
---   silent = true,
---   desc = "Regular cut with Ctrl-x",
--- })
 
 -- Primeagen Keymaps Keymaps
 vim.keymap.set("n", "<C-d>", "<C-d>zz", {

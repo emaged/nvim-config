@@ -1,7 +1,7 @@
 return {
   "ThePrimeagen/harpoon",
   branch = "harpoon2",
-  lazy = true, -- disable for picker menu on startup
+  -- lazy = true, -- disable for picker menu on startup
   dependencies = {
     "nvim-lua/plenary.nvim",
     "folke/snacks.nvim", -- disable for faster startup, together with config function
@@ -21,7 +21,7 @@ return {
           function() require("harpoon").ui:toggle_quick_menu(require("harpoon"):list()) end,
           desc = "Toggle quick menu",
         }
-        maps.n["<C-x>"] = {
+        maps.n[prefix .. "x"] = {
           function()
             vim.ui.input({ prompt = "Harpoon mark index: " }, function(input)
               local num = tonumber(input)

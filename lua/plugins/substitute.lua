@@ -8,8 +8,13 @@ return {
       { "S", function() require("substitute").eol() end, mode = "n" },
       { "s", function() require("substitute").visual() end, mode = "x" },
 
-      { "<localleader>s", function() require("substitute.range").operator() end, mode = "n" },
-      { "<localleader>s", function() require("substitute.range").visual() end, mode = "x" },
+      {
+        "<localleader>s",
+        function() require("substitute.range").operator() end,
+        mode = "n",
+        desc = "Substitute range",
+      },
+      { "<localleader>s", function() require("substitute.range").visual() end, mode = "x", desc = "Substitute range" },
       {
         "<localleader>ss",
         function() require("substitute.range").word() end,

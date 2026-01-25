@@ -12,49 +12,33 @@ return {
       -- Add or skip cursor above/below the main cursor.
       set({ "n", "x" }, "<up>", function() mc.lineAddCursor(-1) end)
       set({ "n", "x" }, "<down>", function() mc.lineAddCursor(1) end)
-      set({ "n", "x" }, "<localleader><up>", function() mc.lineSkipCursor(-1) end, { desc = "Skip cursor above" })
-      set({ "n", "x" }, "<localleader><down>", function() mc.lineSkipCursor(1) end, { desc = "Skip cursor below" })
+      set({ "n", "x" }, "<Leader><up>", function() mc.lineSkipCursor(-1) end, { desc = "Skip cursor above" })
+      set({ "n", "x" }, "<Leader><down>", function() mc.lineSkipCursor(1) end, { desc = "Skip cursor below" })
 
       -- Add or skip adding a new cursor by matching word/selection
-      set({ "n", "x" }, "<localleader>m", function() mc.matchAddCursor(1) end, { desc = "Add cursor on match forward" })
-
-      set(
-        { "n", "x" },
-        "<localleader>z",
-        function() mc.matchSkipCursor(1) end,
-        { desc = "Skip cursor on match forward" }
-      )
-      set(
-        { "n", "x" },
-        "<localleader>M",
-        function() mc.matchAddCursor(-1) end,
-        { desc = "Add cursor on match backward" }
-      )
-      set(
-        { "n", "x" },
-        "<localleader>Z",
-        function() mc.matchSkipCursor(-1) end,
-        { desc = "Skip cursor on match backward" }
-      ) -- Advanced Actions
+      set({ "n", "x" }, "<Leader>mm", function() mc.matchAddCursor(1) end, { desc = "Add cursor on match forward" })
+      set({ "n", "x" }, "<Leader>ms", function() mc.matchSkipCursor(1) end, { desc = "Skip cursor on match forward" })
+      set({ "n", "x" }, "<Leader>mM", function() mc.matchAddCursor(-1) end, { desc = "Add cursor on match backward" })
+      set({ "n", "x" }, "<Leader>mS", function() mc.matchSkipCursor(-1) end, { desc = "Skip cursor on match backward" }) -- Advanced Actions
 
       -- Add a cursor for all matches of cursor word/selection in the document.
-      set({ "n", "x" }, "<localleader>A", mc.matchAllAddCursors, { desc = "Add cursors to all matches" })
+      set({ "n", "x" }, "<Leader>ma", mc.matchAllAddCursors, { desc = "Add cursors to all matches" })
 
       -- Append/insert for each line of visual selections.
       -- Similar to block selection insertion.
-      set("x", "I", mc.insertVisual)
-      set("x", "A", mc.appendVisual)
+      set("x", "I", mc.insertVisual, { desc = "Insert for each line of visual selection" })
+      set("x", "A", mc.appendVisual, { desc = "Append for each line of visual selection" })
 
       -- Add a cursor and jump to the next/previous search result.
-      set("n", "<Leader>,m", function() mc.searchAddCursor(1) end, { desc = "add cursor to search match forward" })
-      set("n", "<Leader>,M", function() mc.searchAddCursor(-1) end, { desc = "add cursor to search match backward" })
+      set("n", "<Leader>m/", function() mc.searchAddCursor(1) end, { desc = "add cursor to search match forward" })
+      set("n", "<Leader>m?", function() mc.searchAddCursor(-1) end, { desc = "add cursor to search match backward" })
 
       -- Jump to the next/previous search result without adding a cursor.
-      set("n", "<Leader>,z", function() mc.searchSkipCursor(1) end, { desc = "Skip search match forward" })
-      set("n", "<Leader>,Z", function() mc.searchSkipCursor(-1) end, { desc = "Skip search match backward" })
+      set("n", "<Leader>m;", function() mc.searchSkipCursor(1) end, { desc = "Skip search match forward" })
+      set("n", "<Leader>m,", function() mc.searchSkipCursor(-1) end, { desc = "Skip search match backward" })
 
       -- Add a cursor to every search result in the buffer.
-      set("n", "<Leader>,A", mc.searchAllAddCursors, { desc = "Add cursors to all search matches" })
+      set("n", "<Leader>m*", mc.searchAllAddCursors, { desc = "Add cursors to all search matches" })
 
       -- Add and remove cursors with control + left click.
       set("n", "<c-leftmouse>", mc.handleMouse)
@@ -62,19 +46,36 @@ return {
       set("n", "<c-leftrelease>", mc.handleMouseRelease)
 
       -- Disable and enable cursors.
-      set({ "n", "x" }, "gm", mc.toggleCursor, { desc = "enable/disable cursor" })
+      set({ "n", "x" }, "<Leader>mt", mc.toggleCursor, { desc = "enable/disable cursor" })
 
       -- Pressing `gaip` will add a cursor on each line of a paragraph.
       -- Can also be used to add cursor for each line of visual selection.
-      set({ "n", "x" }, "ga", mc.addCursorOperator, { desc = "add cursor to visual selection, or gaip" })
+      set({ "n", "x" }, "<Leader>mv", mc.addCursorOperator, { desc = "add cursor to visual selection, or gaip" })
 
-      -- resture cursors if you accidentally clear them
-      set("n", "<Leader>,r", mc.restoreCursors, { desc = "restore cursors" })
+      -- restore cursors if you accidentally clear them
+      set("n", "<Leader>mr", mc.restoreCursors, { desc = "restore cursors" })
 
-      -- Pressing `<Leader>aiwap` will create a cursor in every match of the
+      -- Pressing `<Leader>moiwap` will create a cursor in every match of the
       -- string captured by `iw` inside range `ap`.
       -- This action is highly customizable, see `:h multicursor-operator`.
-      set({ "n", "x" }, "<Leader>,a", mc.operator, { desc = "create a cursor in every match of the string" })
+      set({ "n", "x" }, "<Leader>mo", mc.operator, { desc = "create a cursor in every match of the string" })
+
+      -- Align
+      set("n", "<Leader>m=", mc.alignCursors, { desc = "Align cursor columns" })
+
+      -- Sequences
+      set({ "n", "x" }, "g<C-a>", mc.sequenceIncrement)
+      set({ "n", "x" }, "g<C-x>", mc.sequenceDecrement)
+
+      -- Rotate the text contained in each visual selection between cursors.
+      set("x", "<leader>mc", function() mc.transposeCursors(1) end, { desc = "Cycle forwards" })
+      set("x", "<leader>mC", function() mc.transposeCursors(-1) end, { desc = "Cycle backwards" })
+
+      set("x", "<Leader>mh", function() mc.swapCursors(-1) end, { desc = "Swap with previous cursor" })
+      set("x", "<Leader>ml", function() mc.swapCursors(1) end, { desc = "Swap with next cursor" })
+
+      set("x", "S", mc.splitCursors, { desc = "Split visual into cursors (regex)" })
+      set("x", "<Leader>m|", mc.splitCursors, { desc = "Split visual into cursors (regex)" })
 
       -- Mappings defined in a keymap layer only apply when there are
       -- multiple cursors. This lets you have overlapping mappings.
@@ -84,7 +85,7 @@ return {
         layerSet({ "n", "x" }, "<right>", mc.nextCursor)
 
         -- Delete the main cursor.
-        layerSet({ "n", "x" }, "<Leader>,x", mc.deleteCursor, { desc = "delete main cursor" })
+        layerSet({ "n", "x" }, "<Leader>mx", mc.deleteCursor, { desc = "delete main cursor" })
 
         -- Enable and clear cursors using escape.
         layerSet("n", "<esc>", function()

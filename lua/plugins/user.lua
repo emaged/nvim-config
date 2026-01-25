@@ -25,12 +25,6 @@ return { -- == Examples of Adding Plugins ==
   -- { "lepture/vim-jinja" },
 
   {
-    "chentoast/marks.nvim",
-    event = "VeryLazy",
-    opts = {},
-  },
-
-  {
     "L3MON4D3/LuaSnip",
     dependencies = { "rafamadriz/friendly-snippets" },
     opts = function(_, opts)
