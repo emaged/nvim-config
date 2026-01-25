@@ -55,6 +55,9 @@ return {
     -- customize language server configuration options passed to `lspconfig`
     ---@diagnostic disable: missing-fields
     config = {
+      --  ──────────────────────────────────────────────────────────────
+      --  Spellcheck
+      --  ──────────────────────────────────────────────────────────────
       codebook = {
         cmd = { "codebook-lsp", "serve" },
         filetypes = {
@@ -98,11 +101,58 @@ return {
         settings = {},
       },
 
+      harper_ls = {
+        filetypes = {
+          "asciidoc",
+          "html",
+          "markdown",
+          "tex",
+          "text",
+        },
+        settings = {
+          ["harper-ls"] = {
+            codeActions = {
+              forceStable = true,
+            },
+            linters = {
+              spelled_numbers = true,
+              linking_verbs = true,
+              SpellCheck = false,
+            },
+          },
+        },
+      },
+
+      --  ──────────────────────────────────────────────────────────────
+      --  Web
+      --  ──────────────────────────────────────────────────────────────
+      emmet_language_server = {
+        filetypes = {
+          "css",
+          "eruby",
+          "html",
+          "javascript",
+          "javascriptreact",
+          "less",
+          "sass",
+          "scss",
+          "pug",
+          "typescriptreact",
+        },
+        init_options = {
+          includeLanguages = {
+            javascript = "javascriptreact", -- or "html" if you want HTML emmet in plain JS template strings
+          },
+        },
+      },
+
       html = {
         filetypes = { "html", "templ", "htmldjango", "jinja.html", "jinja" },
       },
 
-      -- Python LSP Configuration
+      --  ──────────────────────────────────────────────────────────────
+      --  Python LSP Configuration
+      --  ──────────────────────────────────────────────────────────────
       basedpyright = {
         root_dir = function(fname)
           if not fname or fname == "" then return nil end

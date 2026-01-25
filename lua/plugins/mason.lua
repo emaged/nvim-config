@@ -58,6 +58,7 @@ return {
 
         -- spellcheck
         "codebook",
+        "harper-ls",
       })
       -- opts.auto_update = false
       -- opts.run_on_start = true
