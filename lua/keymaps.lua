@@ -53,7 +53,9 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
-vim.keymap.set({ "v", "n" }, "<localleader>,", ",", { desc = "backwards search" })
+-- TODO: fix this keymap somehow
+-- search backwards with ,,
+vim.keymap.set({ "o", "v", "n" }, "<localleader>,", ",", { remap = true, desc = "backwards search" })
 
 -- Delete c without yank
 vim.keymap.set({ "v", "n" }, "<localleader>c", '"_c', {

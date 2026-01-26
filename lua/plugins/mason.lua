@@ -63,7 +63,7 @@ return {
       -- opts.auto_update = false
       -- opts.run_on_start = true
       -- opts.start_delay = 0
-      -- opts.debounce_hours = 5 -- at least 5 hours between attempts to install/update
+      opts.debounce_hours = 5 -- at least 5 hours between attempts to install/update
     end,
   },
 }

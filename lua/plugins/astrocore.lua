@@ -109,7 +109,7 @@ return {
         -- snipRun group
         ["<Leader>r"] = { desc = "󰜎 Run (SnipRun)" },
         -- multicursor group
-        ["<Leader>,"] = { desc = "󰗧 Multicursor" },
+        ["<Leader>m"] = { desc = "󰗧 Multicursor" },
         -- sidekick group
         ["<Leader>O"] = { desc = "󱙺 Otter" },
       },
