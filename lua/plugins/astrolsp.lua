@@ -37,9 +37,11 @@ return {
       },
       disabled = { -- disable formatting capabilities for the listed language servers
         -- disable lua_ls formatting capability if you want to use StyLua to format your lua code
+        "djlsp",
         "lua_ls",
         "vtsls",
         "eslint",
+        "ruff",
       },
       timeout_ms = 1000, -- default format timeout
       -- filter = function(client) -- fully override the default formatting function
@@ -239,6 +241,7 @@ return {
     -- customize how language servers are attached
     handlers = {
       emmet_ls = false,
+      jinja_lsp = false,
       -- a function without a key is simply the default handler, functions take two parameters, the server name and the configured options table for that server
       -- function(server, opts) require("lspconfig")[server].setup(opts) end
 
