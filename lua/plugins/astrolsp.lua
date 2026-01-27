@@ -107,7 +107,6 @@ return {
           "html",
           "markdown",
           "tex",
-          "text",
         },
         settings = {
           ["harper-ls"] = {
