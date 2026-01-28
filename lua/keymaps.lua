@@ -1,22 +1,6 @@
+-- =========================
 -- Keymaps (run immediately)
 -- =========================
-
--- =========================================================
--- Universal <Esc> (dismiss everything, then send real <Esc>)
--- =========================================================
-vim.keymap.set("n", "<Esc>", function()
-  -- Dismiss Noice if present
-  pcall(vim.cmd, "NoiceDismiss")
-
-  -- Clear substitute.nvim range highlights if present
-  vim.cmd "silent! lua require('substitute.range').clear_match()"
-
-  -- You can stack more later:
-  -- pcall(vim.cmd, "noh")
-  -- pcall(require("flash").dismiss)
-
-  return "<Esc>"
-end, { expr = true, silent = true, desc = "Universal dismiss" })
 
 -- source current file
 vim.keymap.set("n", "<Leader><Leader>s", "<cmd>source %<cr>", { desc = "source current file" })
@@ -42,21 +26,13 @@ vim.keymap.set("n", "<Leader>y", ":%y<CR>", {
   silent = true,
 })
 
--- New line with enter/ shift enter in normal mode
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "*",
-  callback = function()
-    if vim.bo.buftype == "" then
-      vim.keymap.set("n", "<CR>", "o<Esc>", { buffer = true, silent = true })
-      vim.keymap.set("n", "<A-CR>", "O<Esc>j", { buffer = true, silent = true })
-    end
-  end,
-})
-
 -- TODO: fix this keymap somehow
 -- search backwards with ,,
-vim.keymap.set({ "o", "v", "n" }, "<localleader>,", ",", { remap = true, desc = "backwards search" })
+vim.keymap.set({ "o", "v", "n" }, "<localleader>,", ",", { desc = "backwards search" })
 
+-- =========================================================
+-- <localleader> deletes into black hole register
+-- =========================================================
 -- Delete c without yank
 vim.keymap.set({ "v", "n" }, "<localleader>c", '"_c', {
   silent = true,
@@ -86,15 +62,23 @@ vim.keymap.set("n", "<localleader>x", '"_x', {
 vim.keymap.set("v", "<localleader>x", '"_d', {
   silent = true,
 })
+-- Delete X without yank in normal Mode
+vim.keymap.set("n", "<localleader>X", '"_X', {
+  silent = true,
+})
 
 -- Alternative delete
 vim.keymap.set({ "v", "n" }, "<localleader>d", '"_d', {
   silent = true,
 })
+
 vim.keymap.set({ "v", "n" }, "<localleader>D", '"_D', {
   silent = true,
 })
 
+-- =========================================================
+-- Regular copy/paste keymaps with C-v and C-c
+-- =========================================================
 -- -- Make Ctrl+q Visual Visual Block Mode
 vim.keymap.set({ "v", "n" }, "<C-q>", "<C-v>", {
   silent = true,
@@ -121,7 +105,64 @@ vim.keymap.set({ "v", "n" }, "<C-c>", "y", {
   desc = "Copy selection to clipboard",
 })
 
--- Primeagen Keymaps Keymaps
+-- =========================================================
+-- Universal <Esc> (dismiss everything, then send real <Esc>)
+-- =========================================================
+vim.keymap.set("n", "<Esc>", function()
+  -- Dismiss Noice if present
+  pcall(vim.cmd, "NoiceDismiss")
+
+  -- Clear substitute.nvim range highlights if present
+  vim.cmd "silent! lua require('substitute.range').clear_match()"
+
+  -- You can stack more later:
+  -- pcall(vim.cmd, "noh")
+  -- pcall(require("flash").dismiss)
+
+  return "<Esc>"
+end, { expr = true, silent = true, desc = "Universal dismiss" })
+
+-- New line with enter/ shift enter in normal mode
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "*",
+  callback = function()
+    if vim.bo.buftype == "" then
+      vim.keymap.set("n", "<CR>", "o<Esc>", { buffer = true, silent = true })
+      vim.keymap.set("n", "<A-CR>", "O<Esc>j", { buffer = true, silent = true })
+    end
+  end,
+})
+
+-- =========================================================
+-- Undo Keymaps
+-- =========================================================
+-- main
+-- vim.keymap.set("i", ",", ",<C-g>u")
+-- vim.keymap.set("i", ".", ".<C-g>u")
+-- vim.keymap.set("i", "!", "!<C-g>u")
+-- vim.keymap.set("i", "?", "?<C-g>u")
+-- vim.keymap.set("i", ";", ";<C-g>u")
+-- vim.keymap.set("i", ":", ":<C-g>u")
+-- vim.keymap.set("i", " ", " <C-g>u")
+-- vim.keymap.set("i", "<cr>", "<cr><C-g>u")
+-- vim.keymap.set("i", "<C-u>", "<C-u><C-g>u")
+-- vim.keymap.set("i", "<C-w>", "<C-w><C-g>u")
+-- vim.keymap.
+--
+-- -- optional
+-- vim.keymap.set("i", "[", "[<C-g>u")
+-- vim.keymap.set("i", "{", "{<C-g>u")
+-- vim.keymap.set("i", "=", "=<C-g>u")
+-- vim.keymap.set("i", "/", "/<C-g>u")
+-- vim.keymap.set("i", "\\", "\\<C-g>u")
+
+-- ctrl + z for insert mode undo
+vim.keymap.set("i", "<C-z>", "<C-o>u")
+vim.keymap.set("i", "<C-s-z>", "<C-o><C-r>")
+
+-- =========================================================
+-- Primeagen keymaps
+-- =========================================================
 vim.keymap.set("n", "<C-d>", "<C-d>zz", {
   silent = true,
   desc = "Center on down",
@@ -148,28 +189,3 @@ vim.keymap.set("n", "<M-l>", "<cmd>silent !tmux neww tmux-sessionizer -s 0<CR>")
 vim.keymap.set("n", "<M-o>", "<cmd>silent !tmux neww tmux-sessionizer -s 1<CR>")
 vim.keymap.set("n", "<M-p>", "<cmd>silent !tmux neww tmux-sessionizer -s 2<CR>")
 vim.keymap.set("n", "<M-r>", "<cmd>silent !tmux neww tmux-sessionizer -s 3<CR>")
-
--- Undo keymaps
--- main
--- vim.keymap.set("i", ",", ",<C-g>u")
--- vim.keymap.set("i", ".", ".<C-g>u")
--- vim.keymap.set("i", "!", "!<C-g>u")
--- vim.keymap.set("i", "?", "?<C-g>u")
--- vim.keymap.set("i", ";", ";<C-g>u")
--- vim.keymap.set("i", ":", ":<C-g>u")
--- vim.keymap.set("i", " ", " <C-g>u")
--- vim.keymap.set("i", "<cr>", "<cr><C-g>u")
--- vim.keymap.set("i", "<C-u>", "<C-u><C-g>u")
--- vim.keymap.set("i", "<C-w>", "<C-w><C-g>u")
--- vim.keymap.
---
--- -- optional
--- vim.keymap.set("i", "[", "[<C-g>u")
--- vim.keymap.set("i", "{", "{<C-g>u")
--- vim.keymap.set("i", "=", "=<C-g>u")
--- vim.keymap.set("i", "/", "/<C-g>u")
--- vim.keymap.set("i", "\\", "\\<C-g>u")
---
--- ctrl + z for insert mode undo
-vim.keymap.set("i", "<C-z>", "<C-o>u")
-vim.keymap.set("i", "<C-s-z>", "<C-o><C-r>")
