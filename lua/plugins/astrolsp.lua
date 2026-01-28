@@ -132,6 +132,7 @@ return {
           "css",
           "eruby",
           "html",
+          "htmldjango",
           "javascript",
           "javascriptreact",
           "less",
