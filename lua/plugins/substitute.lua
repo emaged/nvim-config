@@ -3,10 +3,10 @@ return {
     "gbprod/substitute.nvim",
     cond = true,
     keys = {
-      { "s", function() require("substitute").operator() end, mode = "n" },
-      { "ss", function() require("substitute").line() end, mode = "n" },
-      { "S", function() require("substitute").eol() end, mode = "n" },
-      { "s", function() require("substitute").visual() end, mode = "x" },
+      { "gs", function() require("substitute").operator() end, mode = "n" },
+      { "gss", function() require("substitute").line() end, mode = "n" },
+      { "gS", function() require("substitute").eol() end, mode = "n" },
+      { "gs", function() require("substitute").visual() end, mode = "x" },
 
       {
         "<localleader>s",
@@ -28,20 +28,19 @@ return {
         desc = "Substitute in whole buffer",
       },
 
-      { "sx", function() require("substitute.exchange").operator() end, mode = "n" },
-      { "sxx", function() require("substitute.exchange").line() end, mode = "n" },
+      { "gsx", function() require("substitute.exchange").operator() end, mode = "n" },
+      { "gsxx", function() require("substitute.exchange").line() end, mode = "n" },
+      { "gsX", function() require("substitute.exchange").operator { motion = "$" } end, mode = "n" },
       { "X", function() require("substitute.exchange").visual() end, mode = "x" },
-      { "sxc", function() require("substitute.exchange").cancel() end, mode = "n" },
+      { "gsxc", function() require("substitute.exchange").cancel() end, mode = "n" },
     },
 
-    opts = function()
-      return {
-        on_substitute = require("yanky.integration").substitute(),
-        highlight_substituted_text = {
-          enabled = true,
-          timer = 200,
-        },
-      }
-    end,
+    opts = {
+      on_substitute = require("yanky.integration").substitute(),
+      highlight_substituted_text = {
+        enabled = true,
+        timer = 200,
+      },
+    },
   },
 }
