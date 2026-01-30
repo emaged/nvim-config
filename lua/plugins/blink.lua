@@ -18,6 +18,9 @@ return {
         ["<CR>"] = false,
         ["<C-space>"] = false,
         ["<A-space>"] = { "show", "show_documentation", "hide_documentation" },
+        -- ["<C-k>"] = { "show_signature", "hide_signature", "fallback" },
+        -- ["<C-u>"] = { "scroll_signature_up", "fallback" },
+        -- ["<C-d>"] = { "scroll_signature_down", "fallback" },
       },
       completion = {
         menu = {
@@ -69,6 +72,9 @@ return {
           ghost_text = { enabled = true },
         },
       },
+      -- signature = {
+      --   enabled = true,
+      -- },
     },
   },
 

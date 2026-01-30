@@ -1,5 +1,46 @@
+-- if true then return {} end
 return {
   "folke/noice.nvim",
+  opts = {
+    routes = {
+      {
+        filter = {
+          event = "msg_show",
+          any = {
+            { find = "%d+L, %d+B" },
+            { find = "; after #%d+" },
+            { find = "; before #%d+" },
+          },
+        },
+        view = "mini",
+      },
+    },
+    lsp = {
+      hover = {
+        enabled = false,
+      },
+      signature = {
+        enabled = false,
+      },
+      override = {
+        ["vim.lsp.util.convert_input_to_markdown_lines"] = false,
+        ["vim.lsp.util.stylize_markdown"] = false,
+        ["cmp.entry.get_documentation"] = false,
+      },
+      progress = {
+        enabled = false,
+        -- Lsp Progress is formatted using the builtins for lsp_progress. See config.format.builtin
+        -- See the section on formatting for more details on how to customize.
+        --- @type NoiceFormat|string
+        -- format = "lsp_progress",
+        --- @type NoiceFormat|string
+        -- format_done = "lsp_progress_done",
+        -- throttle = 1000 / 30, -- frequency to update lsp progress message
+        -- view = "mini",
+      },
+    },
+  },
+
   keys = {
     -- Clear search + dismiss Noice
     {
@@ -92,35 +133,6 @@ return {
       expr = true,
       silent = true,
       desc = "Noice LSP scroll (up)",
-    },
-  },
-
-  opts = {
-    routes = {
-      {
-        filter = {
-          event = "msg_show",
-          any = {
-            { find = "%d+L, %d+B" },
-            { find = "; after #%d+" },
-            { find = "; before #%d+" },
-          },
-        },
-        view = "mini",
-      },
-    },
-    lsp = {
-      progress = {
-        enabled = false,
-        -- Lsp Progress is formatted using the builtins for lsp_progress. See config.format.builtin
-        -- See the section on formatting for more details on how to customize.
-        --- @type NoiceFormat|string
-        -- format = "lsp_progress",
-        --- @type NoiceFormat|string
-        -- format_done = "lsp_progress_done",
-        -- throttle = 1000 / 30, -- frequency to update lsp progress message
-        -- view = "mini",
-      },
     },
   },
 }

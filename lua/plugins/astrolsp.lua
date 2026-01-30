@@ -17,11 +17,17 @@ return {
         },
       },
     },
+    defaults = {
+      signature_help = {
+        focusable = true,
+      },
+    },
     -- Configuration table of features provided by AstroLSP
     features = {
       codelens = true, -- enable/disable codelens refresh on start
       inlay_hints = false, -- enable/disable inlay hints on start
       semantic_tokens = true, -- enable/disable semantic token highlighting
+      -- signature_help = false,
     },
     -- customize lsp formatting options
     formatting = {

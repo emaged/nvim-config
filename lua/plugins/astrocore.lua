@@ -45,10 +45,12 @@ return {
     options = {
       opt = { -- vim.opt.<key>
         mouse = "nvi",
-        relativenumber = false, -- sets vim.opt.relativenumber
+        relativenumber = true, -- sets vim.opt.relativenumber
         number = true, -- sets vim.opt.number
         spell = false, -- sets vim.opt.spell
         signcolumn = "yes", -- sets vim.opt.signcolumn to yes
+        scrolloff = 4,
+        sidescrolloff = 8,
         wrap = false, -- sets vim.opt.wrap
         exrc = true,
       },
@@ -59,42 +61,7 @@ return {
       },
     },
     -- autocommands
-    autocmds = {
-      mode_line_numbers = {
-        -- Normal mode
-        {
-          event = "ModeChanged",
-          pattern = "*:n",
-          callback = function()
-            -- NORMAL MODE SETTINGS
-            vim.opt.number = true
-            vim.opt.relativenumber = false
-          end,
-        },
-
-        -- Insert mode
-        {
-          event = "ModeChanged",
-          pattern = "*:i",
-          callback = function()
-            -- INSERT MODE SETTINGS (customize!)
-            vim.opt.number = true
-            vim.opt.relativenumber = false
-          end,
-        },
-
-        -- Visual modes (v, V, Ctrl-v)
-        {
-          event = "ModeChanged",
-          pattern = "*:[vV\x16]",
-          callback = function()
-            -- VISUAL MODE SETTINGS
-            vim.opt.number = true
-            vim.opt.relativenumber = true
-          end,
-        },
-      },
-    },
+    autocmds = {},
 
     -- Mappings can be configured through AstroCore as well.
     -- NOTE: keycodes follow the casing in the vimdocs. For example, `<Leader>` must be capitalized
