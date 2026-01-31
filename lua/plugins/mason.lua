@@ -30,7 +30,7 @@ return {
         "some-sass-language-server",
         "stylelint-lsp",
         "sqlls",
-        "pyrefly",
+        -- "pyrefly",
         "rust-analyzer",
 
         -- install formatters && linters
