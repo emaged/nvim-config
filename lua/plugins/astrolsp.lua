@@ -254,9 +254,6 @@ return {
           if found then return vim.fs.dirname(found) end
           return vim.fs.dirname(fname)
         end,
-        init_options = {
-          django_settings_module = "mysite.settings",
-        },
       },
 
       ruff = {
