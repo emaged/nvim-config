@@ -98,7 +98,7 @@ return {
         -- snacks picker additional mappings
         ["<Leader>fe"] = { function() require("snacks").picker.explorer() end, desc = "File Explorer" },
         ["<Leader>f:"] = { function() require("snacks").picker.command_history() end, desc = "Command History" },
-        ["<Leader>pp"] = { function() require("snacks").picker.lazy() end, desc = "Search for Plugin Spec" },
+        ["<Leader>fP"] = { function() require("snacks").picker.lazy() end, desc = "Search for Plugin Spec" },
 
         -- aerial symbol opener
         ["<Leader>fS"] = { function() require("aerial").open() end, desc = "Open Aerial" },

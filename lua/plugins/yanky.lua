@@ -21,9 +21,6 @@ return {
       return opts
     end,
   },
-  -- hello
-  -- hello
-  -- hello
   {
     "AstroNvim/astrocore",
     opts = {
@@ -32,13 +29,16 @@ return {
           ["yp"] = { "<Plug>(YankyPreviousEntry)", desc = "Yank history: previous entry" },
           ["yn"] = { "<Plug>(YankyNextEntry)", desc = "Yank history: next entry" },
 
-          -- Charwise puts (preserve newlines)
-          ["yc"] = { "<Plug>(YankyPutAfterCharwise)", desc = "Put charwise (preserve newlines)" },
-          ["yC"] = { "<Plug>(YankyPutBeforeCharwise)", desc = "Put charwise before (preserve newlines)" },
-
-          -- Charwise joined puts (inline)
-          ["yq"] = { "<Plug>(YankyPutAfterCharwiseJoined)", desc = "Put charwise joined (inline)" },
-          ["yQ"] = { "<Plug>(YankyPutBeforeCharwiseJoined)", desc = "Put charwise joined before (inline)" },
+          [",pc"] = { "<Plug>(YankyPutAfterCharwise)", desc = "Put charwise (preserve newlines)" },
+          [",pC"] = { "<Plug>(YankyPutBeforeCharwise)", desc = "Put charwise before (preserve newlines)" },
+          [",pj"] = { "<Plug>(YankyPutAfterCharwiseJoined)", desc = "Put charwise joined" },
+          [",pJ"] = { "<Plug>(YankyPutBeforeCharwiseJoined)", desc = "Put charwise joined before" },
+        },
+        x = {
+          [",pC"] = { "<Plug>(YankyPutBeforeCharwise)", desc = "Put charwise before (preserve newlines)" },
+          [",pc"] = { "<Plug>(YankyPutAfterCharwise)", desc = "Put charwise (preserve newlines)" },
+          [",pj"] = { "<Plug>(YankyPutAfterCharwiseJoined)", desc = "Put charwise joined" },
+          [",pJ"] = { "<Plug>(YankyPutBeforeCharwiseJoined)", desc = "Put charwise joined before" },
         },
       },
     },
