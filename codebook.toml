@@ -72,3 +72,4 @@ words = [
     "xdg",
     "yanky",
 ]
+ignore_paths = ["/home/emiel/Dropbox/Vault/6-Notes/huizenjacht/routeFeb.md"]

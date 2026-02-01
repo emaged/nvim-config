@@ -21,9 +21,10 @@ local excluded_filenames = {
   "do-not-autosave-me.lua",
 }
 
+-- roots to enable autosave for automatically
 local roots = {
   vim.fs.normalize "~/Dropbox/projects",
-  vim.fs.normalize "~/projects",
+  vim.fs.normalize "~/Dropbox/Vault",
   vim.fs.normalize "~/nextcloud",
 }
 
