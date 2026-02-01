@@ -19,6 +19,11 @@ return { -- == Examples of Adding Plugins ==
     "jay-babu/mason-null-ls.nvim",
     enabled = false,
   },
+  {
+    "esmuellert/codediff.nvim",
+    dependencies = { "MunifTanjim/nui.nvim" },
+    cmd = "CodeDiff",
+  },
 
   { "Vimjas/vim-python-pep8-indent" },
 
