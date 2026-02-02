@@ -11,6 +11,7 @@ return {
       json = { "prettierd" },
       lua = { "stylua" },
       htmldjango = { "djlint" },
+      sql = { "sqlfluff" },
     },
   },
 }

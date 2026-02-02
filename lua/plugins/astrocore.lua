@@ -96,6 +96,8 @@ return {
         ["<Leader>pl"] = { ":Lazy reload ", desc = "Reload package" },
         -- CodeDiff command
         ["<Leader>gD"] = { "<cmd>CodeDiff<cr>", desc = "View CodeDiff diff" },
+        -- Dadbod UI open
+        ["<Leader>D"] = { "<cmd>DBUI<cr>", desc = "Dadbod UI" },
 
         -- snacks picker additional mappings
         ["<Leader>fe"] = { function() require("snacks").picker.explorer() end, desc = "File Explorer" },
