@@ -23,13 +23,12 @@ return {
   -- override astrocommunity settings like this
   {
     "nvim-neotest/neotest-python",
-
     lazy = true,
     opts = {
       dap = { justMyCode = false },
       args = { "--log-level", "DEBUG" },
       runner = "pytest",
-      python = ".venv/bin/python",
+      python = "python",
       pytest_discover_instances = true,
 
       is_test_file = function(file)
