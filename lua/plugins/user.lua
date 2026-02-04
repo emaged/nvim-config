@@ -146,4 +146,37 @@ return { -- == Examples of Adding Plugins ==
   },
 
   { "nvim-tree/nvim-web-devicons", opts = {} },
+
+  {
+    "saghen/filler-begone.nvim",
+    dependencies = {
+      {
+        "AstroNvim/astrocore",
+        opts = {
+          options = {
+            g = {
+              filler_begone = true, -- or remove this line entirely
+            },
+          },
+          autocmds = {
+            filler_begone = {
+              {
+                event = "BufEnter",
+                pattern = "*",
+                callback = function(args)
+                  local bt = vim.bo[args.buf].buftype
+                  local allow = { nofile = true, terminal = true, prompt = true }
+                  if allow[bt] then
+                    vim.b[args.buf].filler_begone = true -- enabled (default)
+                  else
+                    vim.b[args.buf].filler_begone = false -- disable for everything else
+                  end
+                end,
+              },
+            },
+          },
+        },
+      },
+    },
+  },
 }

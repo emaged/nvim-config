@@ -61,7 +61,7 @@ return {
       },
     },
     -- autocommands
-    autocmds = {},
+    -- autocmds = {},
 
     -- Mappings can be configured through AstroCore as well.
     -- NOTE: keycodes follow the casing in the vimdocs. For example, `<Leader>` must be capitalized
@@ -119,8 +119,10 @@ return {
         ["<Leader>r"] = { desc = "󰜎 Run (SnipRun)" },
         -- multicursor group
         ["<Leader>m"] = { desc = "󰗧 Multicursor" },
+        -- Opencode group
+        ["<Leader>O"] = { desc = "󱙺 Opencode" },
         -- sidekick group
-        ["<Leader>O"] = { desc = "󱙺 Otter" },
+        ["<Leader>I"] = { desc = "󰐗 Otter Inject" },
       },
       x = {
         -- groups

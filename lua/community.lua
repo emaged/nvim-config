@@ -38,9 +38,7 @@ return {
   { import = "astrocommunity.ai.opencode-nvim" },
 
   -- completion
-  { import = "astrocommunity.completion.copilot-lua-cmp" },
-  -- { import = "astrocommunity.completion.avante-nvim" },
-  -- { import = "astrocommunity.editing-support.codecompanion-nvim" },
+  -- { import = "astrocommunity.completion.copilot-lua-cmp" },
 
   -- Movement
   { import = "astrocommunity.motion.mini-surround" },
