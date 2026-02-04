@@ -57,15 +57,6 @@ return { -- == Examples of Adding Plugins ==
   },
 
   {
-    "MeanderingProgrammer/render-markdown.nvim",
-    ft = { "markdown" },
-    dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-mini/mini.icons" }, -- if you use standalone mini plugins
-    ---@module 'render-markdown'
-    ---@type render.md.UserConfig
-    opts = {},
-  },
-
-  {
     "olrtg/nvim-emmet",
     ft = { "html", "css", "scss", "sass", "javascript", "htmldjango" },
     config = function() vim.keymap.set({ "n", "v" }, "<A-S-w>", require("nvim-emmet").wrap_with_abbreviation) end,

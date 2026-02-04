@@ -3,6 +3,18 @@ if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 --
 return {
   --
+  -- "folke/sidekick.nvim",
+  -- opts = {
+  --   nes = { enabled = true },
+  --   cli = {
+  --     mux = {
+  --       backend = "tmux",
+  --       enabled = true,
+  --     },
+  --   },
+  -- },
+  --
+  --
   -- {
   --   "linux-cultist/venv-selector.nvim",
   --   dependencies = {

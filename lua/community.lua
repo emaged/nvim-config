@@ -35,9 +35,12 @@ return {
 
   -- AI
   { import = "astrocommunity.ai.sidekick-nvim" },
+  { import = "astrocommunity.ai.opencode-nvim" },
 
   -- completion
-  -- { import = "astrocommunity.completion.copilot-lua-cmp" },
+  { import = "astrocommunity.completion.copilot-lua-cmp" },
+  -- { import = "astrocommunity.completion.avante-nvim" },
+  -- { import = "astrocommunity.editing-support.codecompanion-nvim" },
 
   -- Movement
   { import = "astrocommunity.motion.mini-surround" },
@@ -57,6 +60,7 @@ return {
   { import = "astrocommunity.editing-support.yanky-nvim" },
   { import = "astrocommunity.utility.live-preview" },
   { import = "astrocommunity.utility.noice-nvim" },
+  { import = "astrocommunity.markdown-and-latex.render-markdown-nvim" },
   { import = "astrocommunity.search.grug-far-nvim" },
 
   -- Testing
