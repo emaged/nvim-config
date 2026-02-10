@@ -50,6 +50,7 @@ return {
 
   -- Linting && Formatting
   { import = "astrocommunity.editing-support.conform-nvim" },
+  -- { import = "astrocommunity.editing-support.dial-nvim" },
   { import = "astrocommunity.lsp.nvim-lint" },
   { import = "astrocommunity.editing-support.undotree" },
 
