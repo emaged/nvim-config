@@ -123,15 +123,18 @@ return {
         ["<Leader>O"] = { desc = "󱙺 Opencode" },
         -- sidekick group
         ["<Leader>I"] = { desc = "󰐗 Otter Inject" },
+        -- debugprint group
+        ["g?"] = { desc = "󰍉 Debugprint" },
       },
       x = {
         -- groups
         ["<Leader>r"] = { desc = "󰜎 Run (SnipRun)" },
         ["<Leader>,"] = { desc = "󰗧 Multicursor" },
-        ["<Leader>O"] = { desc = "󱙺 Sidekick" },
+        ["<Leader>O"] = { desc = "󱙺 OpenCode" },
+        ["g?"] = { desc = "󰍉 Debugprint" },
 
         -- grug-far keybinds
-        ["<Leader>s"] = { desc = "󰛔" },
+        ["<Leader>s"] = { desc = "󰛔 Search/Replace" },
         ["<Leader>sr"] = { function() require("grug-far").open() end, desc = "Replace selection" },
         ["<Leader>si"] = {
           function() require("grug-far").open { visualSelectionUsage = "operate-within-range" } end,

@@ -31,6 +31,12 @@ return { -- == Examples of Adding Plugins ==
   -- { "lepture/vim-jinja" },
 
   {
+    "nvim-mini/mini.move",
+    version = false,
+    opts = {},
+  },
+
+  {
     "L3MON4D3/LuaSnip",
     dependencies = { "rafamadriz/friendly-snippets" },
     opts = function(_, opts)

@@ -167,25 +167,17 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz", {
   silent = true,
   desc = "Center on down",
 })
+
 vim.keymap.set("n", "<C-u>", "<C-u>zz", {
   silent = true,
   desc = "Center on up",
-})
-
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", {
-  silent = true,
-  desc = "Move selection down",
-})
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", {
-  silent = true,
-  desc = "Move selection up",
 })
 
 -- tmux sessionizer keymaps --
 -- ------------------------ --
 vim.keymap.set("n", "<M-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 --long running sessions
-vim.keymap.set("n", "<M-l>", "<cmd>silent !tmux neww tmux-sessionizer -s 0<CR>")
-vim.keymap.set("n", "<M-o>", "<cmd>silent !tmux neww tmux-sessionizer -s 1<CR>")
-vim.keymap.set("n", "<M-p>", "<cmd>silent !tmux neww tmux-sessionizer -s 2<CR>")
-vim.keymap.set("n", "<M-r>", "<cmd>silent !tmux neww tmux-sessionizer -s 3<CR>")
+-- vim.keymap.set("n", "<M-l>", "<cmd>silent !tmux neww tmux-sessionizer -s 0<CR>")
+-- vim.keymap.set("n", "<M-o>", "<cmd>silent !tmux neww tmux-sessionizer -s 1<CR>")
+-- vim.keymap.set("n", "<M-p>", "<cmd>silent !tmux neww tmux-sessionizer -s 2<CR>")
+-- vim.keymap.set("n", "<M-r>", "<cmd>silent !tmux neww tmux-sessionizer -s 3<CR>")

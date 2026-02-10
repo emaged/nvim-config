@@ -18,6 +18,7 @@ return {
   -- Specific community recipes (import these first)
   -- { import = "astrocommunity.recipes.auto-session-restore" },
   { import = "astrocommunity.recipes.vscode" },
+  { import = "astrocommunity.recipes.heirline-vscode-winbar" },
   { import = "astrocommunity.recipes.picker-lsp-mappings" }, -- breaks otter
 
   -- Full community plugin pack (import after specific recipes)
@@ -50,7 +51,6 @@ return {
 
   -- Linting && Formatting
   { import = "astrocommunity.editing-support.conform-nvim" },
-  -- { import = "astrocommunity.editing-support.dial-nvim" },
   { import = "astrocommunity.lsp.nvim-lint" },
   { import = "astrocommunity.editing-support.undotree" },
 
