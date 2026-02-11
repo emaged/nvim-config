@@ -123,6 +123,8 @@ return {
         ["<Leader>O"] = { desc = "󱙺 Opencode" },
         -- sidekick group
         ["<Leader>I"] = { desc = "󰐗 Otter Inject" },
+        -- Obsidian group
+        ["<Leader>V"] = { desc = "󱓞 Obsidian" },
         -- debugprint group
         ["g?"] = { desc = "󰍉 Debugprint" },
       },

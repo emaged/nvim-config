@@ -10,7 +10,7 @@ return {
   --   "BufReadPre path/to/my-vault/*.md",
   --   "BufNewFile path/to/my-vault/*.md",
   -- },
-  event = { "BufReadPre  */Dropbox/Vault/*.md" },
+  event = { "BufReadPre */Dropbox/Vault/*.md" },
   dependencies = {
     "nvim-lua/plenary.nvim",
     {
@@ -18,6 +18,41 @@ return {
       opts = {
         mappings = {
           n = {
+
+            -- ========= OPEN / NAVIGATION =========
+            ["<Leader>Vo"] = { "<Cmd>Obsidian open<CR>", desc = "Obsidian Open in App" },
+            ["<Leader>Vs"] = { "<Cmd>Obsidian search<CR>", desc = "Obsidian Search Notes" },
+            ["<Leader>Vq"] = { "<Cmd>Obsidian quick_switch<CR>", desc = "Obsidian Quick Switch" },
+            ["<Leader>Vb"] = { "<Cmd>Obsidian backlinks<CR>", desc = "Obsidian Backlinks" },
+            ["<Leader>VL"] = { "<Cmd>Obsidian links<CR>", desc = "Obsidian Buffer Links" },
+
+            -- ========= NEW NOTES =========
+            ["<Leader>Vnn"] = { "<Cmd>Obsidian new<CR>", desc = "Obsidian New Note" },
+            ["<Leader>Vnt"] = { "<Cmd>Obsidian new_from_template<CR>", desc = "New Note From Template" },
+
+            -- ========= DAILY NOTES =========
+            ["<Leader>Vdt"] = { "<Cmd>Obsidian today<CR>", desc = "Today's Note" },
+            ["<Leader>Vdy"] = { "<Cmd>Obsidian yesterday<CR>", desc = "Yesterday's Note" },
+            ["<Leader>Vdm"] = { "<Cmd>Obsidian tomorrow<CR>", desc = "Tomorrow's Note" },
+            ["<Leader>Vdl"] = { "<Cmd>Obsidian dailies<CR>", desc = "List Daily Notes" },
+
+            -- ========= LINKS =========
+            ["<Leader>Vlf"] = { "<Cmd>Obsidian follow_link<CR>", desc = "Follow Link" },
+
+            -- ========= TAGS / TOC / TEMPLATES =========
+            ["<Leader>Vtt"] = { "<Cmd>Obsidian tags<CR>", desc = "Search Tags" },
+            ["<Leader>VtT"] = { "<Cmd>Obsidian template<CR>", desc = "Insert Template" },
+            ["<Leader>Vtc"] = { "<Cmd>Obsidian toc<CR>", desc = "Table of Contents" },
+
+            -- ========= WORKSPACE =========
+            ["<Leader>Vw"] = { "<Cmd>Obsidian workspace<CR>", desc = "Switch Workspace" },
+
+            -- ========= UTILITIES =========
+            ["<Leader>Vr"] = { "<Cmd>Obsidian rename<CR>", desc = "Rename Note" },
+            ["<Leader>Vc"] = { "<Cmd>Obsidian toggle_checkbox<CR>", desc = "Toggle Checkbox" },
+            ["<Leader>Vp"] = { "<Cmd>Obsidian paste_img<CR>", desc = "Paste Image" },
+
+            -- ========= SMART GF =========
             ["gf"] = {
               function()
                 if require("obsidian").util.cursor_on_markdown_link() then
@@ -26,8 +61,16 @@ return {
                   return "gf"
                 end
               end,
+              expr = true,
               desc = "Obsidian Follow Link",
             },
+          },
+
+          v = {
+            -- ========= VISUAL MODE =========
+            ["<Leader>Vl"] = { ":Obsidian link<CR>", desc = "Link Selection" },
+            ["<Leader>Vn"] = { ":Obsidian link_new<CR>", desc = "New Note from Selection" },
+            ["<Leader>Ve"] = { ":Obsidian extract_note<CR>", desc = "Extract Note" },
           },
         },
       },
