@@ -167,14 +167,14 @@ return {
         logical_alias,
 
         -- case switching (AstroCommunity)
-        augend.case.new {
-          types = {
-            "camelCase",
-            "PascalCase",
-            "snake_case",
-            "SCREAMING_SNAKE_CASE",
-          },
-        },
+        -- augend.case.new {
+        --   types = {
+        --     "camelCase",
+        --     "PascalCase",
+        --     "snake_case",
+        --     "SCREAMING_SNAKE_CASE",
+        --   },
+        -- },
       },
 
       typescript = {
