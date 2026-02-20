@@ -34,6 +34,8 @@ return {
   { import = "astrocommunity.pack.markdown" },
   { import = "astrocommunity.pack.toml" },
 
+  { import = "astrocommunity.file-explorer.yazi-nvim" },
+
   -- AI
   { import = "astrocommunity.ai.sidekick-nvim" },
   { import = "astrocommunity.ai.opencode-nvim" },

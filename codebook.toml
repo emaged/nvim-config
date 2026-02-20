@@ -54,6 +54,7 @@ words = [
     "noremap",
     "nvim",
     "nvim's",
+    "opencode",
     "pipfile",
     "pyrefly",
     "rebelot",
@@ -73,5 +74,6 @@ words = [
     "vscode",
     "xdg",
     "yanky",
+    "yazi",
 ]
 ignore_paths = ["/home/emiel/Dropbox/Vault/6-Notes/huizenjacht/routeFeb.md"]
