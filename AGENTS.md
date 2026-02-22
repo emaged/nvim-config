@@ -1,6 +1,6 @@
 # ~/.config/nvim/AGENTS.md
 
-## Neovim plugin questions
+## Neovim Plugin Questions
 
 - Prefer authoritative plugin documentation over assumptions.
 - Consult plugin README or official docs when behavior/options are uncertain.

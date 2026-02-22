@@ -120,9 +120,7 @@ return {
         ["<Leader>r"] = { desc = "󰜎 Run (SnipRun)" },
         -- multicursor group
         ["<Leader>m"] = { desc = "󰗧 Multicursor" },
-        -- Opencode group
-        ["<Leader>O"] = { desc = "󱙺 Opencode" },
-        -- sidekick group
+        -- Otter group
         ["<Leader>I"] = { desc = "󰐗 Otter Inject" },
         -- Obsidian group
         ["<Leader>V"] = { desc = "󱓞 Obsidian" },
@@ -133,7 +131,6 @@ return {
         -- groups
         ["<Leader>r"] = { desc = "󰜎 Run (SnipRun)" },
         ["<Leader>,"] = { desc = "󰗧 Multicursor" },
-        ["<Leader>O"] = { desc = "󱙺 OpenCode" },
         ["g?"] = { desc = "󰍉 Debugprint" },
 
         -- grug-far keybinds
