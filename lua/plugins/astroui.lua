@@ -11,15 +11,15 @@ return {
   ---@type AstroUIOpts
   opts = {
     -- change colorscheme
-    colorscheme = "catppuccin-mocha",
+    -- colorscheme = "catppuccin-mocha",
     -- colorscheme = "astrodark",
     -- AstroUI allows you to easily modify highlight groups easily for any and all colorschemes
     highlights = {
       init = { -- this table overrides highlights in all themes
         -- Normal = { bg = "#000000" },
         --{
-        WinBar = { fg = "#a6adc8" }, -- example Catppuccin text color
-        WinBarNC = { fg = "#6c7086" }, -- inactive
+        -- WinBar = { fg = "#a6adc8" }, -- example Catppuccin text color
+        -- WinBarNC = { fg = "#6c7086" }, -- inactive
       },
       astrodark = { -- a table of overrides/changes when applying the astrotheme theme
         -- Normal = { bg = "#000000" },
