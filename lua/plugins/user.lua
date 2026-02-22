@@ -22,7 +22,6 @@ return { -- == Examples of Adding Plugins ==
 
   {
     "esmuellert/codediff.nvim",
-    dependencies = { "MunifTanjim/nui.nvim" },
     cmd = "CodeDiff",
   },
 
