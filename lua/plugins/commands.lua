@@ -36,6 +36,7 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
+-- grug-far keymap
 vim.keymap.set({ "n", "x" }, "<Leader>sl", function()
   local search = vim.fn.getreg "/"
   -- surround with \b if "word" search (such as when pressing `*`)
