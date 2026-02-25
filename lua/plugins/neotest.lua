@@ -26,7 +26,15 @@ return {
     lazy = true,
     opts = {
       dap = { justMyCode = false },
-      args = { "--log-level", "DEBUG" },
+      args = {
+        "--log-level",
+        "DEBUG",
+
+        -- coverage: requires python -m pip install pytest-cov
+        "--cov=.", -- or "--cov=myapp" for a single app
+        -- optionally:
+        -- "--cov-report=html:htmlcov",
+      },
       runner = "pytest",
       python = "python",
       pytest_discover_instances = true,

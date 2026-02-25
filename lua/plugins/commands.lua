@@ -10,6 +10,7 @@ vim.api.nvim_create_user_command("LintInfo", function()
   end
 end, {})
 
+-- WatchRun
 vim.api.nvim_create_user_command("WatchRun", function()
   local overseer = require "overseer"
   overseer.run_task({ name = "run script", autostart = false }, function(task)
@@ -47,5 +48,15 @@ vim.keymap.set({ "n", "x" }, "<Leader>sl", function()
     },
   }
 end, { desc = "grug-far: Search using @/ register value or visual selection" })
+
+-- wrap markdown files
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "markdown",
+  callback = function()
+    vim.opt_local.wrap = true
+    vim.opt_local.linebreak = true
+    vim.opt_local.breakindent = true
+  end,
+})
 
 return {}

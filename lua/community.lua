@@ -70,7 +70,7 @@ return {
 
   -- Testing
   { import = "astrocommunity.test.neotest" },
-  -- { import = "astrocommunity.test.nvim-coverage" },
+  { import = "astrocommunity.test.nvim-coverage" },
   { import = "astrocommunity.code-runner.overseer-nvim" },
   { import = "astrocommunity.utility.lua-json5" },
   { import = "astrocommunity.diagnostics.trouble-nvim" },
