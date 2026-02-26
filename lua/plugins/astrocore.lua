@@ -53,7 +53,6 @@ return {
         sidescrolloff = 8,
         wrap = false, -- sets vim.opt.wrap
         exrc = true,
-        tabstop = 4,
       },
       g = { -- vim.g.<key>
         -- configure global vim variables (vim.g)
