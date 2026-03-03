@@ -25,7 +25,41 @@ return {
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.pack.cmake" },
   { import = "astrocommunity.pack.cpp" },
+
   { import = "astrocommunity.pack.java" },
+  {
+    "mfussenegger/nvim-jdtls",
+    opts = {
+      settings = {
+        java = {
+          configuration = {
+            runtimes = {
+              {
+                name = "JavaSE-11",
+                path = "/home/emiel/.local/share/mise/installs/java/11.0.2",
+              },
+              {
+                name = "JavaSE-21",
+                path = "/home/emiel/.local/share/mise/installs/java/21.0.2",
+              },
+              {
+                name = "JavaSE-26",
+                path = "/home/emiel/.local/share/mise/installs/java/26.0.0",
+              },
+            },
+          },
+        },
+        format = {
+          enabled = true,
+          settings = { -- you can use your preferred format style
+            url = "https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml",
+            profile = "GoogleStyle",
+          },
+        },
+      },
+    },
+  },
+
   { import = "astrocommunity.pack.html-css" },
 
   { import = "astrocommunity.pack.python" },
