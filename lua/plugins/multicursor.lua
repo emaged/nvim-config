@@ -74,7 +74,6 @@ return {
       set("x", "<Leader>mh", function() mc.swapCursors(-1) end, { desc = "Swap with previous cursor" })
       set("x", "<Leader>ml", function() mc.swapCursors(1) end, { desc = "Swap with next cursor" })
 
-      set("x", "S", mc.splitCursors, { desc = "Split visual into cursors (regex)" })
       set("x", "<Leader>m|", mc.splitCursors, { desc = "Split visual into cursors (regex)" })
 
       -- Mappings defined in a keymap layer only apply when there are
